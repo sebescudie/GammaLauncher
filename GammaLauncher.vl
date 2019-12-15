@@ -1270,7 +1270,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Renderer" />
             </p:NodeReference>
-            <Pin Id="JuqX92T1nEsQXdLTzQAHu1" Name="Bounds" Kind="InputPin" DefaultValue="1311, 429, 300, 300">
+            <Pin Id="JuqX92T1nEsQXdLTzQAHu1" Name="Bounds" Kind="InputPin" DefaultValue="1267, 266, 300, 300">
               <p:TypeAnnotation LastCategoryFullName="System.Drawing" LastSymbolSource="System.Drawing.dll">
                 <Choice Kind="TypeFlag" Name="Rectangle" />
               </p:TypeAnnotation>
@@ -1328,7 +1328,7 @@
             <Pin Id="Dty8iqgBIUVLvOIERIEa5i" Name="Use Repos" Kind="InputPin" />
             <Pin Id="PyOKLnwjTVWQE2TUsRqv4s" Name="Do Start" Kind="InputPin" />
           </Node>
-          <Node Bounds="360,631,149,176" Id="LmxCgHvZrNpPeOcmM8Cfrs">
+          <Node Bounds="360,631,197,248" Id="LmxCgHvZrNpPeOcmM8Cfrs">
             <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
               <Choice Kind="ApplicationStatefulRegion" Name="If" />
@@ -1382,6 +1382,46 @@
                 </Pin>
                 <Pin Id="Go75y6yLQraQbppr1vLseU" Name="Output" Kind="StateOutputPin" />
               </Node>
+              <Node Bounds="372,833,49,26" Id="Eo3u7ZKfou1P2j9SsR6XQo">
+                <p:NodeReference LastCategoryFullName="System.Windows.Forms.Form" LastSymbolSource="System.Windows.Forms.dll">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="SetIcon" />
+                  <CategoryReference Kind="AssemblyCategory" Name="Form" NeedsToBeDirectParent="true" />
+                </p:NodeReference>
+                <Pin Id="OgvTlU3GNOsO950MjYKAmN" Name="Input" Kind="StateInputPin" />
+                <Pin Id="RdjkMoFydEhPRuZfGcHxA4" Name="Value" Kind="InputPin" />
+                <Pin Id="GkO62ZalP2bMUo16dVzkbt" Name="Output" Kind="StateOutputPin" />
+              </Node>
+              <Node Bounds="458,797,46,26" Id="GSHRgg76V4LMm9AowuiQYO">
+                <p:NodeReference LastCategoryFullName="System.Drawing.Icon" LastSymbolSource="System.Drawing.dll">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="AssemblyCategory" Name="Icon" />
+                  <Choice Kind="OperationCallFlag" Name="Create" />
+                  <PinReference Kind="InputPin" Name="File Name" />
+                </p:NodeReference>
+                <Pin Id="L9eth3DSJ8gPVcdHkC9A7V" Name="File Name" Kind="InputPin" />
+                <Pin Id="Frj8ecNLbqxPzzfsddOm9b" Name="Output" Kind="StateOutputPin" />
+              </Node>
+              <Node Bounds="458,740,87,19" Id="CcMX3mN0AbQLvNTRQD6TZs">
+                <p:NodeReference LastCategoryFullName="System.Application" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="ApplicationPath" />
+                </p:NodeReference>
+                <Pin Id="TOmRLNCsnZ4M4cMK2LytOS" Name="Output" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="458,768,25,19" Id="QsVX3v3M0hHNcMqCzL1s97">
+                <p:NodeReference LastCategoryFullName="Math" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="+" />
+                </p:NodeReference>
+                <Pin Id="C8LFWK3Sl6OLnDibVw6QDA" Name="Input" Kind="InputPin" />
+                <Pin Id="OXfJNFquIHmMh6yuBOJTqG" Name="Input 2" Kind="InputPin" DefaultValue="ico.ico">
+                  <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                    <Choice Kind="TypeFlag" Name="String" />
+                  </p:TypeAnnotation>
+                </Pin>
+                <Pin Id="Rly4nlqQRLfLRSWPyz5LI6" Name="Output" Kind="OutputPin" />
+              </Node>
             </Patch>
           </Node>
           <Node Bounds="360,594,16,19" Id="QMdQWUBqLWGLJsbXkawB8w">
@@ -1392,6 +1432,12 @@
             <Pin Id="FoRzEMdu1xvP8cUTB5HTUA" Name="Simulate" Kind="InputPin" />
             <Pin Id="CNndv5o9N7QNryf8vsgaUx" Name="Output" Kind="OutputPin" />
           </Node>
+          <Pad Id="Ur4wv0dYrmXNCnkB2YdL1E" Bounds="418,156,54,43" ShowValueBox="true" isIOBox="true" Value="254, 189, 10">
+            <p:TypeAnnotation LastCategoryFullName="3D" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="Vector3" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings />
+          </Pad>
         </Canvas>
         <Patch Id="KKnejguk59iOlItt5SMhF8" Name="Create" />
         <Patch Id="CKL6bDvGpbBMcPbl7oUMJl" Name="Update" />
@@ -1414,6 +1460,10 @@
         <Link Id="TFj6IqqWe6TO3UV403yj6o" Ids="QL5e48FFvMCOrTYNG2741Y,RrZhvpdiWtuMytz3dQyaWG" />
         <Link Id="QRqWZcwaH6yMVq2VyKjX4e" Ids="UH2wmUtCIJ4LD50KIxXYQu,R4Iuh8VAvjHLtwvB5llmj3" />
         <Link Id="H5ytz9Mrf0oPVXJ1rwkmCM" Ids="CNndv5o9N7QNryf8vsgaUx,EedlvqWaQevLQfz2RhI4pm" />
+        <Link Id="BjXCT83z5qgMp55z4EnXae" Ids="Go75y6yLQraQbppr1vLseU,OgvTlU3GNOsO950MjYKAmN" />
+        <Link Id="IbN2urv6KYTN5Rz44WM8Lq" Ids="Frj8ecNLbqxPzzfsddOm9b,RdjkMoFydEhPRuZfGcHxA4" />
+        <Link Id="MJMRlsaNDXwMdgOuqNJHWM" Ids="TOmRLNCsnZ4M4cMK2LytOS,C8LFWK3Sl6OLnDibVw6QDA" />
+        <Link Id="N0L0yTxzsxdPzzZ1RZ7yMd" Ids="Rly4nlqQRLfLRSWPyz5LI6,L9eth3DSJ8gPVcdHkC9A7V" />
       </Patch>
     </Node>
   </Patch>
@@ -1421,4 +1471,5 @@
   <NugetDependency Id="JpNiZaIIYG5Pm9cQerAvPm" Location="Elementa" Version="1.2.0-CI-20191204-115001" />
   <PlatformDependency Id="PR2RZQLpnGKNZvYQVn3Ead" Location="mscorlib" />
   <PlatformDependency Id="Ow5sjuC3immNloZfvkN1g7" Location="System.Windows.Forms" />
+  <PlatformDependency Id="HMEsYQpErI5OqaqpKnu53t" Location="System.Drawing" />
 </Document>
