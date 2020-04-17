@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2019.2.0-0140-63c55fb825" Version="0.128">
-  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2019.2.0-0140-g63c55fb825" />
+<Document xmlns:p="property" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2020.1.0" Version="0.128">
+  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2020.1.0" />
   <Patch Id="VwtUUR3K9mbPm4q6fszgF3">
     <Canvas Id="Cn8FrGu71DtOiQColm6Utc" DefaultCategory="Main" CanvasType="FullCategory">
       <!--
@@ -468,11 +468,6 @@
                 <Patch Id="GKlK2T4lbJ4PbNHTsnGv5F" Name="Update">
                   <Pin Id="LMnIaZZhzvqL1xlCT2DUuH" Name="Style Sheet" Kind="OutputPin" Bounds="192,558" />
                 </Patch>
-                <!--
-
-    ************************  ************************
-
--->
                 <ProcessDefinition Id="EBIct7o9YSRLCPnbKxMBv8">
                   <Fragment Id="EBhZ6KbO5efPmqG0tSNGXX" Patch="FQTYWOiuPbMOg3FGpc8bh2" Enabled="true" />
                   <Fragment Id="QkFqKoOMp4ZPJOmUlUKXO5" Patch="GKlK2T4lbJ4PbNHTsnGv5F" Enabled="true" />
@@ -735,6 +730,7 @@
               <Pin Id="RmxmXnX9YOiLoz8fEmwzZT" Name="Paint" Kind="InputPin" />
               <Pin Id="SKMqwpqfDLKPYTk4ODjpBV" Name="Enabled" Kind="InputPin" />
               <Pin Id="PnS2ryJ0uuANh5gHmM6RBU" Name="Output" Kind="OutputPin" />
+              <Pin Id="LvtFQaVQYkfN5OhmUd4GvD" Name="Baseline Position" Kind="OutputPin" />
             </Node>
             <Node Bounds="539,314,165,19" Id="ISA2JvApagJM2qlgz3Rdno">
               <p:NodeReference LastCategoryFullName="Graphics.Skia.Text" LastSymbolSource="VL.Skia.vl">
@@ -883,7 +879,7 @@
                     <CategoryReference Kind="Category" Name="RegularExpressions" NeedsToBeDirectParent="true" />
                   </p:NodeReference>
                   <Pin Id="GgrigBj6OPuPdZJcY085xe" Name="Input" Kind="InputPin" />
-                  <Pin Id="RMekhY7G9GiLecAr3tn9qA" Name="Pattern" Kind="InputPin" DefaultValue="[12][0-9]{3}\.[0-9]\d*\.[0-9]\d*\-[0-9]\d*">
+                  <Pin Id="RMekhY7G9GiLecAr3tn9qA" Name="Pattern" Kind="InputPin" DefaultValue="[12][0-9]{3}\.[0-9]\d*\.[0-9]\d*\-[0-9]\d*|[12][0-9]{3}\.[0-9]\d*\.[0-9]\d*">
                     <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                       <Choice Kind="TypeFlag" Name="String" />
                     </p:TypeAnnotation>
@@ -1713,8 +1709,8 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2019.2.0-0140-g63c55fb825" />
-  <NugetDependency Id="JpNiZaIIYG5Pm9cQerAvPm" Location="Elementa" Version="1.2.0-CI-20191210-180109" />
+  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2020.1.0" />
+  <NugetDependency Id="JpNiZaIIYG5Pm9cQerAvPm" Location="Elementa" Version="1.2.0-CI-20191204-115001" />
   <PlatformDependency Id="PR2RZQLpnGKNZvYQVn3Ead" Location="mscorlib" />
   <PlatformDependency Id="Ow5sjuC3immNloZfvkN1g7" Location="System.Windows.Forms" />
   <PlatformDependency Id="HMEsYQpErI5OqaqpKnu53t" Location="System.Drawing" />
