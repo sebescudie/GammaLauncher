@@ -2137,12 +2137,12 @@
               </Pin>
               <Pin Id="DbJwgnBCvi2L8pZuSRKXyg" Name="Set Position OnOpen" Kind="InputPin" />
               <Pin Id="BQ4WsgClx78NVRusLXaMqb" Name="Set Size OnOpen" Kind="InputPin" />
-              <Pin Id="HgC9WTOw6J3MRl2f3ta5xl" Name="Enable Translate" Kind="InputPin">
+              <Pin Id="HgC9WTOw6J3MRl2f3ta5xl" Name="Enable Translate" Kind="InputPin" DefaultValue="False">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                   <Choice Kind="TypeFlag" Name="Boolean" />
                 </p:TypeAnnotation>
               </Pin>
-              <Pin Id="BRjucApoO0oO7kk47V2JNt" Name="Enable Resize" Kind="InputPin">
+              <Pin Id="BRjucApoO0oO7kk47V2JNt" Name="Enable Resize" Kind="InputPin" DefaultValue="False">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                   <Choice Kind="TypeFlag" Name="Boolean" />
                 </p:TypeAnnotation>
@@ -2612,7 +2612,7 @@
             <Pin Id="Te4VpKKMfIYPhDvnx4Lp7E" Name="ClientBounds" Kind="OutputPin" />
             <Pin Id="CPLDYFcSc5AOlIt3glBoQt" Name="Render Time" Kind="OutputPin" />
           </Node>
-          <Node Bounds="412,400,113,19" Id="NpxcXpt3PWFNc6azDdPGIt">
+          <Node Bounds="412,355,113,19" Id="NpxcXpt3PWFNc6azDdPGIt">
             <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="GammaLauncher.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="AppSettingsInitializer" />
@@ -2625,7 +2625,7 @@
             <Pin Id="Ulds4mLlRqRMMYm4HXkCec" Name="Output" Kind="OutputPin" />
           </Node>
           <Pad Id="IiCIs1t6XKcM1BfjpVVt6i" SlotId="Qgxpsg5fKhGPOz4eRYwOFx" Bounds="477,694" />
-          <Node Bounds="394,441,105,19" Id="O8LpVvSkkP5LqvY0L0Lz9c">
+          <Node Bounds="394,396,105,19" Id="O8LpVvSkkP5LqvY0L0Lz9c">
             <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="GammaLauncher.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="UserInterface" />
@@ -2638,7 +2638,7 @@
             <Pin Id="SUBfUeVliDdPU3exmjMQkq" Name="Start" Kind="OutputPin" />
             <Pin Id="U5z0dae7TEBLd1lQToia5l" Name="On Quick Access Buttons Interaction" Kind="OutputPin" />
           </Node>
-          <Node Bounds="422,488,91,19" Id="U6QD7LdHarDNxFaPI75WAU">
+          <Node Bounds="422,443,91,19" Id="U6QD7LdHarDNxFaPI75WAU">
             <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="GammaLauncher.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="GammaExecutor" />
@@ -2733,7 +2733,7 @@
             </Pin>
             <Pin Id="Rly4nlqQRLfLRSWPyz5LI6" Name="Output" Kind="OutputPin" />
           </Node>
-          <Node Bounds="413,523,143,19" Id="E28htxAFwdNQb9gDr3htRM">
+          <Node Bounds="413,478,143,19" Id="E28htxAFwdNQb9gDr3htRM">
             <p:NodeReference LastCategoryFullName="Main" LastSymbolSource="GammaLauncher.vl">
               <Choice Kind="ProcessNode" Name="QuickAccessButtonsHandler" />
             </p:NodeReference>
@@ -2741,7 +2741,7 @@
             <Pin Id="BBwZeuHakknPAlM0snNHC0" Name="Input" Kind="InputPin" />
             <Pin Id="DQRqiyD5ECRQYfBm5xpHJR" Name="Overlay" Kind="OutputPin" />
           </Node>
-          <Node Bounds="393,571,125,19" Id="GTF1DUkNpMdL1BxGwKUgK5">
+          <Node Bounds="393,526,125,19" Id="GTF1DUkNpMdL1BxGwKUgK5">
             <p:NodeReference LastCategoryFullName="VL.Elementa.Layout" LastSymbolSource="VL.Elementa.Core.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Group" />
@@ -2772,6 +2772,36 @@
             <Pin Id="L3Z0P7g09bCLs6MbrshZbT" Name="Layout Rebuild" Kind="OutputPin" />
             <Pin Id="FBcSxeI5b8XLTNSYbfKlId" Name="Dirty Graph" Kind="OutputPin" />
           </Node>
+          <Node Bounds="433,574,365,19" Id="CzGaZaQgWQWNMI71Rk0WTA">
+            <p:NodeReference LastCategoryFullName="VL.Elementa.Style.Utils" LastSymbolSource="VL.Elementa.Core.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="DefaultStyleSheet" />
+            </p:NodeReference>
+            <Pin Id="StRLOjgcNqlQUDjngMeluL" Name="Background_Fill_Enabled" Kind="InputPin" />
+            <Pin Id="H5nNfAy6m6RPtwdBr7Vt8q" Name="Background_Fill_Paint" Kind="InputPin" />
+            <Pin Id="GL8LctJWybyMQRAh0pzUW9" Name="Background_Fill_Color" Kind="InputPin" />
+            <Pin Id="Pke7nhOQLOyOc2LOePpYRq" Name="Background_Stroke_Enabled" Kind="InputPin" />
+            <Pin Id="QUD4pmhfgRKOHAv2Xc89eJ" Name="Background_Stroke_Color" Kind="InputPin" />
+            <Pin Id="BiBXrM4peYIN3rnx9Jlrg9" Name="Foreground_Fill_Enabled" Kind="InputPin" />
+            <Pin Id="SIZHkju0VfXO8n4seOkpho" Name="Foreground_Fill_Color" Kind="InputPin" DefaultValue="0.5019608, 0.5019608, 0.5019608, 1">
+              <p:TypeAnnotation LastCategoryFullName="Color" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="RGBA" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="HqVqtAVp5VCOyrbNtdz9Yc" Name="Foreground_Fill_Paint" Kind="InputPin" />
+            <Pin Id="LCCX832mf9wQaH5ZB3CvZv" Name="Foreground_Highlight_Color" Kind="InputPin" />
+            <Pin Id="QyRn8iycEXeLwv5i5vlfYK" Name="Foreground_Stroke_Enabled" Kind="InputPin" />
+            <Pin Id="CrGp6X7zQ9IMBGwIrUiVdu" Name="Foreground_Stroke_Color" Kind="InputPin" />
+            <Pin Id="KtYkvFY74fYPgsLZkFfmQN" Name="Text_Enabled" Kind="InputPin" />
+            <Pin Id="CNHR5jlJ1hLOvhBToYr2Sz" Name="Text_Color" Kind="InputPin" />
+            <Pin Id="EaYCB3D4RVdNjwmBbo6Xum" Name="Panel_Fill_Enabled" Kind="InputPin" />
+            <Pin Id="PHjkhA4nwpSPr6sHpsQpk4" Name="Panel_Fill_Paint" Kind="InputPin" />
+            <Pin Id="DYN3fmEuN0tNTtwhzETXY5" Name="Panel_Fill_Color" Kind="InputPin" />
+            <Pin Id="Q8zbWmJyqWEMsSMwFyqwGz" Name="Panel_Stroke_Enabled" Kind="InputPin" />
+            <Pin Id="Ng5Y0rlKu1WO0uAhyWjuL6" Name="Panel_Stroke_Paint" Kind="InputPin" />
+            <Pin Id="FUTmTQ8ZuYCNDbMFsq9xko" Name="Panel_Stroke_Color" Kind="InputPin" />
+            <Pin Id="RnGm4Gpe6OgNMGkYXqseNu" Name="Style Sheet" Kind="OutputPin" />
+          </Node>
         </Canvas>
         <Patch Id="KKnejguk59iOlItt5SMhF8" Name="Create" ParticipatingElements="DGZpIq2lAHgPQYd70ny0ng,CUcNSt0x7NYM8HfkRGMvXs,Gujsek6rS4gQRK9W1nQLa0,Eo3u7ZKfou1P2j9SsR6XQo" />
         <Patch Id="CKL6bDvGpbBMcPbl7oUMJl" Name="Update" />
@@ -2801,6 +2831,7 @@
         <Link Id="GWGmYiJ4tdDNrKL8cs18pw" Ids="SdtwEINn4DdPmwfO71ReLT,Hr54hF02mWuMlEzZeD2FzC" />
         <Link Id="IXPszl45C3YPNhj03pEt0E" Ids="PK6n9wNa0j3QRDTo8DTR1E,JPV7iBMzAd9NJ8sWIfxafC" />
         <Link Id="MhBLfpCrMdqNf290nLhUzM" Ids="Ulds4mLlRqRMMYm4HXkCec,M22xck1yGKENeGhN84B3Ri" />
+        <Link Id="ML6FZHO57abNP125mwUYti" Ids="RnGm4Gpe6OgNMGkYXqseNu,MwJ3TVcZnAOMVztKQvlW4d" />
       </Patch>
     </Node>
   </Patch>
