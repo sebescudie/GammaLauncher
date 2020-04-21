@@ -19,7 +19,7 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 
 ## How to get it
 
-Get the latest version [here](http://sebescudie.fr/releases/gammalauncher/gammalauncher_1.0.7z), or clone the repo and build the app yourself. If you do so, don't forget to copy the `ico.ico` file to your output dir, otherwise the app won't start.
+Get the latest version in the Releases section, or clone the repo and build the app yourself. If you do so, don't forget to copy the `ico.ico` file to your output dir, otherwise the app won't start.
 
 ## Contributing
 
