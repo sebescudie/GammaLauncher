@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2020.1.0" Version="0.128">
-  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2020.1.0" />
+<Document xmlns:p="property" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2020.1.4.167" Version="0.128">
+  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2020.1.4" />
   <Patch Id="VwtUUR3K9mbPm4q6fszgF3">
     <Canvas Id="Cn8FrGu71DtOiQColm6Utc" DefaultCategory="Main" CanvasType="FullCategory">
       <!--
@@ -25,12 +25,12 @@
             <ControlPoint Id="Q8FVTFg7j5jPK1o3DW5ple" Bounds="580,440" />
           </Canvas>
           <Patch Id="BFejXJP5vBFPL4ztRF4rry" Name="Create">
-            <Pin Id="RIGJjiVnl4JOuaNRyfSX0M" Name="Repos Folder" Kind="InputPin" DefaultValue="C:\repos">
+            <Pin Id="RIGJjiVnl4JOuaNRyfSX0M" Name="Repos Folder" Kind="InputPin" DefaultValue="..\..\..\\repos">
               <p:TypeAnnotation LastCategoryFullName="IO" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="Path" />
               </p:TypeAnnotation>
             </Pin>
-            <Pin Id="PBECn06oHCSQVEzNdDv4aN" Name="VVVV Installations" Kind="InputPin" DefaultValue="C:\Program Files\vvvv">
+            <Pin Id="PBECn06oHCSQVEzNdDv4aN" Name="VVVV Installations" Kind="InputPin" DefaultValue="..\..\..\Program Files\vvvv\">
               <p:TypeAnnotation LastCategoryFullName="IO" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="Path" />
               </p:TypeAnnotation>
@@ -2589,7 +2589,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Renderer" />
             </p:NodeReference>
-            <Pin Id="JuqX92T1nEsQXdLTzQAHu1" Name="Bounds" Kind="InputPin" DefaultValue="1487, 193, 300, 300">
+            <Pin Id="JuqX92T1nEsQXdLTzQAHu1" Name="Bounds" Kind="InputPin" DefaultValue="0, 3, 286, 304">
               <p:TypeAnnotation LastCategoryFullName="System.Drawing" LastSymbolSource="System.Drawing.dll">
                 <Choice Kind="TypeFlag" Name="Rectangle" />
               </p:TypeAnnotation>
@@ -2657,29 +2657,13 @@
               <CategoryReference Kind="AssemblyCategory" Name="Form" NeedsToBeDirectParent="true" />
             </p:NodeReference>
             <Pin Id="Pl5OWgpotwqNmahN5Lp0UB" Name="Input" Kind="StateInputPin" />
-            <Pin Id="Rgp9CH7m4saMvpzNCsgt9m" Name="Value" Kind="InputPin" DefaultValue="FixedSingle">
+            <Pin Id="Rgp9CH7m4saMvpzNCsgt9m" Name="Value" Kind="InputPin" DefaultValue="Sizable">
               <p:TypeAnnotation LastCategoryFullName="System.Windows.Forms" LastSymbolSource="System.Windows.Forms.dll">
                 <Choice Kind="TypeFlag" Name="FormBorderStyle" />
               </p:TypeAnnotation>
             </Pin>
             <Pin Id="QYRem1KoJ5YPmegiaJOMho" Name="Output" Kind="StateOutputPin" />
           </Node>
-          <Node Bounds="373,780,48,26" Id="CUcNSt0x7NYM8HfkRGMvXs">
-            <p:NodeReference LastCategoryFullName="System.Windows.Forms.Form" LastSymbolSource="System.Windows.Forms.dll">
-              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <CategoryReference Kind="AssemblyCategory" Name="Forms" />
-              <Choice Kind="OperationCallFlag" Name="SetSize" />
-              <CategoryReference Kind="AssemblyCategory" Name="Form" NeedsToBeDirectParent="true" />
-            </p:NodeReference>
-            <Pin Id="AqbcojWoqDrLf6LqpJ42lj" Name="Input" Kind="StateInputPin" />
-            <Pin Id="RrZhvpdiWtuMytz3dQyaWG" Name="Value" Kind="InputPin" />
-            <Pin Id="UH2wmUtCIJ4LD50KIxXYQu" Name="Output" Kind="StateOutputPin" />
-          </Node>
-          <Pad Id="QL5e48FFvMCOrTYNG2741Y" Comment="" Bounds="418,767,42,15" ShowValueBox="true" isIOBox="true" Value="300, 300">
-            <p:TypeAnnotation LastCategoryFullName="System.Drawing" LastSymbolSource="System.Drawing.dll">
-              <Choice Kind="TypeFlag" Name="Size" />
-            </p:TypeAnnotation>
-          </Pad>
           <Node Bounds="373,832,51,26" Id="Gujsek6rS4gQRK9W1nQLa0">
             <p:NodeReference LastCategoryFullName="System.Windows.Forms.Form" LastSymbolSource="System.Windows.Forms.dll">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -2804,7 +2788,7 @@
             <Pin Id="RnGm4Gpe6OgNMGkYXqseNu" Name="Style Sheet" Kind="OutputPin" />
           </Node>
         </Canvas>
-        <Patch Id="KKnejguk59iOlItt5SMhF8" Name="Create" ParticipatingElements="DGZpIq2lAHgPQYd70ny0ng,CUcNSt0x7NYM8HfkRGMvXs,Gujsek6rS4gQRK9W1nQLa0,Eo3u7ZKfou1P2j9SsR6XQo" />
+        <Patch Id="KKnejguk59iOlItt5SMhF8" Name="Create" ParticipatingElements="DGZpIq2lAHgPQYd70ny0ng,Gujsek6rS4gQRK9W1nQLa0,Eo3u7ZKfou1P2j9SsR6XQo" />
         <Patch Id="CKL6bDvGpbBMcPbl7oUMJl" Name="Update" />
         <ProcessDefinition Id="FOaFvc0Tb7tMjoEgbakLFk">
           <Fragment Id="DboXnORCsMoQJbpLgTMQxU" Patch="KKnejguk59iOlItt5SMhF8" Enabled="true" />
@@ -2816,9 +2800,6 @@
         <Link Id="B12DTKmBPG5MDknodkNMmg" Ids="BGjnqGRWECVOVD3i9YYidF,OKNIsSx9X1xLwNGyJIvc2S" />
         <Link Id="Nucd4yXCxw9MuhRXRJhG0Q" Ids="ImuIZYlnsiBPZLZocj5Q03,Dty8iqgBIUVLvOIERIEa5i" />
         <Link Id="SWpAenzpLbCOGAhQ3DlLvl" Ids="O6nLZBR4jkXPeE2qAvzvpa,Pl5OWgpotwqNmahN5Lp0UB" />
-        <Link Id="ACSYHSMlM5xNb5UKkkisT2" Ids="QYRem1KoJ5YPmegiaJOMho,AqbcojWoqDrLf6LqpJ42lj" />
-        <Link Id="TFj6IqqWe6TO3UV403yj6o" Ids="QL5e48FFvMCOrTYNG2741Y,RrZhvpdiWtuMytz3dQyaWG" />
-        <Link Id="QRqWZcwaH6yMVq2VyKjX4e" Ids="UH2wmUtCIJ4LD50KIxXYQu,R4Iuh8VAvjHLtwvB5llmj3" />
         <Link Id="BjXCT83z5qgMp55z4EnXae" Ids="Go75y6yLQraQbppr1vLseU,OgvTlU3GNOsO950MjYKAmN" />
         <Link Id="IbN2urv6KYTN5Rz44WM8Lq" Ids="Frj8ecNLbqxPzzfsddOm9b,RdjkMoFydEhPRuZfGcHxA4" />
         <Link Id="MJMRlsaNDXwMdgOuqNJHWM" Ids="TOmRLNCsnZ4M4cMK2LytOS,C8LFWK3Sl6OLnDibVw6QDA" />
@@ -2833,10 +2814,11 @@
         <Link Id="IXPszl45C3YPNhj03pEt0E" Ids="PK6n9wNa0j3QRDTo8DTR1E,JPV7iBMzAd9NJ8sWIfxafC" />
         <Link Id="MhBLfpCrMdqNf290nLhUzM" Ids="Ulds4mLlRqRMMYm4HXkCec,M22xck1yGKENeGhN84B3Ri" />
         <Link Id="ML6FZHO57abNP125mwUYti" Ids="RnGm4Gpe6OgNMGkYXqseNu,MwJ3TVcZnAOMVztKQvlW4d" />
+        <Link Id="HG74E40tixMM86cwZUqyqU" Ids="QYRem1KoJ5YPmegiaJOMho,R4Iuh8VAvjHLtwvB5llmj3" />
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2020.1.0" />
+  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2020.1.4" />
   <PlatformDependency Id="PR2RZQLpnGKNZvYQVn3Ead" Location="mscorlib" />
   <PlatformDependency Id="Ow5sjuC3immNloZfvkN1g7" Location="System.Windows.Forms" />
   <PlatformDependency Id="HMEsYQpErI5OqaqpKnu53t" Location="System.Drawing" />
