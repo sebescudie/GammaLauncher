@@ -16,6 +16,7 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 
 - Allow multiple : allows to start more than one `vvvv.exe` at once
 - Use repositories : this will ovewrite packages in the default package folder with the ones in your repositories folder, if you specify one. This is usefull if you're building libraries for gamma.
+- No cache : doesn't load .vl.dll files and compiles everything from scratch
 
 ## How to get it
 
@@ -23,6 +24,6 @@ Get the latest version in the [here](https://github.com/sebescudie/GammaLauncher
 
 ## Contributing
 
-If you wanna contribute to the app by adding functionalities or whatever, please do so !
+If you wanna contribute to the app by adding functionalities or whatever, please do so!
 
 cheerz
