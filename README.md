@@ -10,7 +10,7 @@ GammaLauncher is a simple application that allows to launch vvvv gamma instances
 
 ## Usage
 
-When the application first starts, it generates a `config.xml` file next to it. This file contains path to your gamma insatallations (should be `C:\Program Files\vvvv`), as well as your repositories folder, if you're using that feature. You can customize those paths if needed by editing the config file.
+When the application first starts, it generates a `settings.xml` file next to it. This file contains path to your gamma insatallations (should be `C:\Program Files\vvvv`), as well as your repositories folder, if you're using that feature. You can customize those paths if needed by editing the settings file.
 
 Then, simply pick the specific gamma version you wanna start from the dropdown menu, and tick the options you wanna use :
 
