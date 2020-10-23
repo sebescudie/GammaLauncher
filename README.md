@@ -18,6 +18,11 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 - Use repositories : this will ovewrite packages in the default package folder with the ones in your repositories folder, if you specify one. This is usefull if you're building libraries for gamma.
 - No cache : doesn't load .vl.dll files and compiles everything from scratch
 
+## Features
+
+- Two buttons at the bottom of the app allow you to quickly access your `package-repositories` folder and installed nugets
+- A third one allows to quickly kill all running vvvv instances
+
 ## How to get it
 
 Get the latest version in the [here](https://github.com/sebescudie/GammaLauncher/releases), or clone the repo and build the app yourself. If you do so, don't forget to copy the `ico.ico` file to your output dir, otherwise the app won't start.
