@@ -22,6 +22,9 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 
 - Two buttons at the bottom of the app allow you to quickly access your `package-repositories` folder and installed nugets
 - A third one allows to quickly kill all running vvvv instances
+- Pressing <kbd>CTRL</kbd>+<kbd>R</kbd> refreshes your installed versions list
+- Pressing <kbd>CTRL</kbd>+<kbd>,</kbd> takes you to the application's folder so you can quickly edit your settings file
+- Mouse scrolling over the vvvversion dropdown allows you cycle through your installed versions without clicking/unfolding it
 
 ## How to get it
 
