@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2020.3.0.53" Version="0.128">
-  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2020.3.0-0053-gd338f20e7b" />
+<Document xmlns:p="property" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2020.3.0.68" Version="0.128">
+  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2020.3.0-0068-gbfc5bf7649" />
   <Patch Id="VwtUUR3K9mbPm4q6fszgF3">
     <Canvas Id="Cn8FrGu71DtOiQColm6Utc" DefaultCategory="Main" CanvasType="FullCategory">
       <Canvas Id="A8kMw5cSAh9N9pwyyLzDKt" Name="Model" Position="92,129">
@@ -3072,7 +3072,6 @@
             <Link Id="PxMY07Pf1DaO7wWMIzoCbs" Ids="Pj4e0cUDykZNPZ851nY8yE,BYjmAxUvPu9LgL9WwchTQ4" />
             <Link Id="AVpJLNJM7OoNiJYVNyJ1jI" Ids="JZUk4O8ON33Nb2TXJwc0Wz,UZNFtPznRuOMEf4BAfbEpQ" />
             <Link Id="DCEPuPmfZR3Mjx4NKT04Wk" Ids="H1mZvt2lr9BLVSfo6xSJVm,QeJfDv8ajzRLjgrhAa8xra" />
-            <Link Id="UcjYRB9qklpM1nSSmA6Kl6" Ids="A4nwiMJ9r5pNBQK1TmkhR8,QnNv37vbdP9Mgz46EiAO1V" />
             <Link Id="UJaQLeV2yxCLi67yTDFtKG" Ids="IlTbJpzz0ylLVKWTAxDMWE,AJ4HhpbCDIFPBpNInK8YE4" />
             <Link Id="VO3mkF0pzEzPyDChFjr92O" Ids="Bh1ziDgWEeCMOdGHBKcS2G,BeCJ8wpVfOHQKC7dIO8CH2" />
             <Link Id="GF4pRh5itKBMLBFGoZNcrd" Ids="RAGKUpidakSLqgjXQJGvE7,BcPNlfTECmWLAluw8abEcl" />
@@ -3146,7 +3145,6 @@
             <Link Id="NUt1djb39lAOAZMCLUw9r3" Ids="K28leWUCBLpPl1cEBWb9cM,T2zJvIUwVxOQG1iMUIS3PH" />
             <Link Id="Lsx263AqSLDLdBcUf6qHGp" Ids="GJhuT0CSyG0MtxDVdnIjBF,H0tYRJl8vpTOQiZAnCzKQS" />
             <Link Id="H6f2EzuprijOZCkuSuANlS" Ids="VTK5nDCYT4xQCNPDAjG6XA,GJhuT0CSyG0MtxDVdnIjBF" IsHidden="true" />
-            <Link Id="OYJheqSCOJUOlvxCbLojSB" Ids="Jeay4i5rpj1L3R5YssZcdi,Vf8n9MIiTJdLAIUqTMRWEj" />
             <Link Id="DknAHpx1B2nMf2aN4vNkIm" Ids="HzPvzeF1hXJOKDaNZqOHRe,NFvRpWRJ68MN8f2fQKCsns" IsHidden="true" />
             <Link Id="CdJ3QarODj6NlffDEKLeFF" Ids="ARpHpqFVwJxQSpXOFdQw4s,GYgncfhOpvILCNcZFjalQE" IsHidden="true" />
             <Link Id="MHcqec7jLa8QGj9uxdfdZp" Ids="HBeX9xy6nDAMgJHfu8oiob,K7dwLNsucerNUhnHbDZRNw" />
@@ -3205,6 +3203,8 @@
               <Pin Id="R3faK2UOuMSQSRiqNemxOP" Name="Output" Kind="OutputPin" />
             </Patch>
             <Link Id="VjggkSoTad5PS74ZiwSXzJ" Ids="TXE9xFY4hYUOskvZg4lDsl,Ck5eBitnWR3OahkH49AWXc" />
+            <Link Id="T3JOibLeZc3QMxz52eGGf9" Ids="Jeay4i5rpj1L3R5YssZcdi,Vf8n9MIiTJdLAIUqTMRWEj" />
+            <Link Id="DIJl2LZvAzuOPQpUaa1WYR" Ids="A4nwiMJ9r5pNBQK1TmkhR8,QnNv37vbdP9Mgz46EiAO1V" />
           </Patch>
         </Node>
       </Canvas>
@@ -10618,7 +10618,7 @@
                 <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="Category" Name="XML" />
-                  <Choice Kind="OperationCallFlag" Name="Parse" />
+                  <Choice Kind="OperationNode" Name="Parse (XDocument)" />
                 </p:NodeReference>
                 <Pin Id="RdGD1kUqEYyNIAUMVI2Um6" Name="Text" Kind="InputPin" />
                 <Pin Id="HmJFkL29PauOtU82WvPA6o" Name="Options" Kind="InputPin" />
@@ -10922,7 +10922,7 @@
               <Node Bounds="168,268,63,26" Id="TwB7jJ1o3yeL1BDkhPBRPu">
                 <p:NodeReference LastCategoryFullName="System.XML" LastSymbolSource="VL.Xml.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <Choice Kind="OperationCallFlag" Name="ParseJSON" />
+                  <Choice Kind="OperationNode" Name="ParseJSON (XDocument)" />
                 </p:NodeReference>
                 <Pin Id="EGZ3DcLll7kPJvmIpFzQT9" Name="Input" Kind="InputPin" />
                 <Pin Id="TSV8rRPe3T5NG8te7IuA84" Name="Deserialize Root Element Name" Kind="InputPin" DefaultValue="root">
@@ -11992,7 +11992,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Renderer" />
             </p:NodeReference>
-            <Pin Id="PtzfPf1wzRoNVCmzdivKRW" Name="Bounds" Kind="InputPin" DefaultValue="2057, 204, 300, 300">
+            <Pin Id="PtzfPf1wzRoNVCmzdivKRW" Name="Bounds" Kind="InputPin" DefaultValue="1269, 346, 300, 300">
               <p:TypeAnnotation LastCategoryFullName="System.Windows" LastSymbolSource="VL.CoreLib.Windows.vl">
                 <Choice Kind="TypeFlag" Name="Rectangle" />
               </p:TypeAnnotation>
@@ -12109,14 +12109,14 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2020.3.0-0053-gd338f20e7b" />
+  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2020.3.0-0068-gbfc5bf7649" />
   <PlatformDependency Id="PR2RZQLpnGKNZvYQVn3Ead" Location="mscorlib" />
   <PlatformDependency Id="Ow5sjuC3immNloZfvkN1g7" Location="System.Windows.Forms" />
   <PlatformDependency Id="HMEsYQpErI5OqaqpKnu53t" Location="System.Drawing" />
   <NugetDependency Id="NX5GDuJLeKtPJwH3aT1wUS" Location="Semver" Version="2.0.6" />
   <NugetDependency Id="AeBNvhcNzMfPwldSgSFtIg" Location="VL.Elementa" Version="5.0.0-preview01" />
   <NugetDependency Id="LUAVmc6OaqEL0AnV7LyuXG" Location="VL.WinFormsUtils" Version="1.0.9" />
-  <NugetDependency Id="VAZ8GWuf6LPP2WPip5LCNC" Location="VL.Lang" Version="2020.3.0-0053-gd338f20e7b" />
+  <NugetDependency Id="VAZ8GWuf6LPP2WPip5LCNC" Location="VL.Lang" Version="2020.3.0-0068-gbfc5bf7649" />
   <PlatformDependency Id="DAeKq8qWKE7MjA5vL6Z5iI" Location="netstandard" />
   <NugetDependency Id="A7QaxZnKLQBPrEoH3eQWQY" Location="RestSharp" Version="106.11.7" />
 </Document>
