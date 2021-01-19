@@ -11414,7 +11414,7 @@
                 <Choice Kind="ProcessAppFlag" Name="SetBorderStyle" />
               </p:NodeReference>
               <Pin Id="R3i2ZGCWikUODFQOB8JdlN" Name="Input" Kind="InputPin" />
-              <Pin Id="OZlJaUPOZgrPXcRsLn5jBl" Name="Border Style" Kind="InputPin" DefaultValue="FixedSingle">
+              <Pin Id="OZlJaUPOZgrPXcRsLn5jBl" Name="Border Style" Kind="InputPin" DefaultValue="Sizable">
                 <p:TypeAnnotation LastCategoryFullName="System.Windows.Forms" LastSymbolSource="System.Windows.Forms.dll">
                   <Choice Kind="TypeFlag" Name="FormBorderStyle" />
                 </p:TypeAnnotation>
@@ -11896,7 +11896,7 @@
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="Renderer" />
             </p:NodeReference>
-            <Pin Id="PtzfPf1wzRoNVCmzdivKRW" Name="Bounds" Kind="InputPin" DefaultValue="1349, 280, 300, 300">
+            <Pin Id="PtzfPf1wzRoNVCmzdivKRW" Name="Bounds" Kind="InputPin" DefaultValue="927, 330, 298, 300">
               <p:TypeAnnotation LastCategoryFullName="System.Windows" LastSymbolSource="VL.CoreLib.Windows.vl">
                 <Choice Kind="TypeFlag" Name="Rectangle" />
               </p:TypeAnnotation>
@@ -11987,6 +11987,21 @@
             <Pin Id="RMQSZlz182fPylSuNk6z0i" Name="Application" Kind="InputPin" />
             <Pin Id="Px3Iq7KrgN9M75XGmfqnVn" Name="Skia Renderer" Kind="InputPin" />
           </Node>
+          <Node Bounds="366,580,73,19" Id="UrnvKt358qcMaBl7z6qlMc">
+            <p:NodeReference LastCategoryFullName="VL.WinFormsUtils" LastSymbolSource="VL.WinFormsUtils.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="StoreBounds" />
+            </p:NodeReference>
+            <Pin Id="BLZKvokBWIALnQLDDfwnT2" Name="Initial Window Bounds" Kind="InputPin" />
+            <Pin Id="KSJY6S4V2R6L3VV4ol0X7N" Name="Input" Kind="InputPin" />
+            <Pin Id="LGKNShOrH89MLW05Hd4Lo9" Name="File Path" Kind="InputPin" DefaultValue="bounds.xml">
+              <p:TypeAnnotation LastCategoryFullName="IO" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Path" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="RqP9SIbYMhrN5kzVjsWoOa" Name="Initial Window Bounds" Kind="OutputPin" />
+            <Pin Id="SZT7DvHPQf1LYcojyeAL6F" Name="Output" Kind="OutputPin" />
+          </Node>
         </Canvas>
         <Patch Id="KKnejguk59iOlItt5SMhF8" Name="Create" ParticipatingElements="DVYycQXDSXSP39FqVCqNbP" />
         <Patch Id="CKL6bDvGpbBMcPbl7oUMJl" Name="Update" />
@@ -12010,6 +12025,8 @@
         <Link Id="MMDYyOYj5iEPhRmzWEXM2z" Ids="II3ppXAtpJFPfyUdNUiD08,FkHfoXs6HfbPqEJYVvYCe6" />
         <Link Id="PWdgDgohvqtO9D6wpSa8dS" Ids="VUqK419WdeSL73H3YcC0hP,RMQSZlz182fPylSuNk6z0i" />
         <Link Id="CQgogZaoqaYN6Ys4IfMo4l" Ids="II3ppXAtpJFPfyUdNUiD08,Px3Iq7KrgN9M75XGmfqnVn" />
+        <Link Id="UVnqEaHrMiKMRiqVDAidn6" Ids="QxYM8EmgBm1LljeIOxwxp3,BLZKvokBWIALnQLDDfwnT2" />
+        <Link Id="Kir9Lylme0TLaVCjLcgIaD" Ids="II3ppXAtpJFPfyUdNUiD08,KSJY6S4V2R6L3VV4ol0X7N" />
       </Patch>
     </Node>
   </Patch>
