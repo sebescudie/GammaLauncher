@@ -27,9 +27,8 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 - Mouse scrolling over the vvvversion dropdown allows you cycle through your installed versions without clicking/unfolding it
 - If you have _Allow Multiple_ set to true, drag and dropping a `.vl` file on the launcher will open it in a new vvvv instance with all set parameters.
 - A burger menu allows to check for two things :
-  - If a new preview version of vvvv gamma exists online. If so, you'll be able to download and install it directly from the launcher with a single click
+  - If a new version of vvvv gamma exists online. If so, you'll be able to download and install it directly from the launcher with a single click
   - If a new version of GammaLauncher exists online. If so, clicking on the version number takes you to the download page on Github.
-  - Please note that right now it does not check for vvvv stable versions. This will of course be available at some point.
 
 ## How to get it
 
