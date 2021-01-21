@@ -30,6 +30,25 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
   - If a new version of vvvv gamma exists online. If so, you'll be able to download and install it directly from the launcher with a single click
   - If a new version of GammaLauncher exists online. If so, clicking on the version number takes you to the download page on Github.
 
+## Changelog
+
+### 3.0.5
+
+#### New
+
+- A burger menu on the left checks for new gamma versions and installs them. Also tells you if a newer GammaLauncher is available
+- Drag and drop a `.vl` document on the launcher to open it in a new vvvv instance (if you have Allow Multiple enabled)
+
+#### Fixed
+
+- Clicking on nuget folder when a stable version is selected opens the stable gamma's nuget folder. When a preview is selected, it opens preview's nuget folder (asked by motzi)
+- Remembers previous window position on startup (asked by dottore)
+
+#### Changed
+
+- Reversed versions order in the dropdown menu. Newer versions are on top (asked by mburk)
+
+
 ## How to get it
 
 Get the latest version in the [here](https://github.com/sebescudie/GammaLauncher/releases), or clone the repo and build the app yourself. If you do so, don't forget to copy the `ico.ico` file to your output dir, otherwise the app won't start.
