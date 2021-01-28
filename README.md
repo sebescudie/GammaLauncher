@@ -38,6 +38,7 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 
 - A burger menu on the left checks for new gamma versions and installs them. Also tells you if a newer GammaLauncher is available
 - Drag and drop a `.vl` document on the launcher to open it in a new vvvv instance (if you have Allow Multiple enabled)
+- Pressing <kbd>CTRL</kbd>+<kbd>R</kbd> also checks if newer builds are available online
 
 #### Fixed
 
