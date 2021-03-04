@@ -32,9 +32,11 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 
 ## Changelog
 
-### 3.0.5
+### 3.5.1
 
 #### New
+
+- Massive performance improvement thanks to @gregsn (massive thanks to him) : the app now runs slooooowly when not focused. No more CPU madness!
 
 - A burger menu on the left checks for new gamma versions and installs them. Also tells you if a newer GammaLauncher is available
 - Drag and drop a `.vl` document on the launcher to open it in a new vvvv instance (if you have Allow Multiple enabled)
