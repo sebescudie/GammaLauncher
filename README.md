@@ -32,6 +32,12 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 
 ## Changelog
 
+### 3.5.2
+
+#### Fixed
+
+- Gets rid of exception if the launcher is started with no internet connection (reported by dottore)
+
 ### 3.5.1
 
 #### New
