@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2021.3.1.89" Version="0.128">
-  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2021.3.1" />
+<Document xmlns:p="property" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2021.4.0.30" Version="0.128">
+  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2021.4.0-0030-gf9a882289a" />
   <Patch Id="VwtUUR3K9mbPm4q6fszgF3">
     <Canvas Id="Cn8FrGu71DtOiQColm6Utc" DefaultCategory="Main" CanvasType="FullCategory">
       <Canvas Id="A8kMw5cSAh9N9pwyyLzDKt" Name="Model" Position="92,129">
@@ -11041,8 +11041,9 @@
                   <CategoryReference Kind="Category" Name="Primitive" />
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 </p:NodeReference>
-                <Pin Id="EpBEgMrKicSOqMrEVHpGtm" Name="Producer" Kind="InputPin" />
                 <Pin Id="UZqqrSqEkf4OlvuEfNcLwE" Name="Force New Instance" Kind="InputPin" />
+                <Pin Id="EpBEgMrKicSOqMrEVHpGtm" Name="Producer" Kind="InputPin" />
+                <Pin Id="EdsLMi8i2SpQb8K1XdZH5K" Name="On Stop" Kind="InputPin" />
                 <Pin Id="DSL7v1KK2e3MRh9thsKNzt" Name="Singleton" Kind="OutputPin" />
               </Node>
               <Link Id="KAyeuhlvmawNL1QyuHuj5v" Ids="DSL7v1KK2e3MRh9thsKNzt,UBy19ZhAESmQEi6blZUZJ1" />
@@ -12713,7 +12714,7 @@
           </Node>
           <Pad Id="PfJK4Cv4pTWQKxCesaH08l" Bounds="480,590" />
           <Pad Id="KOxchPQOAWFMePD1Cxxhiu" SlotId="TMwQUV4UyqUNsQU9amrwKq" Bounds="797,591" />
-          <Node Bounds="653,200,61,19" Id="Cl4W550pJhUONVbp7ffxm9">
+          <Node Bounds="653,275,61,19" Id="Cl4W550pJhUONVbp7ffxm9">
             <p:NodeReference LastCategoryFullName="System.Application" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="MainLoop" />
@@ -12725,7 +12726,7 @@
             <Pin Id="UGX29ECDmD1P9OrrBKnAV7" Name="Is Incremental" Kind="OutputPin" />
             <Pin Id="MVOoIvxTgNOLG4pOoQFDFS" Name="Incremental FPS" Kind="OutputPin" />
           </Node>
-          <Node Bounds="653,164,45,19" Id="CxrESIZNFGfLv4cSmsTUkn">
+          <Node Bounds="653,239,45,19" Id="CxrESIZNFGfLv4cSmsTUkn">
             <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="CoreLibBasics.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="Switch" />
@@ -12744,6 +12745,41 @@
             </Pin>
             <Pin Id="FFk73vGZy3wMuDj8Ckw1QU" Name="Output" Kind="OutputPin" />
           </Node>
+          <Node Bounds="678,135,65,19" Id="IPTOZnfnHIhMIAlfb9PDEg">
+            <p:NodeReference LastCategoryFullName="System.Application" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="IsExported" />
+            </p:NodeReference>
+            <Pin Id="N12b0RAR4KcMAjWs7rEiO6" Name="Is Exported" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="678,170,37,19" Id="CYuP3LiJdyAL6oZpIyvwMk">
+            <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="NOT" />
+              <CategoryReference Kind="BooleanType" Name="Boolean" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="CCBQJvTKU4gOUe33FDeMDF" Name="Input" Kind="StateInputPin" />
+            <Pin Id="H76hCvSWMCSN4TdyMxkkPy" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <Node Bounds="653,201" Id="CswTZQuO6uPQGXvXeAPYzN">
+            <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="OR" />
+              <CategoryReference Kind="BooleanType" Name="Boolean" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="BbUKLZs66T6K9rUCt6RmnE" Name="Input" Kind="StateInputPin" />
+            <Pin Id="E2WU5RlP4ezNARGKEtXlsY" Name="Input 2" Kind="InputPin" />
+            <Pin Id="N9CJhZ6NUEgOGZYTBiEnJ1" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <Pad Id="SPoWr7AVNeVQEjZ8E2ZesM" Bounds="751,152,98,135" ShowValueBox="true" isIOBox="true" Value="If the app is not exported, it's likely that we'll want to edit the patch, so let's stay at 60FPS">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:fontsize p:Type="Int32">9</p:fontsize>
+              <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+            </p:ValueBoxSettings>
+          </Pad>
         </Canvas>
         <Patch Id="KKnejguk59iOlItt5SMhF8" Name="Create" ParticipatingElements="IVNCbRAS2mrN7Ns8qBOZ1U" />
         <Patch Id="CKL6bDvGpbBMcPbl7oUMJl" Name="Update" ParticipatingElements="CecAJODc68DP5kStZfp0QJ,TclKNGmwsuYLL2l9xal9XP,D9RciYxpzNQMnR5opipxr1,Gb5iIkOSAzYNUNLn9dJI54,CdqA7xOrN9lLlZJ1jqpKip,FPrC926ayRWLag9bYShU9t,RvIkIOFQGI3PFFPiKjT2r8,Gf2N4aXsXrtMvnxMzOlQ5V" />
@@ -12786,20 +12822,23 @@
         <Link Id="UkA61OckdTXPX5kTYe7bV0" Ids="PfJK4Cv4pTWQKxCesaH08l,FkHfoXs6HfbPqEJYVvYCe6" />
         <Link Id="B09VpkR0JeuNnNjk41DFCF" Ids="PfJK4Cv4pTWQKxCesaH08l,Px3Iq7KrgN9M75XGmfqnVn" />
         <Link Id="TY4v5WGqknuNqTKHIzIOIg" Ids="FFk73vGZy3wMuDj8Ckw1QU,BOXQr8OveyHM556LW1pxsl" />
-        <Link Id="KoaiPLGQSb1NLMxFX4EXRe" Ids="INpnIkjjPcpLNttsTwElXE,CMwzHDSbsesPrAOhhloQm5" />
+        <Link Id="KoaiPLGQSb1NLMxFX4EXRe" Ids="INpnIkjjPcpLNttsTwElXE,BbUKLZs66T6K9rUCt6RmnE" />
+        <Link Id="HpybiZ8FvdTMILvi07PulB" Ids="N12b0RAR4KcMAjWs7rEiO6,CCBQJvTKU4gOUe33FDeMDF" />
+        <Link Id="P8I7LBKdt4vM8MezsvRM0J" Ids="N9CJhZ6NUEgOGZYTBiEnJ1,CMwzHDSbsesPrAOhhloQm5" />
+        <Link Id="Cosk84SKo9ULclaJfJ87vr" Ids="H76hCvSWMCSN4TdyMxkkPy,E2WU5RlP4ezNARGKEtXlsY" />
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2021.3.1" />
+  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2021.4.0-0030-gf9a882289a" />
   <PlatformDependency Id="PR2RZQLpnGKNZvYQVn3Ead" Location="mscorlib" />
   <PlatformDependency Id="Ow5sjuC3immNloZfvkN1g7" Location="System.Windows.Forms" />
   <PlatformDependency Id="HMEsYQpErI5OqaqpKnu53t" Location="System.Drawing" />
   <NugetDependency Id="NX5GDuJLeKtPJwH3aT1wUS" Location="Semver" Version="2.0.6" />
   <NugetDependency Id="LUAVmc6OaqEL0AnV7LyuXG" Location="VL.WinFormsUtils" Version="1.0.9" />
-  <NugetDependency Id="VAZ8GWuf6LPP2WPip5LCNC" Location="VL.Lang" Version="2021.3.1" />
+  <NugetDependency Id="VAZ8GWuf6LPP2WPip5LCNC" Location="VL.Lang" Version="2021.4.0-0030-gf9a882289a" />
   <PlatformDependency Id="DAeKq8qWKE7MjA5vL6Z5iI" Location="netstandard" />
   <NugetDependency Id="A7QaxZnKLQBPrEoH3eQWQY" Location="RestSharp" Version="106.11.7" />
   <DocumentDependency Id="LMCkFoVr7uFL65tvgkwpnF" Location="./vl/VL.TeamCity.VVVV.vl" />
-  <NugetDependency Id="Qe3rt7clC60QVvJQ7vKGuu" Location="VL.Elementa" Version="5.0.4" />
-  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2021.3.1" />
+  <NugetDependency Id="Qe3rt7clC60QVvJQ7vKGuu" Location="VL.Elementa" Version="5.0.6" />
+  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2021.4.0-0030-gf9a882289a" />
 </Document>
