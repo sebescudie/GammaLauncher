@@ -34,7 +34,7 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 
 ### 3.5.3
 
-- Now queries Teamcity API the same way visualprogramming.net does
+- Now queries Teamcity API the same way visualprogramming.net does (thanks @antongit and @tebjan for the teamcity madness)
 - Forces app to run @60FPS when running in the IDE
 
 ### 3.5.2
