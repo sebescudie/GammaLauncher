@@ -10,7 +10,7 @@ GammaLauncher is a simple application that allows to launch vvvv gamma instances
 
 ## Usage
 
-When the application first starts, it generates a `settings.xml` file next to it. This file contains path to your gamma insatallations (should be `C:\Program Files\vvvv`), as well as your repositories folder, if you're using that feature. You can customize those paths if needed by editing the settings file.
+When the application first starts, it generates a `settings.xml` file in `%APPDATA\Local\GammaLauncher`. This file contains path to your gamma installations (should be `C:\Program Files\vvvv`), as well as your repositories folder, if you're using that feature. You can customize those paths if needed by editing the settings file. To quickly locate the settings file, press <kbd>CTRL</kbd> + <kbd>,</kbd>.
 
 Then, simply pick the specific gamma version you wanna start from the dropdown menu, and tick the options you wanna use :
 
@@ -23,6 +23,7 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 - Two buttons at the bottom of the app allow you to quickly access your `package-repositories` folder and installed nugets
 - A third one allows to quickly kill all running vvvv instances
 - Pressing <kbd>CTRL</kbd>+<kbd>R</kbd> refreshes your installed versions list
+- Pressing <kbd>CTRL</kbd>+<kbd>U</kbd> starts the uninstaller associated with the version currently selected in the Dropdown
 - Pressing <kbd>CTRL</kbd>+<kbd>,</kbd> takes you to the application's folder so you can quickly edit your settings file
 - Mouse scrolling over the vvvversion dropdown allows you cycle through your installed versions without clicking/unfolding it
 - If you have _Allow Multiple_ set to true, drag and dropping a `.vl` file on the launcher will open it in a new vvvv instance with all set parameters.
@@ -50,7 +51,9 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 - Massive performance improvement thanks to @gregsn (massive thanks to him) : the app now runs slooooowly when not focused. No more CPU madness!
 
 - A burger menu on the left checks for new gamma versions and installs them. Also tells you if a newer GammaLauncher is available
+
 - Drag and drop a `.vl` document on the launcher to open it in a new vvvv instance (if you have Allow Multiple enabled)
+
 - Pressing <kbd>CTRL</kbd>+<kbd>R</kbd> also checks if newer builds are available online
 
 #### Fixed
@@ -61,7 +64,6 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 #### Changed
 
 - Reversed versions order in the dropdown menu. Newer versions are on top (asked by mburk)
-
 
 ## How to get it
 
