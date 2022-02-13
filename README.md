@@ -2,7 +2,7 @@
 
 _A simple launcher for vvvv gamma_
 
-![](https://raw.githubusercontent.com/sebescudie/GammaLauncher/master/capture.PNG)
+<img src="capture.png" title="" alt="GitHub Logo" width="259">
 
 ## Was ist das
 
