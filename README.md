@@ -33,6 +33,22 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 
 ## Changelog
 
+### 4.1.0
+
+- When an uninstall succedes, a version scan is triggered so that the dropdown is always up to date
+- Fixes drawing of the button pointing to new launche releases
+- Now uses a custom icon
+
+### 4.0.1
+
+- Gamma version can be uninstalled with a simple click or via <kbd>CTRL</kbd> + <kbd>U</kbd>
+- <kbd>ALT</kbd>+<kbd>E</kbd> will open the selected version's installation folder
+
+### 4.0.0-beta01
+
+- Now supports multiple `--package-repositories` in the settings file
+- Settings are now saved in `%APPDATA%\local\GammaLauncher` so that they can persist between updates
+
 ### 3.5.3
 
 - Now queries Teamcity API the same way visualprogramming.net does (thanks @antongit and @tebjan for the teamcity madness)
