@@ -33,6 +33,12 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 
 ## Changelog
 
+### 4.1.1
+
+- Elementa custom styles assignd to Create, resulting in a major performance improvement, thanks to  @bj-rn for this one! (#29)
+
+- Fixes Kill VVVV overlay button not closing when being clicked
+
 ### 4.1.0
 
 - When an uninstall succedes, a version scan is triggered so that the dropdown is always up to date
