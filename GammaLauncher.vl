@@ -4107,7 +4107,7 @@
                       <Pin Id="GDFdpHpwwjcNzEhSymypfg" Name="On Interaction" Kind="OutputPin" />
                       <Pin Id="Ate98RHB0n9O4JRiDSTqBL" Name="Value" Kind="OutputPin" />
                     </Node>
-                    <Node Bounds="994,773,99,95" Id="A070QeCz0sELFkFsIUDPv4">
+                    <Node Bounds="994,773,270,95" Id="A070QeCz0sELFkFsIUDPv4">
                       <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
                         <Choice Kind="ProcessAppFlag" Name="ForEach" />
                         <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
@@ -4135,6 +4135,17 @@
                           </p:NodeReference>
                           <Pin Id="M5T2Y6kZJ5WMeL374cAIUZ" Name="Input" Kind="StateInputPin" />
                           <Pin Id="JOMFTK7dncVLt7MNV95v2p" Name="Output" Kind="StateOutputPin" />
+                          <Pin Id="NnaqVVz5pr0LpDxIwxTCtc" Name="Apply" Kind="InputPin" />
+                        </Node>
+                        <Node Bounds="1201,805,51,26" Id="FpgI4NMJywJM6ihsRDZuVl">
+                          <p:NodeReference LastCategoryFullName="Reactive.Subjects.Subject" LastSymbolSource="VL.Reactive.vl">
+                            <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                            <Choice Kind="OperationCallFlag" Name="OnNext" />
+                            <CategoryReference Kind="ClassType" Name="Subject" NeedsToBeDirectParent="true" />
+                          </p:NodeReference>
+                          <Pin Id="Gm7lBWtnyQFOMMRSxBahvD" Name="Input" Kind="StateInputPin" />
+                          <Pin Id="IqJAqoiHSXNOW70amhExUF" Name="Value" Kind="InputPin" />
+                          <Pin Id="Awi10Ikbfo4M6bfd3CZq1K" Name="Output" Kind="StateOutputPin" />
                         </Node>
                       </Patch>
                     </Node>
@@ -4168,8 +4179,17 @@
                     <Choice Kind="TypeFlag" Name="RGBA" />
                   </p:TypeAnnotation>
                 </Pad>
+                <Node Bounds="1205,491,46,26" Id="FJDEN5GQQlYNBj2Ki3aStW">
+                  <p:NodeReference LastCategoryFullName="Reactive.Subjects.Subject" LastSymbolSource="VL.Reactive.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="ClassType" Name="Subject" />
+                    <Choice Kind="OperationCallFlag" Name="Create" />
+                  </p:NodeReference>
+                  <Pin Id="GxwelGWBrXtPckucDugg5f" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Pad Id="L7C8fNXOAVKNUFhpglH22S" SlotId="Lf0YtfvNqsLQNSD7wmFC4s" Bounds="1207,556" />
               </Canvas>
-              <Patch Id="R5BldR9NTYhNsFdwzvMF3S" Name="Create" ParticipatingElements="IKdwXS7pqPRNacWIMjiv69,RH1RZKHlEi7PbTu89tthzm,TH6xTBPDeT5PwjcCgrf2tI,I85LKW1hllzMwr4tkpBXJ5,S63tVqOD9lPOt2phEQqZaF,P9b6GxqCWUiPOonUcf0Ea4,FpWrpH4hdveM1l6ltibx38,FBKhkYMIaP8PGWg9aOaIpm,HpYc8yS2NxCLrDPPVvt4RT,Hqe9x7asO3lP8IHeX7dt0R,RfHu5uMdpeAOYVGpYAzBmV,GjWW4Ydn1QDPVTK8TfQMJJ" />
+              <Patch Id="R5BldR9NTYhNsFdwzvMF3S" Name="Create" ParticipatingElements="IKdwXS7pqPRNacWIMjiv69,RH1RZKHlEi7PbTu89tthzm,TH6xTBPDeT5PwjcCgrf2tI,I85LKW1hllzMwr4tkpBXJ5,S63tVqOD9lPOt2phEQqZaF,P9b6GxqCWUiPOonUcf0Ea4,FpWrpH4hdveM1l6ltibx38,FBKhkYMIaP8PGWg9aOaIpm,HpYc8yS2NxCLrDPPVvt4RT,Hqe9x7asO3lP8IHeX7dt0R,RfHu5uMdpeAOYVGpYAzBmV,GjWW4Ydn1QDPVTK8TfQMJJ,QLpJ40tccggQc5Kp1H5cmU" />
               <Patch Id="OZ3LwlNhAO9L3DkNSpH5Hf" Name="Update" ParticipatingElements="Lrka7pGk5nXLRZoYxRcJmG,UJCsWL0zNRxM74NzmtPSfz">
                 <Pin Id="MwrCQyZMnwVPcAXbCktmS4" Name="Output" Kind="OutputPin" Bounds="379,495" />
                 <Pin Id="MjU7iKiE0TcLrlyjTok7zQ" Name="Settings Runtime" Kind="InputPin" Bounds="954,387">
@@ -4227,6 +4247,19 @@
               <Link Id="UJCsWL0zNRxM74NzmtPSfz" Ids="MVYcjhxQBhcNO1Go7IK60X,FgMk6kBp18kNrXuIrOpBj8" />
               <Link Id="VGQET1ILcz9MEvJOwlR3gZ" Ids="AxLiFr6rojEOvMBXRShYU5,VBTRJP6JQ07Naphv9C0E6N" />
               <Link Id="GjWW4Ydn1QDPVTK8TfQMJJ" Ids="VMC9Q5SLzJlOlDlblwbtv5,RednULvua2oQWcPnUsrS2n" />
+              <Slot Id="Lf0YtfvNqsLQNSD7wmFC4s" Name="Close Overlay Event">
+                <p:TypeAnnotation p:Type="TypeReference">
+                  <Choice Kind="TypeFlag" Name="Subject" />
+                  <p:TypeArguments>
+                    <TypeReference>
+                      <Choice Kind="TypeFlag" Name="Boolean" />
+                    </TypeReference>
+                  </p:TypeArguments>
+                </p:TypeAnnotation>
+              </Slot>
+              <Link Id="QLpJ40tccggQc5Kp1H5cmU" Ids="GxwelGWBrXtPckucDugg5f,L7C8fNXOAVKNUFhpglH22S" />
+              <Link Id="S6NIYPagkD4LV7zuiHfTl0" Ids="L7C8fNXOAVKNUFhpglH22S,VqbPsqfyutROneIqbrRPPq" />
+              <Link Id="RU7HiVBqIQjMQv4P2wbcCK" Ids="L7C8fNXOAVKNUFhpglH22S,Gm7lBWtnyQFOMMRSxBahvD" />
             </Patch>
           </Node>
           <!--
