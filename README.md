@@ -4,6 +4,8 @@ _A simple launcher for vvvv gamma_
 
 <img src="capture.png" title="" alt="GitHub Logo" width="259">
 
+[![vvvv](https://img.shields.io/static/v1?label=MADE%20WITH&message=VVVV&color=191919&style=for-the-badge)](https://visualprogramming.net/)
+
 ## Was ist das
 
 GammaLauncher is a simple application that allows to launch vvvv gamma instances with specific arguments from a simple GUI.
@@ -36,7 +38,6 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 ### 4.1.1
 
 - Elementa custom styles assignd to Create, resulting in a major performance improvement, thanks to  @bj-rn for this one! (#29)
-
 - Fixes Kill VVVV overlay button not closing when being clicked
 
 ### 4.1.0
