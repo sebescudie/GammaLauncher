@@ -32,8 +32,17 @@ Then, simply pick the specific gamma version you wanna start from the dropdown m
 - A burger menu allows to check for two things :
   - If a new version of vvvv gamma exists online. If so, you'll be able to download and install it directly from the launcher with a single click
   - If a new version of GammaLauncher exists online. If so, clicking on the version number takes you to the download page on Github.
+- There might be settings you want to start instances with that are not available in the launcher. You can now specify an arbitrary command-line argument in the settings file : this argument will simply be appended when the Launcher starts an instance. If you want to get rid of it, simply delete it from the settings file and restart the launcher for this to be taken into account.
 
 ## Changelog
+
+### 4.2.0
+
+- The settings file gets a new `CustomArg` element where one can type an arbitrary command-line argument that will be used every time.
+
+### 4.1.2
+
+- If the path of `package-repositories` contained spaces, either vvvv could not be started from the launcher, or the _Repos_ button would not work. This is now fixed : if your package repositories folder contains spaces, you should write it between quotes in your settings files (#36)
 
 ### 4.1.1
 
