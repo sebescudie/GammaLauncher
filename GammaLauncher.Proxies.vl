@@ -2,7 +2,61 @@
 <Document xmlns:p="property" Id="RZO841kOBU2Mnx1oF35asF" LanguageVersion="2022.5.0-0535-gcd0fc433ef" Version="0.128">
   <NugetDependency Id="RUkQKFbue4hO7SJguADFLr" Location="VL.CoreLib" Version="2022.5.0-0535-gcd0fc433ef" />
   <Patch Id="Tq3oQB6YU2kMCecyqErJAE">
-    <Canvas Id="AraVcDJVe0tOw9CXfukl4I" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <Canvas Id="AraVcDJVe0tOw9CXfukl4I" DefaultCategory="Main" CanvasType="FullCategory">
+      <!--
+
+    ************************ TryParseTeamCityTimeString (DateTime) ************************
+
+-->
+      <Node Name="TryParseTeamCityTimeString (DateTime)" Bounds="376,421,235,120" Id="BtJKG9iheLsP3tF8PCFwF4">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="E6ii0Aid4EwMAHcrgQCnXc" ManuallySortedPins="true">
+          <Node Bounds="388,475,79,19" Id="UddS72ilTMYQZAelPB93di">
+            <p:NodeReference LastCategoryFullName="System.DateTime" LastSymbolSource="System.Runtime.dll" OverloadStrategy="AllPinsThatAreNotCommon">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="AssemblyCategory" Name="DateTime" />
+              <Choice Kind="OperationCallFlag" Name="TryParseExact" />
+              <PinReference Kind="InputPin" Name="S">
+                <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:DataTypeReference>
+              </PinReference>
+              <PinReference Kind="InputPin" Name="Format">
+                <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:DataTypeReference>
+              </PinReference>
+            </p:NodeReference>
+            <Pin Id="JI7dtVCRT64QU0wolTcxic" Name="S" Kind="InputPin" />
+            <Pin Id="HdjHZ4lM6sOLzHENwD5hkH" Name="Format" Kind="InputPin" />
+            <Pin Id="NPWEdobStydLmVF26EzIDY" Name="Provider" Kind="InputPin" />
+            <Pin Id="GxiBxqGs0YtMzZTDaYAGk8" Name="Style" Kind="InputPin" />
+            <Pin Id="BTMVkAaCWgnMnRKhmWZ5Pq" Name="Result (return)" Kind="OutputPin" />
+            <Pin Id="QqtTxvD4FosQH4YEZPIw6x" Name="Result" Kind="OutputPin" />
+          </Node>
+          <Pad Id="Jmn8WNpUUuEPuDz09S4w3b" Comment="Format" Bounds="415,454,130,15" ShowValueBox="true" isIOBox="true" Value="yyyyMMddTHHmmssK">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+              <Choice Kind="TypeFlag" Name="String" />
+            </p:TypeAnnotation>
+          </Pad>
+          <Link Id="Iq2k0jTRHs2LqU5eJMLyJM" Ids="Jmn8WNpUUuEPuDz09S4w3b,HdjHZ4lM6sOLzHENwD5hkH" />
+          <ControlPoint Id="DpiW9hZ53WwNhcySUafRXx" Bounds="390,439" />
+          <Link Id="D7W7coRrs7TO6JHeTFyKhs" Ids="DpiW9hZ53WwNhcySUafRXx,JI7dtVCRT64QU0wolTcxic" />
+          <Link Id="KVMP9tXzekYO6ixrhYvg9U" Ids="JTy8iyWxaPkQCvZbb8KVt2,DpiW9hZ53WwNhcySUafRXx" IsHidden="true" />
+          <ControlPoint Id="VbqZi4ivUJpPeyx2SaNaFy" Bounds="464,524" />
+          <Link Id="SIVwidYLwSiQbnkVv4kD4V" Ids="QqtTxvD4FosQH4YEZPIw6x,VbqZi4ivUJpPeyx2SaNaFy" />
+          <Link Id="KEjOQlt4tyJNJecqDEvcmA" Ids="VbqZi4ivUJpPeyx2SaNaFy,VHijtcjsKAKMDgMI7XC30w" IsHidden="true" />
+          <ControlPoint Id="EATkxJZXSdHNYRiJMUnOeG" Bounds="390,524" />
+          <Link Id="PacTOuP301jOjXKeLbqUM8" Ids="BTMVkAaCWgnMnRKhmWZ5Pq,EATkxJZXSdHNYRiJMUnOeG" />
+          <Link Id="FweFxUFUN2TL4x7UyxDs4X" Ids="EATkxJZXSdHNYRiJMUnOeG,RQvylP18KBLMKaHYMGZAJP" IsHidden="true" />
+          <Pin Id="VHijtcjsKAKMDgMI7XC30w" Name="Result" Kind="OutputPin" Bounds="489,493" />
+          <Pin Id="RQvylP18KBLMKaHYMGZAJP" Name="Success" Kind="OutputPin" Bounds="390,509" />
+          <Pin Id="JTy8iyWxaPkQCvZbb8KVt2" Name="Input" Kind="InputPin" Bounds="363,428" />
+        </Patch>
+      </Node>
+    </Canvas>
     <!--
 
     ************************ Application ************************
@@ -24,4 +78,6 @@
       </Patch>
     </Node>
   </Patch>
+  <PlatformDependency Id="BPObeQVpr38QbCzv4pAhjK" Location="System.Runtime" />
+  <NugetDependency Id="NFt8md5RnshN5tYVNApidn" Location="Humanizer.Core" Version="2.2.0" />
 </Document>
