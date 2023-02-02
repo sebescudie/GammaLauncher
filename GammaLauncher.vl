@@ -3870,7 +3870,6 @@
                                 </p:NodeReference>
                                 <Pin Id="LVsKnQRH7b8MsVEiOzS9J0" Name="Application" Kind="InputPin" />
                                 <Pin Id="DgKsAV1SmW3MQUmzrQTwHO" Name="Kill All Instances Popup Channel" Kind="InputPin" />
-                                <Pin Id="Uux7VfKLJUpNVLIjXkTDRV" Name="Update" Kind="ApplyPin" />
                               </Node>
                             </Patch>
                           </Node>
@@ -4247,7 +4246,7 @@
                                     <Pin Id="QK74KbsnbNGMjkID8bpCLI" Name="Text Align" Kind="InputPin" />
                                     <Pin Id="LB2sLlyPMWBNQPGpaxfeLn" Name="Output" Kind="OutputPin" />
                                   </Node>
-                                  <Node Bounds="610,542,65,19" Id="O5Ic2oKo1vqNcYF8xPdGxu">
+                                  <Node Bounds="544,348,85,19" Id="O5Ic2oKo1vqNcYF8xPdGxu">
                                     <p:NodeReference LastCategoryFullName="Main.Editor.UI.Editor.Tabs" LastDependency="GammaLauncher.vl">
                                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                                       <Choice Kind="ProcessAppFlag" Name="Palette" />
@@ -4496,6 +4495,36 @@
                                     <ControlPoint Id="S3rPETQTBsQLzHDPG2p1s6" Bounds="407,507" Alignment="Top" />
                                     <ControlPoint Id="DTTokJ1i0igPsSQuPeqSPs" Bounds="407,567" Alignment="Bottom" />
                                   </Node>
+                                  <Node Bounds="591,386,97,19" Id="NZ6YWt4VhUvOOVfh0jIWpU">
+                                    <p:NodeReference LastCategoryFullName="ImGui.Styling" LastDependency="VL.ImGui.vl">
+                                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                                      <Choice Kind="ProcessNode" Name="SetSelectableStyle" />
+                                    </p:NodeReference>
+                                    <Pin Id="U90CRQ0IcbROnD8fZdpHdd" Name="Input" Kind="InputPin" />
+                                    <Pin Id="U3n8OQneD6oOxjSVwXTjLU" Name="Text Align" Kind="InputPin" />
+                                    <Pin Id="RwaTLqX1y4nP2rQuOBa2gq" Name="Output" Kind="OutputPin" />
+                                  </Node>
+                                  <Node Bounds="592,480,84,19" Id="CcJ31gVd7yfMQNQHEIhvyB">
+                                    <p:NodeReference LastCategoryFullName="ImGui.Styling" LastDependency="VL.ImGUI.Nodes">
+                                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                                      <Choice Kind="ProcessNode" Name="SetHeaderStyle" />
+                                    </p:NodeReference>
+                                    <Pin Id="GGNKT3dHPv2LJvVrMBe9T7" Name="Input" Kind="InputPin" />
+                                    <Pin Id="HhLJiKaWSaJM7HwDG3slRU" Name="Color" Kind="InputPin" />
+                                    <Pin Id="LL0JsXl32mLOxA3q7grgHD" Name="Hovered" Kind="InputPin" />
+                                    <Pin Id="PAKw7sV6CKZLU2euL4ruPY" Name="Active" Kind="InputPin" />
+                                    <Pin Id="UsedPPOUHjZLY5k5Mgaub0" Name="Output" Kind="OutputPin" />
+                                  </Node>
+                                  <Pad Id="K4YoTTlmDTaL20L5lIGuVf" Comment="Color" Bounds="620,418,20,15" ShowValueBox="true" isIOBox="true" Value="0.24000038, 0.24000038, 0.24000038, 1">
+                                    <p:TypeAnnotation LastCategoryFullName="Color" LastDependency="VL.CoreLib.vl">
+                                      <Choice Kind="TypeFlag" Name="RGBA" />
+                                    </p:TypeAnnotation>
+                                  </Pad>
+                                  <Pad Id="Rsc1gFIhwVfN8hcC05XZGR" Comment="Hovered" Bounds="647,441,20,15" ShowValueBox="true" isIOBox="true" Value="0.41999984, 0.41999984, 0.41999984, 1">
+                                    <p:TypeAnnotation LastCategoryFullName="Color" LastDependency="VL.CoreLib.vl">
+                                      <Choice Kind="TypeFlag" Name="RGBA" />
+                                    </p:TypeAnnotation>
+                                  </Pad>
                                 </Canvas>
                                 <ProcessDefinition Id="TebExTHxPiFL6iP1fIt2ZN">
                                   <Fragment Id="JFKfZszb05PNlhC5HphKVc" Patch="APHhkp2RT42Lw2v34ateIg" Enabled="true" />
@@ -4551,6 +4580,11 @@
                                 <Link Id="KJmm8IYOT9nPNtcuoRdXMb" Ids="S3rPETQTBsQLzHDPG2p1s6,GeTOrjEsmapMNLpqs33YaO" />
                                 <Link Id="CJ7XJVXvQxKMhhUWgHH6oK" Ids="NJZzFKcwo1YLJYhVQaOqcf,DTTokJ1i0igPsSQuPeqSPs" />
                                 <Link Id="LAVX3hp6LBDN6V22htEUk5" Ids="DTTokJ1i0igPsSQuPeqSPs,Mw7683TEzmZO1wdWsyiQfx" />
+                                <Link Id="TKrX8tRASU2QS3CluXvI4f" Ids="RwaTLqX1y4nP2rQuOBa2gq,GGNKT3dHPv2LJvVrMBe9T7" />
+                                <Link Id="Hs5N7okThs1LJX0D2frWy3" Ids="UsedPPOUHjZLY5k5Mgaub0,VRWQsCEBl4uQT6XRpS4RuU" />
+                                <Link Id="Tzo6vMVBdiINBoryZnsKeO" Ids="HTNuqIpCeDOMVkTG8LjoIJ,LL0JsXl32mLOxA3q7grgHD" />
+                                <Link Id="Is9t2ICM8TCMWi7sOqQPDO" Ids="HTNuqIpCeDOMVkTG8LjoIJ,PAKw7sV6CKZLU2euL4ruPY" />
+                                <Link Id="N70ZI9fLiRsOrTOtbaDoDv" Ids="OvgsHHnicjfNNUVJw5pSD4,HhLJiKaWSaJM7HwDG3slRU" />
                               </Patch>
                             </Node>
                             <Node Bounds="340,396,98,19" Id="Ks6mk0j19FWQYpZ6T2yjgB">
@@ -6037,7 +6071,7 @@
                           <Link Id="RnGMfYqHsGDMK6CPtut1c3" Ids="Khgt0nWSBcSOyxYvK3fDK0,Qo2BDrvSS4rLVKoAXzTp2L" IsHidden="true" />
                         </Patch>
                       </Node>
-                      <ControlPoint Id="V8mNdrOIgLfLclc1h6ijMh" Bounds="413,88" />
+                      <ControlPoint Id="V8mNdrOIgLfLclc1h6ijMh" Bounds="414,18" />
                       <ControlPoint Id="UjtiCAtcf7ZPhwrrypGT8Q" Bounds="180,1243" />
                       <!--
 
@@ -6779,7 +6813,7 @@
                       </Node>
                       <ControlPoint Id="MsD7mU8eJPsNROHHpvKgxs" Bounds="180,1106" />
                       <ControlPoint Id="BDNXctBm1sIQQU3v3qxy91" Bounds="188,625" />
-                      <ControlPoint Id="SkSeCUtqiA4LWtQOslT4Db" Bounds="435,120" />
+                      <ControlPoint Id="SkSeCUtqiA4LWtQOslT4Db" Bounds="457,61" />
                     </Canvas>
                     <ProcessDefinition Id="HBk4EJHug5dL2nE2N9EMhA">
                       <Fragment Id="QAaIj3Y3jMzOQCI002ANUb" Patch="AoeRoWMtIxqMDrOMJu09Y7" Enabled="true" />
