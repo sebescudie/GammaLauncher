@@ -14,7 +14,7 @@ GammaLauncher is a simple application that allows to launch vvvv gamma instances
 
 ## Installation
 
-The latest release is available [here](https://github.com/sebescudie/GammaLauncher/releases/latest). Simply download and run the installer.
+The latest release is available [here](https://github.com/sebescudie/GammaLauncher/releases/latest). Simply download and run the installer. You can find the changelog in the [Releases secgtion](https://github.com/sebescudie/GammaLauncher/releases) or by reading `CHANGELOG.md`.
 
 ## Usage
 
@@ -23,7 +23,7 @@ The latest release is available [here](https://github.com/sebescudie/GammaLaunch
 Open the app and go to the _Settings_ tab. There you can specify the follwing properties :
 
 - vvvv installation folder : this is where the launcher will look for your installed vvvversions. It defaults to `C:\Program Files\vvvv`
-- Nuget override : if you're want to override the default nuget folder with your own, specify it here
+- Nuget override : if you want to override the default nuget folder with your own, specify it here
 - Extra args : arbitrary arguments the launcher will use when starting a vvvv instance
 - Package repositories : all folders you add in this section will be used as package sources. More information [here](https://thegraybook.vvvv.org/reference/extending/contributing.html#source-package-repositories)
 
@@ -31,11 +31,11 @@ Then go to the _Launch_ tab and press <kbd>F5</kbd>, this will re-scan your inst
 
 ### Updates
 
-When the app starts, it looks online for the most recent vvvv preview builds. If the a more recent version is available online, the _Updates_ tab will turn yellow. You can then browse the available builds and click the _Install_ button to download and start the installer. A _Changes_ button allows to view the changelog for this version. You can also click _Check for updates_ or press <kbd>SHIFT + F5</kbd> to maually look for updates.
+When the app starts, it looks online for the most recent vvvv preview builds. If a more recent version is available online, the _Updates_ tab will turn yellow. You can then browse the available builds and click the _Install_ button to download and start the installer. A _Changes_ button allows to view the changelog for this version in your browser. You can also click _Check for updates_ or press <kbd>SHIFT + F5</kbd> at any time to maually look for updates.
 
 ### Opening documents
 
-You can drag and drop any VL document from your file browser on the launcher to open it in a new instance
+You can drag and drop any VL document from your file browser on the launcher to open it in a new vvvv instance.
 
 ## Features
 
