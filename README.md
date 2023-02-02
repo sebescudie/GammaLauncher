@@ -14,7 +14,7 @@ GammaLauncher is a simple application that allows to launch vvvv gamma instances
 
 ## Installation
 
-The latest release is available [here](https://github.com/sebescudie/GammaLauncher/releases/latest). Simply download and run the installer. You can find the changelog in the [Releases secgtion](https://github.com/sebescudie/GammaLauncher/releases) or by reading `CHANGELOG.md`.
+The latest release is available [here](https://github.com/sebescudie/GammaLauncher/releases/latest). Simply download and run the installer. You can find the changelog in the [Releases section](https://github.com/sebescudie/GammaLauncher/releases) or by reading `CHANGELOG.md`.
 
 ## Usage
 
