@@ -21,8 +21,10 @@ UninstallDisplayIcon={app}\GammaLauncher.exe
 Compression=lzma2
 OutputDir=.
 ArchitecturesAllowed=x64
-WizardStyle=modern
+WizardStyle=classic
 PrivilegesRequired=admin
+WizardSmallImageFile=ico.bmp
+SetupIconFile=ico.ico
 
 [Run]
 Filename: {app}\{cm:AppName}.exe; Description: {cm:LaunchProgram,{cm:AppName}}; Flags: nowait postinstall skipifsilent
