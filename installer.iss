@@ -24,6 +24,14 @@ ArchitecturesAllowed=x64
 WizardStyle=modern
 PrivilegesRequired=admin
 
+[Run]
+Filename: {app}\{cm:AppName}.exe; Description: {cm:LaunchProgram,{cm:AppName}}; Flags: nowait postinstall skipifsilent
+Filename: "https://github.com/sebescudie/GammaLauncher/wiki"; Description: "Open online documentation"; Flags: shellexec postinstall runmaximized skipifsilent
+
+[CustomMessages]
+AppName=GammaLauncher
+LaunchProgram=Start GammaLauncher after finishing installation 
+
 
 [Files]
 Source: "D:\Documents\vvvv\gamma-preview\Exports\GammaLauncher\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
