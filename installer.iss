@@ -26,7 +26,7 @@ PrivilegesRequired=admin
 
 
 [Files]
-Source: "D:\Documents\vvvv\gamma-preview\Exports\GammaLauncher\*"; DestDir: "{commonpf64}\GammaLauncher"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "D:\Documents\vvvv\gamma-preview\Exports\GammaLauncher\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{group}\GammaLauncher"; Filename: "{app}\GammaLauncher.exe"
