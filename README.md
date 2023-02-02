@@ -1,8 +1,10 @@
 # GammaLauncher
 
-_A simple launcher for vvvv gamma_
-
+<p align="center">
 <img src="capture.png" title="" alt="GitHub Logo" width="259">
+</p>
+
+_A simple launcher for vvvv gamma_
 
 [![vvvv](https://img.shields.io/static/v1?label=MADE%20WITH&message=VVVV&color=191919&style=for-the-badge)](https://visualprogramming.net/)
 
