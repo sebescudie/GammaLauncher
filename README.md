@@ -12,36 +12,39 @@ _A simple launcher for vvvv gamma_
 
 GammaLauncher is a simple application that allows to launch vvvv gamma instances with specific arguments from a simple GUI.
 
+## Installation
+
+The latest release is available [here](https://github.com/sebescudie/GammaLauncher/releases/latest). Simply download and run the installer.
+
 ## Usage
 
-When the application first starts, it generates a `settings.xml` file in `%APPDATA\Local\GammaLauncher`. This file contains path to your gamma installations (should be `C:\Program Files\vvvv`), as well as your repositories folder, if you're using that feature. You can customize those paths if needed by editing the settings file. To quickly locate the settings file, press <kbd>CTRL</kbd> + <kbd>,</kbd>.
+### Initial setup
 
-Then, simply pick the specific gamma version you wanna start from the dropdown menu, and tick the options you wanna use :
+Open the app and go to the _Settings_ tab. There you can specify the follwing properties :
 
-- Allow multiple : allows to start more than one `vvvv.exe` at once
-- Use repositories : this will ovewrite packages in the default package folder with the ones in your repositories folder, if you specify one. This is usefull if you're building libraries for gamma.
-- No cache : doesn't load .vl.dll files and compiles everything from scratch
+- vvvv installation folder : this is where the launcher will look for your installed vvvversions. It defaults to `C:\Program Files\vvvv`
+- Nuget override : if you're want to override the default nuget folder with your own, specify it here
+- Extra args : arbitrary arguments the launcher will use when starting a vvvv instance
+- Package repositories : all folders you add in this section will be used as package sources. More information [here](https://thegraybook.vvvv.org/reference/extending/contributing.html#source-package-repositories)
+
+Then go to the _Launch_ tab and press <kbd>F5</kbd>, this will re-scan your installed vvvversions and populate the dropdown menu. Now pick the version you want to work with in the drop down, select startup arguments with the checkboxes and click the _Launch_ button!
+
+### Updates
+
+When the app starts, it looks online for the most recent vvvv preview builds. If the a more recent version is available online, the _Updates_ tab will turn yellow. You can then browse the available builds and click the _Install_ button to download and start the installer. A _Changes_ button allows to view the changelog for this version. You can also click _Check for updates_ or press <kbd>SHIFT + F5</kbd> to maually look for updates.
+
+### Opening documents
+
+You can drag and drop any VL document from your file browser on the launcher to open it in a new instance
 
 ## Features
 
-- Two buttons at the bottom of the app allow you to quickly access your `package-repositories` folder and installed nugets
-- A third one allows to quickly kill all running vvvv instances
-- Pressing <kbd>CTRL</kbd>+<kbd>R</kbd> refreshes your installed versions list
-- Pressing <kbd>CTRL</kbd>+<kbd>U</kbd> starts the uninstaller associated with the version currently selected in the Dropdown
-- Pressing <kbd>CTRL</kbd>+<kbd>,</kbd> takes you to the application's folder so you can quickly edit your settings file
-- Mouse scrolling over the vvvversion dropdown allows you cycle through your installed versions without clicking/unfolding it
-- If you have _Allow Multiple_ set to true, drag and dropping a `.vl` file on the launcher will open it in a new vvvv instance with all set parameters.
-- A burger menu allows to check for two things :
-  - If a new version of vvvv gamma exists online. If so, you'll be able to download and install it directly from the launcher with a single click
-  - If a new version of GammaLauncher exists online. If so, clicking on the version number takes you to the download page on Github.
-- There might be settings you want to start instances with that are not available in the launcher. You can now specify an arbitrary command-line argument in the settings file : this argument will simply be appended when the Launcher starts an instance. If you want to get rid of it, simply delete it from the settings file and restart the launcher for this to be taken into account.
-
-## How to get it
-
-Get the latest version in the [here](https://github.com/sebescudie/GammaLauncher/releases), or clone the repo and build the app yourself. If you do so, don't forget to copy the `ico.ico` file to your output dir, otherwise the app won't start.
+- Run vvvv instances with any combination of [command line arguments](https://thegraybook.vvvv.org/reference/hde/commandline-arguments.html#commandline-arguments) from a simple GUI
+- Install and uninstall vvvversions with a single click
+- Quickly access useful folders such as installed nugets, default nugets, package sources and so on
+- Quickly kill all running vvvv instances
+- Quickly start new instances with a specific document by dropping it on the launcher
 
 ## Contributing
 
-If you wanna contribute to the app by adding functionalities or whatever, please do so!
-
-cheerz
+All suggestions and pull requests are welcome, don't hesitate to report problems and share suggestions in the issues or on the [vvvv forum](http://wwww.discourse.vvvv.org).
