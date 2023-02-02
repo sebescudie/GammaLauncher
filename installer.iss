@@ -1,25 +1,32 @@
-; -- 64Bit.iss --
-; Demonstrates installation of a program built for the x64 (a.k.a. AMD64)
-; architecture.
-; To successfully run this installation and the program it installs,
-; you must have a "x64" edition of Windows.
+#define MyAppName "GammaLauncher"
+#define MyAppVersion "5.0.0"
+#define MyAppPublisher "sebescudie"
+#define MyAppURL "www.sebescudie.github.io"
+#define MyAppExeName "gammalauncher_5.0.0"
 
-; SEE THE DOCUMENTATION FOR DETAILS ON CREATING .ISS SCRIPT FILES!
 
 [Setup]
-AppName=GammaLauncher
-AppVersion=5.0.0
-WizardStyle=modern
+AppId={{CB22A910-7C8F-4884-BC15-BC22602713A9}
+AppName={#MyAppName}
+AppVersion={#MyAppVersion}
+AppPublisher={#MyAppPublisher}
+AppPublisherURL={#MyAppURL}
+AppSupportURL={#MyAppURL}
+AppUpdatesURL={#MyAppURL}
+OutputBaseFilename={#MyAppExeName}
 DefaultDirName={commonpf64}\GammaLauncher
 DefaultGroupName=GammaLauncher
+Uninstallable=yes
 UninstallDisplayIcon={app}\GammaLauncher.exe
 Compression=lzma2
 OutputDir=.
 ArchitecturesAllowed=x64
-OutputBaseFilename=gammalauncher_5.0.0_setup
+WizardStyle=modern
+PrivilegesRequired=admin
+
 
 [Files]
-Source: "{userdocs}vvvv\gamma-preview\Exports\GammaLauncher\*"; DestDir: "{commonpf64}\GammaLauncher"; Flags: external
+Source: "D:\Documents\vvvv\gamma-preview\Exports\GammaLauncher\*"; DestDir: "{commonpf64}\GammaLauncher"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{group}\GammaLauncher"; Filename: "{app}\GammaLauncher.exe"
