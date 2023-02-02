@@ -10,15 +10,16 @@
 AppName=GammaLauncher
 AppVersion=5.0.0
 WizardStyle=modern
-DefaultDirName={commonpf}\GammaLauncher
+DefaultDirName={commonpf64}\GammaLauncher
 DefaultGroupName=GammaLauncher
 UninstallDisplayIcon={app}\GammaLauncher.exe
 Compression=lzma2
 OutputDir=.
 ArchitecturesAllowed=x64
+OutputBaseFilename=gammalauncher_5.0.0_setup
 
 [Files]
-Source: "{userdocs}\vvvv\gamma-preview\Exports\GammaLauncher"; DestDir: "{commonpf}\GammaLauncher";
+Source: "{userdocs}vvvv\gamma-preview\Exports\GammaLauncher\*"; DestDir: "{commonpf64}\GammaLauncher"; Flags: external
 
 [Icons]
 Name: "{group}\GammaLauncher"; Filename: "{app}\GammaLauncher.exe"
