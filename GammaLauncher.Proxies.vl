@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="RZO841kOBU2Mnx1oF35asF" LanguageVersion="2022.5.0-0535-gcd0fc433ef" Version="0.128">
-  <NugetDependency Id="RUkQKFbue4hO7SJguADFLr" Location="VL.CoreLib" Version="2022.5.0-0535-gcd0fc433ef" />
+<Document xmlns:p="property" Id="RZO841kOBU2Mnx1oF35asF" LanguageVersion="2022.5.0-0545-gedd0cac281" Version="0.128">
+  <NugetDependency Id="RUkQKFbue4hO7SJguADFLr" Location="VL.CoreLib" Version="2022.5.0-0545-gedd0cac281" />
   <Patch Id="Tq3oQB6YU2kMCecyqErJAE">
     <Canvas Id="AraVcDJVe0tOw9CXfukl4I" DefaultCategory="GammaLauncher.Utils" CanvasType="FullCategory">
       <Canvas Id="B9CY97uNoeILKnQS6WKhu7" Name="DateTime" Position="417,639">
@@ -10,22 +10,22 @@
 
 -->
         <Node Name="TryParseTeamCityTimeString (DateTime)" Bounds="321,185,235,120" Id="MZKcK9AZIxvPN21JP6Qq2h">
-          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+          <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
             <Choice Kind="OperationDefinition" Name="Operation" />
           </p:NodeReference>
           <Patch Id="TVavv7RC0ChOwRTnlaX9dn" ManuallySortedPins="true">
             <Node Bounds="333,239,79,19" Id="FgXlrmbQUBHOIthhB1k6yb">
-              <p:NodeReference LastCategoryFullName="System.DateTime" LastSymbolSource="System.Runtime.dll" OverloadStrategy="AllPinsThatAreNotCommon">
+              <p:NodeReference LastCategoryFullName="System.DateTime" LastDependency="System.Runtime.dll" OverloadStrategy="AllPinsThatAreNotCommon">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="AssemblyCategory" Name="DateTime" />
                 <Choice Kind="OperationCallFlag" Name="TryParseExact" />
                 <PinReference Kind="InputPin" Name="S">
-                  <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                  <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                     <Choice Kind="TypeFlag" Name="String" />
                   </p:DataTypeReference>
                 </PinReference>
                 <PinReference Kind="InputPin" Name="Format">
-                  <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                  <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                     <Choice Kind="TypeFlag" Name="String" />
                   </p:DataTypeReference>
                 </PinReference>
@@ -38,7 +38,7 @@
               <Pin Id="TPjZyzkgQ2NLOR7nzRBnxj" Name="Result" Kind="OutputPin" />
             </Node>
             <Pad Id="CrmJgmF9s3cNIA74FaOaBS" Comment="Format" Bounds="360,218,130,15" ShowValueBox="true" isIOBox="true" Value="yyyyMMddTHHmmssK">
-              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
             </Pad>
@@ -57,6 +57,42 @@
             <Pin Id="GpWW2zN9SQYQIevS1GAF2R" Name="Input" Kind="InputPin" Bounds="363,428" />
           </Patch>
         </Node>
+        <!--
+
+    ************************ Humanize (TimeSpan) ************************
+
+-->
+        <Node Name="Humanize (TimeSpan)" Bounds="483,414,150,95" Id="MtfPqBJJe4ZNUfThFk5R0c">
+          <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+            <Choice Kind="OperationDefinition" Name="Operation" />
+          </p:NodeReference>
+          <Patch Id="SUS0tOsqSEUOIhtXUSHstd">
+            <Node Bounds="495,451,126,26" Id="PU9AxKz7tFEPChR8xCHvgV">
+              <p:NodeReference LastCategoryFullName="Humanizer.TimeSpanHumanizeExtensions" LastDependency="Humanizer.dll" OverloadStrategy="AllPinsThatAreNotCommon">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="AssemblyCategory" Name="TimeSpanHumanizeExtensions" NeedsToBeDirectParent="true" />
+                <Choice Kind="OperationCallFlag" Name="Humanize" />
+                <PinReference Kind="InputPin" Name="Count Empty Units" />
+              </p:NodeReference>
+              <Pin Id="NKs7UL0mYHHO3ivT5FubSG" Name="Input" Kind="StateInputPin" />
+              <Pin Id="RQOJi0CplWHQG5wAuKGBQu" Name="Precision" Kind="InputPin" DefaultValue="1" />
+              <Pin Id="DDhaTRs1fIqPw5HO3f1SIC" Name="Count Empty Units" Kind="InputPin" />
+              <Pin Id="Co896F9lRxbQCHeV33R9Cj" Name="Culture" Kind="InputPin" />
+              <Pin Id="CBCqWddySHuNBvHPISC2JV" Name="Max Unit" Kind="InputPin" />
+              <Pin Id="HCz4Fnmp7L8QX0fufW7RCb" Name="Min Unit" Kind="InputPin" />
+              <Pin Id="NJLd1Yp1R3CLAzXU7FODul" Name="Collection Separator" Kind="InputPin" />
+              <Pin Id="LZojAdomN1LNgqncxw3GYd" Name="Result" Kind="OutputPin" />
+            </Node>
+            <ControlPoint Id="IdCUE6pva15N1Cw43dsgyT" Bounds="497,432" />
+            <Link Id="HF19MNCVl7KOfkQHy1IymB" Ids="IdCUE6pva15N1Cw43dsgyT,NKs7UL0mYHHO3ivT5FubSG" />
+            <Pin Id="UxIReLZhCU5QEA9wq20YBU" Name="Input" Kind="InputPin" Bounds="504,435" />
+            <Link Id="NaNZpxU4TP8OpRaL6B3t21" Ids="UxIReLZhCU5QEA9wq20YBU,IdCUE6pva15N1Cw43dsgyT" IsHidden="true" />
+            <ControlPoint Id="JKDSdRTlIMVLFeHYIGMws7" Bounds="497,492" />
+            <Link Id="UnDM8cgTT6CLLhcmDLmcI7" Ids="LZojAdomN1LNgqncxw3GYd,JKDSdRTlIMVLFeHYIGMws7" />
+            <Pin Id="FNwaaNbKuFhNxuUAEPgCYo" Name="Result" Kind="OutputPin" Bounds="497,492" />
+            <Link Id="RxJyBEzPFPePArJg7CmviW" Ids="JKDSdRTlIMVLFeHYIGMws7,FNwaaNbKuFhNxuUAEPgCYo" IsHidden="true" />
+          </Patch>
+        </Node>
       </Canvas>
       <Canvas Id="J9wayekrvHsMOtyqfrmwtu" Name="Process" Position="426,724">
         <!--
@@ -65,7 +101,7 @@
 
 -->
         <Node Name="Process" Bounds="318,233" Id="I2dUBg1CB4uMVJXRYWLvGM">
-          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+          <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
             <Choice Kind="ContainerDefinition" Name="Process" />
           </p:NodeReference>
           <Patch Id="M2Lc92qnYUoMUiSLyrH4a3">
@@ -79,7 +115,7 @@
               <ControlPoint Id="DAgTA50OdPHNk6bbxwtQSx" Bounds="760,2094" />
               <ControlPoint Id="TGoGevDhVE4NbmM7b7qJel" Bounds="1207,545" />
               <Node Bounds="375,287,852,1346" Id="ThkMwQ9Urm5MEfVVhHG889">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin" LastDependency="VL.CoreLib.dll">
+                <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ProcessStatefulRegion" Name="Cache" />
                   <CategoryReference Kind="Category" Name="Primitive" />
@@ -88,17 +124,17 @@
                 <Pin Id="AeDoSNQqeyjNpRqqO7TvQa" Name="Dispose Cached Outputs" Kind="InputPin" DefaultValue="False" />
                 <Pin Id="Ah2qxp6D5PWMCAI6z4gl36" Name="Has Changed" Kind="OutputPin" />
                 <ControlPoint Id="JBhCmUngqVdMSs9DYKvk9r" Bounds="620,1628" Alignment="Bottom">
-                  <p:TypeAnnotation LastCategoryFullName="Reactive" LastSymbolSource="VL.CoreLib.vl">
+                  <p:TypeAnnotation LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                     <Choice Kind="TypeFlag" Name="Observable" />
                   </p:TypeAnnotation>
                 </ControlPoint>
                 <ControlPoint Id="RjfZnRKzVHSOJwGv6Qb1ji" Bounds="853,1628" Alignment="Bottom">
-                  <p:TypeAnnotation LastCategoryFullName="Reactive" LastSymbolSource="VL.CoreLib.vl">
+                  <p:TypeAnnotation LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                     <Choice Kind="TypeFlag" Name="Observable" />
                   </p:TypeAnnotation>
                 </ControlPoint>
                 <ControlPoint Id="QzHfmI4CQfaON6XH9Zoz7A" Bounds="1093,1628" Alignment="Bottom">
-                  <p:TypeAnnotation LastCategoryFullName="Reactive" LastSymbolSource="VL.CoreLib.vl">
+                  <p:TypeAnnotation LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                     <Choice Kind="TypeFlag" Name="Observable" />
                   </p:TypeAnnotation>
                 </ControlPoint>
@@ -107,7 +143,7 @@
                   <Patch Id="HfAz7ZkWViILB8SeevbOtB" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="Tnaq91JQso0O011tewMYI0" Name="Then" ManuallySortedPins="true" />
                   <Node Bounds="441,310,46,26" Id="OvbYUlp8VkuMBfhQbsOtgF">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="AssemblyCategory" Name="Process" />
                       <Choice Kind="OperationCallFlag" Name="Create" />
@@ -115,7 +151,7 @@
                     <Pin Id="Vae8KAhuXHSLcfyKAhX1fy" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Node Bounds="670,411,139,26" Id="EwmRLE1dDt0QUoXSLmmFPC">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="AssemblyCategory" Name="ProcessStartInfo" />
                       <Choice Kind="OperationCallFlag" Name="SetRedirectStandardOutput" />
@@ -125,7 +161,7 @@
                     <Pin Id="IBQky6A3rhSOrBqyMEpLDs" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Node Bounds="441,352,55,26" Id="Q9DRRcNOPiuQZcDe4C1wOv">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="AssemblyCategory" Name="Process" />
                       <Choice Kind="OperationCallFlag" Name="StartInfo" />
@@ -135,12 +171,12 @@
                     <Pin Id="LDA6scWG24oNOL01H3iXAt" Name="Start Info" Kind="OutputPin" />
                   </Node>
                   <Pad Id="T2gGARAZgsJQbuj4SGMbK7" Comment="" Bounds="822,388,40,19" ShowValueBox="true" isIOBox="true" Value="True">
-                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="TypeFlag" Name="Boolean" />
                     </p:TypeAnnotation>
                   </Pad>
                   <Node Bounds="670,559,103,26" Id="Lps4qjc5J52OSWHHvOYC7m">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="SetUseShellExecute" />
                     </p:NodeReference>
@@ -149,12 +185,12 @@
                     <Pin Id="GHTvAaPbwVbQT76ABfmQNq" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Pad Id="IyRjeueLykEO6MZcmBxhZU" Comment="" Bounds="808,544,40,20" ShowValueBox="true" isIOBox="true" Value="False">
-                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="TypeFlag" Name="Boolean" />
                     </p:TypeAnnotation>
                   </Pad>
                   <Node Bounds="670,460,130,26" Id="JLXUkkiuQgTM7xCwmUG1qS">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="SetRedirectStandardError" />
                     </p:NodeReference>
@@ -163,12 +199,12 @@
                     <Pin Id="TuZTq4trCkNNh2C6pXK86B" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Pad Id="Vv0lDg3zl0EOqkkJz8epBa" Comment="" Bounds="825,437,40,19" ShowValueBox="true" isIOBox="true" Value="True">
-                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="TypeFlag" Name="Boolean" />
                     </p:TypeAnnotation>
                   </Pad>
                   <Node Bounds="441,458,122,26" Id="AUoqVXZCN2hPfaQVyWGQwx">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="SetEnableRaisingEvents" />
                     </p:NodeReference>
@@ -177,12 +213,12 @@
                     <Pin Id="Hal8SDgPMGBNewpWLCdaMn" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Pad Id="JuPsp5ZxCEnMR70Y4zYo20" Comment="" Bounds="505,426,40,19" ShowValueBox="true" isIOBox="true" Value="True">
-                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="TypeFlag" Name="Boolean" />
                     </p:TypeAnnotation>
                   </Pad>
                   <Node Bounds="670,783,107,26" Id="RdOPSaX0OB7P5h7MgsL8ws">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="AssemblyCategory" Name="ProcessStartInfo" />
                       <Choice Kind="OperationCallFlag" Name="SetCreateNoWindow" />
@@ -192,7 +228,7 @@
                     <Pin Id="Huu4miLwfqsO9kVtamr1vN" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Node Bounds="670,620,74,26" Id="QNG47uGiZ8NLLDmZ9fy3sU">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="SetFileName" />
                       <CategoryReference Kind="AssemblyCategory" Name="ProcessStartInfo" NeedsToBeDirectParent="true" />
@@ -202,7 +238,7 @@
                     <Pin Id="RcjPz3grS1fM6NynLFj1bQ" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Node Bounds="670,741,80,26" Id="AIrCP2tVP5PQG0SHy9cLZY">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="SetArguments" />
                     </p:NodeReference>
@@ -211,7 +247,7 @@
                     <Pin Id="GjpynZqsrPULQEtFD9YSzz" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Node Bounds="670,679,109,26" Id="TqOfLSh52ZfPqgOMnyCsgw">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="SetWorkingDirectory" />
                     </p:NodeReference>
@@ -221,7 +257,7 @@
                     <Pin Id="CWiUbupgCsDLslJXhw5yAi" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Node Bounds="776,617,104,19" Id="PRZI4kzvXoLPLYdhNCmBbd">
-                    <p:NodeReference LastCategoryFullName="Primitive.String" LastSymbolSource="VL.CoreLib.vl">
+                    <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="IsNullOrWhiteSpace" />
                       <CategoryReference Kind="StringType" Name="String" NeedsToBeDirectParent="true" />
@@ -230,14 +266,14 @@
                     <Pin Id="HRiRjGQZEnUNcSCtiHLOcW" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="774,645,37,19" Id="AU6MsKGcaGzNNVeIUwSBQ0">
-                    <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="VL.CoreLib.vl">
+                    <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="OperationCallFlag" Name="NOT" />
                     </p:NodeReference>
                     <Pin Id="FRtyRHGWJ15Nk5TAPWIeqA" Name="Input" Kind="StateInputPin" />
                     <Pin Id="K5UaoeZscBjQDX79S1UacH" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Node Bounds="427,824,763,556" Id="CnVnhHc8B77Px1zG8xiD2a">
-                    <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="VL.CoreLib.vl">
+                    <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                       <Choice Kind="ProcessAppFlag" Name="Do" />
                       <CategoryReference Kind="Category" Name="Control" NeedsToBeDirectParent="true" />
@@ -252,7 +288,7 @@
                       <Patch Id="MKi2GWBoAC7P8BG5RfgtHE" Name="Create" ManuallySortedPins="true" />
                       <Patch Id="VN1uoLsHGUpPHdyCFXTBbA" Name="Update" ManuallySortedPins="true" />
                       <Node Bounds="616,1037,109,26" Id="QT8BaGrVUsLOOkILF660WH">
-                        <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                        <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="OutputDataReceived" />
                         </p:NodeReference>
@@ -260,7 +296,7 @@
                         <Pin Id="B14KYaWljTvPzKj9aFSYlm" Name="Result" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="618,1084,124,124" Id="KVAuRBHSbkoL69P06REDsD">
-                        <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.CoreLib.vl">
+                        <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                           <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                           <Choice Kind="ProcessAppFlag" Name="ForEach" />
                           <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
@@ -277,7 +313,7 @@
                           <ControlPoint Id="JEhzM3sK7uhOTmvYnKYmws" Bounds="631,1092" />
                           <ControlPoint Id="HM0nIECihoDLe4F3gp1COg" Bounds="632,1201" />
                           <Node Bounds="630,1109,62,26" Id="O10sUgSXAs4Nhe7Fz01mPp">
-                            <p:NodeReference LastCategoryFullName="Reactive.EventPattern" LastSymbolSource="VL.CoreLib.vl">
+                            <p:NodeReference LastCategoryFullName="Reactive.EventPattern" LastDependency="VL.CoreLib.vl">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <CategoryReference Kind="RecordType" Name="EventPattern" />
                               <Choice Kind="OperationCallFlag" Name="EventArgs" />
@@ -286,7 +322,7 @@
                             <Pin Id="O5PSrv57rEEMSjAIYYKITt" Name="Event Args" Kind="OutputPin" />
                           </Node>
                           <Node Bounds="630,1150,100,26" Id="OLmHaRGmHleP3v6Ipt5Xj2">
-                            <p:NodeReference LastCategoryFullName="System.Diagnostics.DataReceivedEventArgs" LastSymbolSource="System.Diagnostics.Process.dll">
+                            <p:NodeReference LastCategoryFullName="System.Diagnostics.DataReceivedEventArgs" LastDependency="System.Diagnostics.Process.dll">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <CategoryReference Kind="AssemblyCategory" Name="DataReceivedEventArgs" />
                               <Choice Kind="OperationCallFlag" Name="Data" />
@@ -298,7 +334,7 @@
                         </Patch>
                       </Node>
                       <Node Bounds="851,1040,99,26" Id="ITueBlEpETNQGe1ssiQJP6">
-                        <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                        <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="ErrorDataReceived" />
                         </p:NodeReference>
@@ -306,7 +342,7 @@
                         <Pin Id="QTVwHUUM220PY1fLpK9yhw" Name="Result" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="852,1090,124,124" Id="HoMnrl327xdPlLFyERy0t0">
-                        <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.CoreLib.vl">
+                        <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                           <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                           <Choice Kind="ProcessAppFlag" Name="ForEach" />
                           <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
@@ -323,7 +359,7 @@
                           <ControlPoint Id="T6jXrxGGyZoQMrHek2h2mI" Bounds="865,1098" />
                           <ControlPoint Id="PWDoJIy5YV1Qdmwxgvmy3N" Bounds="866,1207" />
                           <Node Bounds="864,1115,62,26" Id="ScCPxhj9TIkOZQEHbWbj4g">
-                            <p:NodeReference LastCategoryFullName="Reactive.EventPattern" LastSymbolSource="VL.CoreLib.vl">
+                            <p:NodeReference LastCategoryFullName="Reactive.EventPattern" LastDependency="VL.CoreLib.vl">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <CategoryReference Kind="RecordType" Name="EventPattern" />
                               <Choice Kind="OperationCallFlag" Name="EventArgs" />
@@ -332,7 +368,7 @@
                             <Pin Id="Ji3TEE3L8yhQDZuJkK3Owl" Name="Event Args" Kind="OutputPin" />
                           </Node>
                           <Node Bounds="864,1156,100,26" Id="C1y6uqVsSolMyMt9SopSSq">
-                            <p:NodeReference LastCategoryFullName="System.Diagnostics.DataReceivedEventArgs" LastSymbolSource="System.Diagnostics.Process.dll">
+                            <p:NodeReference LastCategoryFullName="System.Diagnostics.DataReceivedEventArgs" LastDependency="System.Diagnostics.Process.dll">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <CategoryReference Kind="AssemblyCategory" Name="DataReceivedEventArgs" />
                               <Choice Kind="OperationCallFlag" Name="Data" />
@@ -344,7 +380,7 @@
                         </Patch>
                       </Node>
                       <Node Bounds="1090,973,45,26" Id="DQkb0CQ4TWjMNciVSQOGHG">
-                        <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                        <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Exited" />
                         </p:NodeReference>
@@ -352,7 +388,7 @@
                         <Pin Id="SNUQMP5Q6RKLO3boZ7myAk" Name="Result" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="1092,1018,86,156" Id="OPx7SQAAyjBO0UbVQMiYoX">
-                        <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.CoreLib.vl">
+                        <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                           <Choice Kind="ProcessAppFlag" Name="ForEach" />
                           <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
                           <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
@@ -369,7 +405,7 @@
                           <ControlPoint Id="D4DhYgq8xJYNmzB4NNry3i" Bounds="1107,1026" />
                           <ControlPoint Id="N4VKfWrRjz1Mc5l38ittKi" Bounds="1106,1167" />
                           <Node Bounds="1104,1052,62,26" Id="JLwFBDECIO6ObS7hHlgmH5">
-                            <p:NodeReference LastCategoryFullName="Reactive.EventPattern" LastSymbolSource="VL.CoreLib.vl">
+                            <p:NodeReference LastCategoryFullName="Reactive.EventPattern" LastDependency="VL.CoreLib.vl">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <CategoryReference Kind="RecordType" Name="EventPattern" />
                               <Choice Kind="OperationCallFlag" Name="EventArgs" />
@@ -378,7 +414,7 @@
                             <Pin Id="OAU1j88Vs8zLgS1oK3fK5M" Name="Event Args" Kind="OutputPin" />
                           </Node>
                           <Node Bounds="1106,1106,57,26" Id="BRCMckcXqlbLRXfpC06uPC">
-                            <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                            <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                               <Choice Kind="OperationCallFlag" Name="ExitCode" />
                             </p:NodeReference>
@@ -389,7 +425,7 @@
                         </Patch>
                       </Node>
                       <Node Bounds="620,1265,56,26" Id="F5P5nB1ZzT2Nfo4dQnXY5a">
-                        <p:NodeReference LastCategoryFullName="Reactive.Observable" LastSymbolSource="VL.CoreLib.vl" OverloadStrategy="AllPinsThatAreNotCommon">
+                        <p:NodeReference LastCategoryFullName="Reactive.Observable" LastDependency="VL.CoreLib.vl" OverloadStrategy="AllPinsThatAreNotCommon">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Replay" />
                           <PinReference Kind="InputPin" Name="Buffer Size" />
@@ -399,12 +435,12 @@
                         <Pin Id="QAPamsodJvqPsEb08KmgdG" Name="Result" Kind="OutputPin" />
                       </Node>
                       <Pad Id="JKnioFzH2MpPXX8QzfNUAL" Comment="Buffer Size" Bounds="676,1238,35,15" ShowValueBox="true" isIOBox="true" Value="100">
-                        <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                        <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                           <Choice Kind="TypeFlag" Name="Integer32" />
                         </p:TypeAnnotation>
                       </Pad>
                       <Node Bounds="852,1273,56,26" Id="Ma31JXk7lizLy0ikiYQxOB">
-                        <p:NodeReference LastCategoryFullName="Reactive.Observable" LastSymbolSource="VL.CoreLib.vl" OverloadStrategy="AllPinsThatAreNotCommon">
+                        <p:NodeReference LastCategoryFullName="Reactive.Observable" LastDependency="VL.CoreLib.vl" OverloadStrategy="AllPinsThatAreNotCommon">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Replay" />
                           <PinReference Kind="InputPin" Name="Buffer Size" />
@@ -414,7 +450,7 @@
                         <Pin Id="Cr6XARsAgTNO6Z8KZOLiCK" Name="Result" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="633,1328,-42,19" Id="FWudoPeWclXOeC4oStGiTB">
-                        <p:NodeReference LastCategoryFullName="Reactive.ConnectableObservable" LastSymbolSource="VL.CoreLib.vl">
+                        <p:NodeReference LastCategoryFullName="Reactive.ConnectableObservable" LastDependency="VL.CoreLib.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Connect" />
                           <CategoryReference Kind="ImmutableInterfaceType" Name="ConnectableObservable" NeedsToBeDirectParent="true" />
@@ -423,7 +459,7 @@
                         <Pin Id="TXtZr8oQKeVOKv2ceWS2qf" Name="Result" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="1091,1262,56,26" Id="Q5oEeMzWP3zOov9LjVGBKo">
-                        <p:NodeReference LastCategoryFullName="Reactive.Observable" LastSymbolSource="VL.CoreLib.vl" OverloadStrategy="AllPinsThatAreNotCommon">
+                        <p:NodeReference LastCategoryFullName="Reactive.Observable" LastDependency="VL.CoreLib.vl" OverloadStrategy="AllPinsThatAreNotCommon">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Replay" />
                           <PinReference Kind="InputPin" Name="Buffer Size" />
@@ -433,7 +469,7 @@
                         <Pin Id="MOzFoQHpihVQNZBA7udOpU" Name="Result" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="866,1334,100,26" Id="REPFlDhdq17NHbp1BvkrIp">
-                        <p:NodeReference LastCategoryFullName="Reactive.ConnectableObservable" LastSymbolSource="VL.CoreLib.vl">
+                        <p:NodeReference LastCategoryFullName="Reactive.ConnectableObservable" LastDependency="VL.CoreLib.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Connect" />
                           <CategoryReference Kind="ImmutableInterfaceType" Name="ConnectableObservable" NeedsToBeDirectParent="true" />
@@ -442,7 +478,7 @@
                         <Pin Id="IWn0AVBSsLOOuzKWzMiOaW" Name="Result" Kind="OutputPin" />
                       </Node>
                       <Node Bounds="1103,1330,-13,19" Id="TNnrC1MNn5nPs0V6C7hMox">
-                        <p:NodeReference LastCategoryFullName="Reactive.ConnectableObservable" LastSymbolSource="VL.CoreLib.vl">
+                        <p:NodeReference LastCategoryFullName="Reactive.ConnectableObservable" LastDependency="VL.CoreLib.vl">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Connect" />
                           <CategoryReference Kind="ImmutableInterfaceType" Name="ConnectableObservable" NeedsToBeDirectParent="true" />
@@ -453,17 +489,17 @@
                     </Patch>
                   </Node>
                   <Pad Id="VQIa8ZARFgcLMoeyvvv4bY" Comment="needed ?" Bounds="812,741,35,35" ShowValueBox="true" isIOBox="true" Value="True">
-                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="TypeFlag" Name="Boolean" />
                     </p:TypeAnnotation>
                   </Pad>
                   <Node Bounds="387,1463,43,26" Id="UBOBj5kb2H2OsFQd6pkjeB">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="Start" />
                       <CategoryReference Kind="AssemblyCategory" Name="Process" NeedsToBeDirectParent="true" />
                       <PinReference Kind="OutputPin" Name="return" ParameterModifier="return">
-                        <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="System" LastSymbolSource="mscorlib.dll">
+                        <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="System" LastDependency="mscorlib.dll">
                           <Choice Kind="TypeFlag" Name="Boolean" />
                         </p:DataTypeReference>
                       </PinReference>
@@ -473,7 +509,7 @@
                     <Pin Id="HyC1TtJVrptQYpYSqu1RLb" Name="Result" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="387,1547,114,26" Id="U0YkN65n0dTPIRRQIIfuEm">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="AssemblyCategory" Name="Process" />
                       <Choice Kind="OperationCallFlag" Name="BeginOutputReadLine" />
@@ -482,7 +518,7 @@
                     <Pin Id="FhEaA8YIGF6MZDPo8Unotk" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Node Bounds="387,1585,104,26" Id="DqVFJsO4jR4Oi7b5gHFuzR">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="BeginErrorReadLine" />
                     </p:NodeReference>
@@ -490,7 +526,7 @@
                     <Pin Id="A1ltyMXpFSwMpIlg9DWF9j" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Node Bounds="387,1503,43,26" Id="JfsRtMODiPTLeWSvdvLCl3">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="Id" />
                       <CategoryReference Kind="AssemblyCategory" Name="Process" NeedsToBeDirectParent="true" />
@@ -500,7 +536,7 @@
                     <Pin Id="FAXk5bK4PJdO6dGM5mzSgL" Name="Id" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="670,510,131,26" Id="MwANzBl4fheOM4Go4BAE2J">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="SetRedirectStandardInput" />
                     </p:NodeReference>
@@ -509,7 +545,7 @@
                     <Pin Id="ULpHPeVctjnPrkyBqyN4Vt" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Pad Id="B8vzL57tarJPVCRIcFeJlj" Comment="" Bounds="825,498,28,14" ShowValueBox="true" isIOBox="true" Value="True">
-                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
                       <FullNameCategoryReference ID="Primitive" />
                     </p:TypeAnnotation>
@@ -520,7 +556,7 @@
                 </Patch>
               </Node>
               <Pad Id="GanSrNwMK7TPH4bKsnLJRQ" Comment="Dispose Cached Outputs" Bounds="1031,249,35,35" ShowValueBox="true" isIOBox="true" Value="True">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
                   <FullNameCategoryReference ID="Primitive" />
                 </p:TypeAnnotation>
@@ -529,7 +565,7 @@
                 </p:ValueBoxSettings>
               </Pad>
               <Node Bounds="388,1691,65,19" Id="I7pulbW9vmAQMpYFMI81H7">
-                <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="VL.CoreLib.vl">
+                <p:NodeReference LastCategoryFullName="Primitive.Object" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="IsAssigned" />
                   <CategoryReference Kind="ClassType" Name="Object" NeedsToBeDirectParent="true" />
@@ -539,7 +575,7 @@
                 <Pin Id="PGNqRkzhUhZLfTWTGf1dKG" Name="Not Assigned" Kind="OutputPin" />
               </Node>
               <Node Bounds="487,1791,309,275" Id="Spu8MxZpMxZPehbVWwmD3Q">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin" LastDependency="VL.CoreLib.dll">
+                <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ApplicationStatefulRegion" Name="If" />
                   <CategoryReference Kind="Category" Name="Primitive" />
@@ -555,7 +591,7 @@
                   <Patch Id="M71sLpgR0moNbQCofz6dZv" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="Uz5lrUR4JAbQd3Xd6wu47d" Name="Then" ManuallySortedPins="true" />
                   <Node Bounds="499,1844,61,26" Id="JLNIZGL2wIZPTQMIeheHQZ">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="AssemblyCategory" Name="Process" />
                       <Choice Kind="OperationCallFlag" Name="HasExited" />
@@ -565,7 +601,7 @@
                     <Pin Id="U5BscCQo6P6OaalUnoxGm6" Name="Has Exited" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="555,1890,37,19" Id="UbMFEJzsVXzOXDGBhav3ma">
-                    <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="VL.CoreLib.vl">
+                    <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="NOT" />
                       <CategoryReference Kind="BooleanType" Name="Boolean" NeedsToBeDirectParent="true" />
@@ -574,7 +610,7 @@
                     <Pin Id="AK6EWjG9tEDO0grdOWLLsQ" Name="Output" Kind="StateOutputPin" />
                   </Node>
                   <Node Bounds="601,1948,92,85" Id="OXZ367cKnjjLZSgK6VJLDR">
-                    <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin" LastDependency="VL.CoreLib.dll">
+                    <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                       <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                       <Choice Kind="ApplicationStatefulRegion" Name="If" />
                       <CategoryReference Kind="Category" Name="Primitive" />
@@ -586,7 +622,7 @@
                       <Patch Id="FjTdD8Wqxj1Oh1YyS2vGUO" Name="Create" ManuallySortedPins="true" />
                       <Patch Id="Uy25527VyOQMl04g6P75ey" Name="Then" ManuallySortedPins="true" />
                       <Node Bounds="613,1979,43,26" Id="MhrbToDzrPiLvK8sbURhnZ">
-                        <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                        <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                           <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                           <Choice Kind="OperationCallFlag" Name="Id" />
                           <CategoryReference Kind="AssemblyCategory" Name="Process" NeedsToBeDirectParent="true" />
@@ -598,7 +634,7 @@
                     </Patch>
                   </Node>
                   <Node Bounds="748,1956,36,81" Id="BcaC0vWHEYbQcBTSvwJdZ0">
-                    <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin" LastDependency="VL.CoreLib.dll">
+                    <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                       <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                       <Choice Kind="ApplicationStatefulRegion" Name="If" />
                       <CategoryReference Kind="Category" Name="Primitive" />
@@ -614,13 +650,13 @@
                 </Patch>
               </Node>
               <Pad Id="FDbzqtsBgj9OysmdryIMtC" Comment="" Bounds="672,1774,35,15" ShowValueBox="true" isIOBox="true" Value="-1">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="Integer32" />
                 </p:TypeAnnotation>
               </Pad>
               <ControlPoint Id="NlPOaordB1hMRDMNw3e2P1" Bounds="634,2091" />
               <Node Bounds="1091,1729,65,19" Id="TP0P12B9fwENHfiUGoobW5">
-                <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.CoreLib.vl">
+                <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="HoldLatest" />
                 </p:NodeReference>
@@ -631,7 +667,7 @@
               </Node>
               <ControlPoint Id="UPuagw52QE2M7UDdiOXGSc" Bounds="1152,1690" />
               <Pad Id="GMKt5rgnGMnOiHzctxGZ9i" Comment="" Bounds="771,1775,35,15" ShowValueBox="true" isIOBox="true" Value="-1">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="Integer32" />
                 </p:TypeAnnotation>
               </Pad>
@@ -639,7 +675,7 @@
               <ControlPoint Id="GXexjLoF9EgLENJK4Db4kH" Bounds="1241,2010" />
               <Pad Id="RwlCUWE7ro8OV7rLzbdPUP" Bounds="1065,1843" />
               <Node Bounds="1059,1873,65,19" Id="GzaS0voYkxBP3QNIyaLQE2">
-                <p:NodeReference LastCategoryFullName="Primitive.Object" LastSymbolSource="VL.CoreLib.vl">
+                <p:NodeReference LastCategoryFullName="Primitive.Object" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="IsAssigned" />
                   <CategoryReference Kind="ClassType" Name="Object" NeedsToBeDirectParent="true" />
@@ -649,7 +685,7 @@
                 <Pin Id="E4F2YHdDnYFMErfZVyoRvK" Name="Not Assigned" Kind="OutputPin" />
               </Node>
               <Node Bounds="1058,1965,160,121" Id="C1OaMkN2E4LPwTUR3tIQD5">
-                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin" LastDependency="VL.CoreLib.dll">
+                <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <Choice Kind="ApplicationStatefulRegion" Name="If" />
                   <CategoryReference Kind="Category" Name="Primitive" />
@@ -659,7 +695,7 @@
                   <Patch Id="GbENpeUyOR9LQBxZz1eVb1" Name="Create" ManuallySortedPins="true" />
                   <Patch Id="VRfUxEAVwevModtHQem2VP" Name="Then" ManuallySortedPins="true" />
                   <Node Bounds="1070,1988,80,26" Id="JNqOq9XeaKaOVD6ii23HUq">
-                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+                    <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="StandardInput" />
                     </p:NodeReference>
@@ -668,12 +704,12 @@
                     <Pin Id="IYw258hvAk7LXThH4egslS" Name="Standard Input" Kind="OutputPin" />
                   </Node>
                   <Node Bounds="1144,2040,62,26" Id="SBZn6U2KmM9PO5RRn4tqu1">
-                    <p:NodeReference LastCategoryFullName="System.IO.StreamWriter" LastSymbolSource="System.Runtime.dll" OverloadStrategy="AllPinsThatAreNotCommon">
+                    <p:NodeReference LastCategoryFullName="System.IO.StreamWriter" LastDependency="System.Runtime.dll" OverloadStrategy="AllPinsThatAreNotCommon">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="AssemblyCategory" Name="StreamWriter" />
                       <Choice Kind="OperationCallFlag" Name="Write" />
                       <PinReference Kind="InputPin" Name="Value">
-                        <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="System" LastSymbolSource="mscorlib.dll">
+                        <p:DataTypeReference p:Type="TypeReference" LastCategoryFullName="System" LastDependency="mscorlib.dll">
                           <Choice Kind="TypeFlag" Name="String" />
                         </p:DataTypeReference>
                       </PinReference>
@@ -685,7 +721,7 @@
                 </Patch>
               </Node>
               <Node Bounds="1057,1925,37,19" Id="T6to6qzFF1dLuUlQpZkzDh">
-                <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="VL.CoreLib.vl">
+                <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="AND" />
                   <CategoryReference Kind="BooleanType" Name="Boolean" NeedsToBeDirectParent="true" />
@@ -821,7 +857,7 @@
             <Patch Id="MRPgY1aVkJxMe5YkZDi8QJ" Name="Create" />
             <Patch Id="UE2W4JLtBAdMBPmJz3FqnN" Name="Update">
               <Pin Id="PdB0y1bDZvLM93p7QUlUSy" Name="Execute" Kind="InputPin" Bounds="769,445" DefaultValue="False">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="Boolean" />
                 </p:TypeAnnotation>
               </Pin>
@@ -847,12 +883,12 @@
 
 -->
         <Node Name="ProcessDefinition" Bounds="470,484,411,715" Id="T9v6yyNki5ELQjRwMouvpO">
-          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+          <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
             <Choice Kind="OperationDefinition" Name="Operation" />
           </p:NodeReference>
           <Patch Id="PbShmMXFOiJOpZmhp1894K">
             <Node Bounds="661,586,139,26" Id="Bb2L89pfOGoQVOAqjukq6A">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="AssemblyCategory" Name="ProcessStartInfo" />
                 <Choice Kind="OperationCallFlag" Name="SetRedirectStandardOutput" />
@@ -862,12 +898,12 @@
               <Pin Id="RZVbgUa5QqGO5T41fQVWUp" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Pad Id="ByZbNsGNcjrNhPAXoCfz77" Comment="" Bounds="797,571,35,15" ShowValueBox="true" isIOBox="true" Value="True">
-              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Boolean" />
               </p:TypeAnnotation>
             </Pad>
             <Node Bounds="661,839,103,26" Id="PcqDMgSe1gHMeuWp8vfxFq">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="SetUseShellExecute" />
               </p:NodeReference>
@@ -876,12 +912,12 @@
               <Pin Id="LEIqiOuRMUpLYenQ4w30d5" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Pad Id="FXS94bcvVriLNpZEmM7M3l" Comment="" Bounds="761,821,40,20" ShowValueBox="true" isIOBox="true" Value="False">
-              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Boolean" />
               </p:TypeAnnotation>
             </Pad>
             <Node Bounds="661,680,130,26" Id="OLJkOZ3iw86Nevw2C8COfE">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="SetRedirectStandardError" />
               </p:NodeReference>
@@ -890,12 +926,12 @@
               <Pin Id="AKNLlzw2fpqQOg3p3SCSPz" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Pad Id="UxrYRHZTVK0PJrVjlwFUlP" Comment="" Bounds="788,661,35,15" ShowValueBox="true" isIOBox="true" Value="True">
-              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Boolean" />
               </p:TypeAnnotation>
             </Pad>
             <Node Bounds="661,1153,107,26" Id="B7v5Rcjz1XQLRbvCq3A42S">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="AssemblyCategory" Name="ProcessStartInfo" />
                 <Choice Kind="OperationCallFlag" Name="SetCreateNoWindow" />
@@ -905,7 +941,7 @@
               <Pin Id="MKmtFpfEvhWNu3QF1JD8KD" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Node Bounds="661,945,74,26" Id="L4Snner5ZrRP1TodMbLD1c">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="SetFileName" />
                 <CategoryReference Kind="AssemblyCategory" Name="ProcessStartInfo" NeedsToBeDirectParent="true" />
@@ -915,7 +951,7 @@
               <Pin Id="JeNB8rLSs7OQFQ7KaC4Dzo" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Node Bounds="661,1111,80,26" Id="UQ0e6o7giCaO2oCIpv6sY6">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="SetArguments" />
               </p:NodeReference>
@@ -924,7 +960,7 @@
               <Pin Id="AHUNAdO6btDLzMppWisIT0" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Node Bounds="661,1049,109,26" Id="MDCM5AUqPL1QVxg5JEHdtS">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="SetWorkingDirectory" />
               </p:NodeReference>
@@ -934,7 +970,7 @@
               <Pin Id="VtuaszdqJAGOZ0HV41mqKn" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Node Bounds="765,986,104,19" Id="RWbRDWjqM8wLh2rLdsDbvS">
-              <p:NodeReference LastCategoryFullName="Primitive.String" LastSymbolSource="VL.CoreLib.vl">
+              <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="IsNullOrWhiteSpace" />
                 <CategoryReference Kind="StringType" Name="String" NeedsToBeDirectParent="true" />
@@ -943,19 +979,19 @@
               <Pin Id="AvEXq1awJflQEXS9mGE15l" Name="Result" Kind="OutputPin" />
             </Node>
             <Node Bounds="765,1015,37,19" Id="KjD24f3b0sRQaGTMYIqz7C">
-              <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="VL.CoreLib.vl">
+              <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="OperationCallFlag" Name="NOT" />
               </p:NodeReference>
               <Pin Id="R528V547LyzMsvXvk1rB5p" Name="Input" Kind="StateInputPin" />
               <Pin Id="HZFjggDkkM4OHac06J09d0" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Pad Id="CcqwiGqiGYQNpspwfDSRO2" Comment="needed ?" Bounds="765,1135,35,15" ShowValueBox="true" isIOBox="true" Value="True">
-              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Boolean" />
               </p:TypeAnnotation>
             </Pad>
             <Node Bounds="661,760,131,26" Id="Bm1vXSQLaZrOTLU0VEdGUy">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastSymbolSource="System.Diagnostics.Process.dll">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.ProcessStartInfo" LastDependency="System.Diagnostics.Process.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="SetRedirectStandardInput" />
               </p:NodeReference>
@@ -964,7 +1000,7 @@
               <Pin Id="TLs4noGCiXWLmXcVLnRWiu" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Pad Id="PUfynrVLP0YO5MWCZivSlz" Comment="" Bounds="789,740,35,15" ShowValueBox="true" isIOBox="true" Value="True">
-              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
                 <FullNameCategoryReference ID="Primitive" />
               </p:TypeAnnotation>
@@ -987,7 +1023,7 @@
             <Link Id="Stm57fA8zlHPuEl0QibFVo" Ids="TLs4noGCiXWLmXcVLnRWiu,BhdfrxPuCXKOHkYiGuN8Xb" />
             <Link Id="VkIUigSALnDPgBTxUZrq3g" Ids="PUfynrVLP0YO5MWCZivSlz,CTGVRLdwKeyLF3rIQvu7cV" />
             <Node Bounds="482,531,55,26" Id="MMcr0IyTXUGORfkqjmEXO5">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <CategoryReference Kind="AssemblyCategory" Name="Process" />
                 <Choice Kind="OperationCallFlag" Name="StartInfo" />
@@ -1008,7 +1044,7 @@
             <Link Id="MY0nlnTsESuOsyoYHHFlks" Ids="MtJcZjjNqcrMvzkjVeAt4n,SuB1jnKvqEhL2e0stlJsR8" />
             <Link Id="UFlU9XSr62gNgtbjMjOtqW" Ids="Dg07YNLMhbMQTuwaI10QL9,MtJcZjjNqcrMvzkjVeAt4n" IsHidden="true" />
             <Node Bounds="482,704,122,26" Id="D5YaGj2Zh55PntH5CFwAWA">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="SetEnableRaisingEvents" />
               </p:NodeReference>
@@ -1017,7 +1053,7 @@
               <Pin Id="UEd2D16157IOJXWkCSQsSO" Name="Output" Kind="StateOutputPin" />
             </Node>
             <Pad Id="DVJwjeFQvj7O6LGjSTabRK" Comment="" Bounds="601,687,35,15" ShowValueBox="true" isIOBox="true" Value="True">
-              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.vl">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                 <Choice Kind="TypeFlag" Name="Boolean" />
               </p:TypeAnnotation>
             </Pad>
@@ -1049,7 +1085,7 @@
           <p:HideCategory p:Type="Boolean">false</p:HideCategory>
           <Patch Id="BifNqjF5DEZLnf2dOsV1Bn">
             <Node Bounds="315,499,43,26" AutoConnect="true" Id="GvtUVPf8Q8XNdlnHXBJV9D">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll" OverloadStrategy="AllPinsThatAreNotCommon">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll" OverloadStrategy="AllPinsThatAreNotCommon">
                 <Choice Kind="OperationNode" Name="Start" />
                 <FullNameCategoryReference ID="System.Diagnostics.Process" />
                 <PinReference Kind="InputPin" Name="Input" />
@@ -1076,7 +1112,7 @@
           <p:HideCategory p:Type="Boolean">false</p:HideCategory>
           <Patch Id="Im1D40nW7TJLjkbxzPho8w">
             <Node Bounds="321,649,45,26" AutoConnect="true" Id="MGxN8gXG0oAPEt0FiDMKct">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                 <Choice Kind="OperationNode" Name="Exited" />
                 <FullNameCategoryReference ID="System.Diagnostics.Process" />
               </p:NodeReference>
@@ -1100,7 +1136,7 @@
           <p:HideCategory p:Type="Boolean">false</p:HideCategory>
           <Patch Id="NdYhNMcIvsmOBoxwVtUnh4">
             <Node Bounds="316,802,57,26" AutoConnect="true" Id="EsLc9GliSRhOHRSR9tK6y0">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                 <Choice Kind="OperationNode" Name="ExitCode" />
                 <FullNameCategoryReference ID="System.Diagnostics.Process" />
               </p:NodeReference>
@@ -1126,7 +1162,7 @@
           <p:HideCategory p:Type="Boolean">false</p:HideCategory>
           <Patch Id="JBLh9BinFTWLQnfflLttR3">
             <Node Bounds="308,374,46,26" AutoConnect="true" Id="Q2pSftKKgqnPShyWiXqiuc">
-              <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastSymbolSource="System.Diagnostics.Process.dll">
+              <p:NodeReference LastCategoryFullName="System.Diagnostics.Process" LastDependency="System.Diagnostics.Process.dll">
                 <Choice Kind="OperationNode" Name="Create" />
                 <FullNameCategoryReference ID="System.Diagnostics.Process" />
               </p:NodeReference>
@@ -1160,4 +1196,5 @@
   </Patch>
   <PlatformDependency Id="BPObeQVpr38QbCzv4pAhjK" Location="System.Runtime" />
   <PlatformDependency Id="OtJ4D7Rn3VaM9cmGpWJBdo" Location="System.Diagnostics.Process" />
+  <NugetDependency Id="A4CLdtsjr5JM7AzevBn2J5" Location="Humanizer.Core" Version="2.2.0" />
 </Document>
