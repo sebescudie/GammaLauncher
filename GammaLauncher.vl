@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2022.5.0-0536-gb07a1658b7" Version="0.128">
-  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2022.5.0-0536-gb07a1658b7" />
+<Document xmlns:p="property" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2022.5.0-0545-gedd0cac281" Version="0.128">
+  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2022.5.0-0545-gedd0cac281" />
   <Patch Id="VwtUUR3K9mbPm4q6fszgF3">
     <Canvas Id="Cn8FrGu71DtOiQColm6Utc" DefaultCategory="Main" CanvasType="FullCategory">
       <Canvas Id="A8kMw5cSAh9N9pwyyLzDKt" Name="Model" Position="92,129">
@@ -7776,7 +7776,7 @@
                   <Pin Id="MKOZAu9PvWaOmaAoMDAia3" Name="Visible" Kind="InputPin" />
                   <Pin Id="BrFv9yGooISLwfliMP6Q29" Name="Output" Kind="OutputPin" />
                 </Node>
-                <ControlPoint Id="EyXW35ALOHXNCeQ66dG7tk" Bounds="466,111" />
+                <ControlPoint Id="EyXW35ALOHXNCeQ66dG7tk" Bounds="466,82" />
                 <Node Bounds="459,662,49,19" Id="HRjuXKalIAyLW1YKY0J2AO">
                   <p:NodeReference LastCategoryFullName="VL.WinFormsUtils" LastDependency="VL.WinFormsUtils.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -7989,6 +7989,31 @@
                   <Pin Id="E82a96Bf0N6MUYwBJw9rhF" Name="Value" Kind="InputPin" />
                   <Pin Id="SIZL3cTLaRtOEYsgzyEALu" Name="Output" Kind="StateOutputPin" />
                 </Node>
+                <Node Bounds="551,79,66,19" Id="Czm1WMTGgNbMKasI4dVXdJ">
+                  <p:NodeReference LastCategoryFullName="ImGui.Styling" LastDependency="VL.ImGui.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="FontConfig" />
+                  </p:NodeReference>
+                  <Pin Id="BY4YqYfIqB5LhthPs7oEw6" Name="Family Name" Kind="InputPin" DefaultValue="Segoe UI" />
+                  <Pin Id="E0PqAiMWaImOCDQzOxPY6R" Name="Font Style" Kind="InputPin" />
+                  <Pin Id="QI3qoeOj43VQDzNlveFupv" Name="Size" Kind="InputPin" />
+                  <Pin Id="U3KbxsKB1CbOdc5gjssgTh" Name="Name" Kind="InputPin" />
+                  <Pin Id="FoWsEvrkvDjPV7gV173RNB" Name="Output" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="551,108,39,19" Id="JgJuUaDJFfJNXxbcubtN7o">
+                  <p:NodeReference LastCategoryFullName="Collections.Spread" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="ClassType" Name="Spread" NeedsToBeDirectParent="true" />
+                    <Choice Kind="OperationCallFlag" Name="Cons" />
+                  </p:NodeReference>
+                  <Pin Id="RNf3yIfy0M1PEZAwviMZbY" Name="Input" Kind="InputPin" />
+                  <Pin Id="HrfCh33cnLVLAQiFfusAlT" Name="Result" Kind="OutputPin" />
+                </Node>
+                <Pad Id="Hwi7WBloLhtNlr0QvBEgkq" Comment="Family Name" Bounds="553,63,160,15" ShowValueBox="true" isIOBox="true" Value="Segoe UI">
+                  <p:TypeAnnotation LastCategoryFullName="Text" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="TypeFlag" Name="FontList" />
+                  </p:TypeAnnotation>
+                </Pad>
               </Canvas>
               <ProcessDefinition Id="GJ1MuldFPStOxgWQnx9ZN6">
                 <Fragment Id="E0AYloWrji9NeKyn663gCn" Patch="Bm4kKQT1Qc0OcozdFGTBMM" Enabled="true" />
@@ -8052,6 +8077,9 @@
               <Link Id="UCuTIKYhf6KLoqpl0CGirV" Ids="NLAJC0OukgMPIsKVztFagf,JBuOkGu2yIdNWSYj7lj8MO" />
               <Link Id="PqaQpY6x5IdPdq19zKCoys" Ids="BrFv9yGooISLwfliMP6Q29,MoWCRioHi7pNhUP0ofdORz" />
               <Link Id="SzbL9SJMnUiMq3a0ODLLOJ" Ids="SIZL3cTLaRtOEYsgzyEALu,DIKhEwDdMiULemyivm4oFh" />
+              <Link Id="NnIiA7ATKVGN4v8XvbsAKr" Ids="FoWsEvrkvDjPV7gV173RNB,RNf3yIfy0M1PEZAwviMZbY" />
+              <Link Id="KKfx4JfZJXMOCPgdxOslbA" Ids="HrfCh33cnLVLAQiFfusAlT,UsPdsGv37q2PilCo54HWMp" />
+              <Link Id="CJYD1hDpsQtL0DXrq2sgfj" Ids="Hwi7WBloLhtNlr0QvBEgkq,BY4YqYfIqB5LhthPs7oEw6" />
             </Patch>
           </Node>
         </Canvas>
@@ -9160,11 +9188,6 @@
                 </Node>
                 <ControlPoint Id="LEXjrGri5mNLaNqvsIHb4H" Bounds="592,494" />
               </Canvas>
-              <!--
-
-    ************************  ************************
-
--->
               <ProcessDefinition Id="QWsSEvHplvIQMCRNty8Ppg">
                 <Fragment Id="PsEox3KqMFzNSmeslaWnlC" Patch="L0lPz1Keo3HOj7vFe0gqmO" Enabled="true" />
                 <Fragment Id="CP3FaRuTuitOks2mffeEMQ" Patch="KsW501wYQozNg1ebjTXNYc" Enabled="true" />
@@ -13903,15 +13926,15 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2022.5.0-0536-gb07a1658b7" />
+  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2022.5.0-0545-gedd0cac281" />
   <PlatformDependency Id="PR2RZQLpnGKNZvYQVn3Ead" Location="mscorlib" />
   <PlatformDependency Id="Ow5sjuC3immNloZfvkN1g7" Location="System.Windows.Forms" />
   <PlatformDependency Id="HMEsYQpErI5OqaqpKnu53t" Location="System.Drawing" />
   <NugetDependency Id="A7QaxZnKLQBPrEoH3eQWQY" Location="RestSharp" Version="106.15.0" />
-  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2022.5.0-0536-gb07a1658b7" />
+  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2022.5.0-0545-gedd0cac281" />
   <NugetDependency Id="Vnl8tgKwbGMP0yvGw64Adv" Location="Semver" Version="2.0.6" />
-  <NugetDependency Id="IscN5qIHnL6N2GQSwSz602" Location="VL.ImGui" Version="2022.5.0-0536-gb07a1658b7" />
-  <NugetDependency Id="DueOVdpuzHRN7xQZ6gn9H6" Location="VL.ImGui.Skia" Version="2022.5.0-0536-gb07a1658b7" />
+  <NugetDependency Id="IscN5qIHnL6N2GQSwSz602" Location="VL.ImGui" Version="2022.5.0-0545-gedd0cac281" />
+  <NugetDependency Id="DueOVdpuzHRN7xQZ6gn9H6" Location="VL.ImGui.Skia" Version="2022.5.0-0545-gedd0cac281" />
   <DocumentDependency Id="K4SG30vxDXFQCQQq5jLvaS" Location="./GammaLauncher.Proxies.vl" />
   <NugetDependency Id="ObULv8xpK0APMCczaZvh3u" Location="Downloader" Version="3.0.3" />
   <NugetDependency Id="ExFUESH6MHIL8sAEZQOefx" Location="VL.WinFormsUtils" Version="1.0.9" />
