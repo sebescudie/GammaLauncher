@@ -47,4 +47,4 @@ You can drag and drop any VL document from your file browser on the launcher to 
 
 ## Contributing
 
-All suggestions and pull requests are welcome, don't hesitate to report problems and share suggestions in the issues or on the [vvvv forum](http://wwww.discourse.vvvv.org).
+All suggestions and pull requests are welcome, don't hesitate to report problems and share suggestions in the issues or on the [vvvv forum](http://www.discourse.vvvv.org).
