@@ -5922,6 +5922,55 @@
                             </Node>
                             <ControlPoint Id="OLdF0T56q0qQQK0bqusN0p" Bounds="594,835" />
                             <ControlPoint Id="KMkj7SW1SeLMMzneORzPtz" Bounds="596,573" />
+                            <Node Bounds="708,628,80,86" Id="Rwb5yuFopaOLU5VOjq8aNP">
+                              <p:NodeReference LastCategoryFullName="Reactive.Channel" LastDependency="VL.CoreLib.vl">
+                                <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                                <Choice Kind="ProcessAppFlag" Name="ForEach (Channel)" />
+                              </p:NodeReference>
+                              <Patch Id="T3tHrsw1YLsNKpMP3uwFQ9" ManuallySortedPins="true">
+                                <Patch Id="RaExxVWfYmvOaLQ2QZRXEf" Name="Create" ManuallySortedPins="true" />
+                                <Patch Id="PCWBSP3k5gzPIPqPbSiySB" Name="Update" ManuallySortedPins="true" />
+                                <Node Bounds="742,667" Id="EQzs1rncL4YOm8Hxd9wRL0">
+                                  <p:NodeReference LastCategoryFullName="Main.Runtime.LaunchTabRuntime" LastDependency="GammaLauncher.vl">
+                                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                                    <Choice Kind="OperationCallFlag" Name="ScanLocalVvvvVersions" />
+                                  </p:NodeReference>
+                                  <Pin Id="SP4jGrzhURYMh3oItbH9vs" Name="Input" Kind="StateInputPin" />
+                                  <Pin Id="UVVjAfou5sKNZrPHadJRyt" Name="Output" Kind="StateOutputPin" />
+                                </Node>
+                              </Patch>
+                              <Pin Id="Er25PnQuWtYOceRciiDlWV" Name="At Least Run Once" Kind="InputPin" />
+                              <ControlPoint Id="AzrHCqSNQKgLLa9O7sCyY6" Bounds="725,635" Alignment="Top" />
+                            </Node>
+                            <Node Bounds="807,382" Id="M15ftclAhh5MbRnZNQ2U0t">
+                              <p:NodeReference LastCategoryFullName="Main.App.App" LastDependency="GammaLauncher.vl">
+                                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                                <Choice Kind="OperationCallFlag" Name="GetRuntimeChannel" />
+                              </p:NodeReference>
+                              <Pin Id="IaGoPnp5KvVLANbXNXsjon" Name="Input" Kind="StateInputPin" />
+                              <Pin Id="Ih7RxFI0VQbOZDokL3ONRG" Name="State Output" Kind="StateOutputPin" />
+                              <Pin Id="LJZZVHC582IO6UCWGERosW" Name="Output" Kind="OutputPin" />
+                            </Node>
+                            <Node Bounds="908,422,41,19" Id="BXtXUh2gwDTNbMOdAZWBzn">
+                              <p:NodeReference LastCategoryFullName="Reactive.Channel" LastDependency="VL.CoreLib.vl">
+                                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                                <CategoryReference Kind="ClassType" Name="Channel" NeedsToBeDirectParent="true" />
+                                <Choice Kind="OperationCallFlag" Name="Value" />
+                              </p:NodeReference>
+                              <Pin Id="KsmIZKI9GOvMnZXsgdgMEa" Name="Input" Kind="StateInputPin" />
+                              <Pin Id="Icf2W82WMq4QS4pU8Wduss" Name="Output" Kind="StateOutputPin" />
+                              <Pin Id="EJtfxuRL6n8PnXRg9NvBiG" Name="Value" Kind="OutputPin" />
+                            </Node>
+                            <Node Bounds="943,448,119,26" Id="QTOiIEy98ruPhNCb6zPWLj">
+                              <p:NodeReference LastCategoryFullName="Main.Runtime.ApplicationRuntime" LastDependency="GammaLauncher.vl">
+                                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                                <CategoryReference Kind="ClassType" Name="ApplicationRuntime" />
+                                <Choice Kind="OperationCallFlag" Name="GetLaunchTabRuntime" />
+                              </p:NodeReference>
+                              <Pin Id="VXiZNJHekCeNsGyK0MOnhd" Name="Input" Kind="StateInputPin" />
+                              <Pin Id="JmOulICL1q4LicI9Hjj4ZR" Name="Output" Kind="StateOutputPin" />
+                              <Pin Id="Kv1wWHTA1sAPcwKZS9VoK8" Name="Launch Tab Runtime" Kind="OutputPin" />
+                            </Node>
                           </Canvas>
                           <ProcessDefinition Id="INp7VmAXDcsMimfR0Ou7vW">
                             <Fragment Id="JPXNsCELtzSNpdwJmQHyl7" Patch="SAiRMFrQjTYNo91tIzDiXw" Enabled="true" />
@@ -5999,6 +6048,11 @@
                           <Link Id="RPXQ4l8t58qPHAvLPn4tyr" Ids="Jh4uO1x4gKvQIDsKQWFQOK,LKLuB8mgdjyPaXQVWs081w" />
                           <Link Id="RmaaJoqXF6AN2IH9zimiUe" Ids="Nhe8BwZID4iMoQB9HOMlhw,Ucgnov7Wj6RLLxJ2aSRavH" />
                           <Link Id="Qsw4up6zGHbPHQ0fP1ORxQ" Ids="UCiScDY6yuHPkA8RgMRr27,KMkj7SW1SeLMMzneORzPtz,OLdF0T56q0qQQK0bqusN0p,NIHHkhL2SXSNz2IxXTKXJ9" />
+                          <Link Id="MdiEwROCLerNyI2jiIFu77" Ids="U7loAhPVH51LqYtQ2kkF0H,AzrHCqSNQKgLLa9O7sCyY6" />
+                          <Link Id="IrG7pxwprZ0OGvZb3LEFKo" Ids="HVCOC9ltNmWOvL4BGELnKX,IaGoPnp5KvVLANbXNXsjon" />
+                          <Link Id="UTygdItFbUdOJ1BYPt6i5o" Ids="LJZZVHC582IO6UCWGERosW,KsmIZKI9GOvMnZXsgdgMEa" />
+                          <Link Id="DR2qIRhhDBTNE6DNN2Hs4A" Ids="EJtfxuRL6n8PnXRg9NvBiG,VXiZNJHekCeNsGyK0MOnhd" />
+                          <Link Id="LBaqJSQvDThQXmW9Tx6eRz" Ids="Kv1wWHTA1sAPcwKZS9VoK8,SP4jGrzhURYMh3oItbH9vs" />
                         </Patch>
                       </Node>
                       <!--
