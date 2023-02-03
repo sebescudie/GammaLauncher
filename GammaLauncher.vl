@@ -2578,14 +2578,6 @@
                     <Pin Id="D5J4FCAc2NpQNlinIs4J4z" Name="Output" Kind="StateOutputPin" />
                     <Pin Id="G41mMco87d3O1jsulWSNKm" Name="Progress Percentage" Kind="OutputPin" />
                   </Node>
-                  <Node Bounds="1748,1761,55,19" Id="MeCVi4ygmrkPxo0JcXLZJJ">
-                    <p:NodeReference LastCategoryFullName="System.Conversion" LastDependency="VL.CoreLib.vl">
-                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="OperationCallFlag" Name="ToString" />
-                    </p:NodeReference>
-                    <Pin Id="IMKcS83IEY3Mh5WujliuVP" Name="Input" Kind="InputPin" />
-                    <Pin Id="NcsW8SVESdKNJfglcAQRka" Name="Result" Kind="OutputPin" />
-                  </Node>
                   <Node Bounds="1728,1801,85,19" Id="Gar55EoWsnSOT21N9vCfvi">
                     <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -2608,6 +2600,15 @@
                     <Pin Id="EJcZu6dYFzDPtSHF77Dl7u" Name="Input" Kind="StateInputPin" />
                     <Pin Id="RqJ30LIfQeePmuVKOJzg6F" Name="Value" Kind="InputPin" />
                     <Pin Id="StJ3WCVavmeMv3DoF5EMxQ" Name="Output" Kind="StateOutputPin" />
+                  </Node>
+                  <Node Bounds="1748,1752,55,19" Id="SWGp8xumU9kNVUr4JM6z0v">
+                    <p:NodeReference LastCategoryFullName="System.Conversion" LastDependency="VL.CoreLib.vl">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <Choice Kind="OperationCallFlag" Name="ToString (Format)" />
+                    </p:NodeReference>
+                    <Pin Id="G2ZZtARLiVvLeO6LGFqNMK" Name="Input" Kind="InputPin" />
+                    <Pin Id="I5H8Jej6WlULSmk5MoZXmp" Name="Format" Kind="InputPin" DefaultValue="F2" />
+                    <Pin Id="DHG0VOOeHPdMTHR0zYVzKw" Name="Result" Kind="OutputPin" />
                   </Node>
                 </Patch>
               </Node>
@@ -3573,7 +3574,6 @@
             <Link Id="OeHusQ4A8cVOGHFVruZSRj" Ids="IeWlAiqAbQjMq5P6elujU8,MfQjQvEb5eQMRxZd5OK1ns" />
             <Link Id="MJoO3OyS2DlPLKtfut4Ksc" Ids="KqexEN6nxuWO06Me5SZaRN,RyTzZSoWMPkPWCpL3XWJuv" />
             <Link Id="CT6llTMrc12MVqU5O7sM23" Ids="PRBpy0KdrvGMFCp7hpre2P,RqJ30LIfQeePmuVKOJzg6F" />
-            <Link Id="QyDWiSsQlRPQWGJQK9RlIo" Ids="NcsW8SVESdKNJfglcAQRka,I650ex2ajojLEGeQpGkJgi" />
             <Link Id="TunNOtbJDKGPt5p8s6Q45I" Ids="UlpSM0HGUmFLtEY1FCXuPk,EJcZu6dYFzDPtSHF77Dl7u" />
             <Link Id="IaEiMmVIDxJPzVdUTecBlC" Ids="RpR4xMgiep2QEFqYQyTAaK,J8O6lRfKHvCLFH07YbBtSI" IsHidden="true" />
             <Link Id="FIJPaktwn1JOzHr2sg7I62" Ids="R4own2krf5VM39ye8zzoGl,VWOSzMorrqDLv956yM95Ax" IsHidden="true" />
@@ -3593,7 +3593,6 @@
             <Link Id="CJoUP3lE7BTNOWS4pwsxxU" Ids="Cny2EitEEscNw9aYxxKs1Y,DrGXTtri9hOOtkjSqKvkxV" />
             <Link Id="PK7ftcOvklVMx1r7kpz5f7" Ids="RJNnAJSoqijNEPARO9H8Si,N55peBRy5IOOnp4aCBnsaB" />
             <Link Id="L8w0EY5L1yhOSfE2Ur5XPc" Ids="RJNnAJSoqijNEPARO9H8Si,GYjOg7u0LuUMtlMVoUIUcp" />
-            <Link Id="BdgScbCOOPZOLbLQjXCd6w" Ids="G41mMco87d3O1jsulWSNKm,IMKcS83IEY3Mh5WujliuVP" />
             <Link Id="VJIhXkiWYwZPnWMa5B5ZgF" Ids="DQyJGkCvHY5NadONEowDe3,OzQDYfOUwr9NfDrftlMCtt" />
             <Link Id="ApUe7d62R1jPcCXcaQFOGb" Ids="JpBnW9Hfuf8M3UWW5ljmzv,KQ5LgWv3SAKO86S5zxUKh9" />
             <Link Id="NEw7BPYpZcFPlhduiEcnUp" Ids="Q1cIYbVrxUTQChiZPkheq3,VpWEG4XYmnLOhCdYTbpguL" />
@@ -3741,6 +3740,8 @@
             <Link Id="McxhNVZp6pQNwZUEkGkItQ" Ids="CVXyRkwuToCQBtTVMjFsMi,ECndSOjUbpjPZM62mkH5YK" />
             <Link Id="IXsDScuckqQP6h281Eax4x" Ids="UlpSM0HGUmFLtEY1FCXuPk,LhbWt55T720L5hdTxzhjfn" />
             <Link Id="FliaHwcW7bGN90fAR24dyn" Ids="LhrX0y1iI8YNTQS8Q41v2r,V7dBHKQDbYcMHCJRIg85Us" />
+            <Link Id="LfTrakzfR69NdosrvQmAsu" Ids="G41mMco87d3O1jsulWSNKm,G2ZZtARLiVvLeO6LGFqNMK" />
+            <Link Id="Ryy1hYHI87WL0dgSVKnYMt" Ids="DHG0VOOeHPdMTHR0zYVzKw,I650ex2ajojLEGeQpGkJgi" />
           </Patch>
         </Node>
       </Canvas>
