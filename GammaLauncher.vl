@@ -8519,7 +8519,7 @@
               <Link Id="RZ8UntOgQc8LHXYByOMHO0" Ids="N7FXNJPodOcM2RXME1DLY1,PaYpqKitUzrQXyriOr8aXk" IsHidden="true" />
               <Link Id="RWGJIINT9v9QFrHSvLOeeo" Ids="CcgcdQHYZH8P9pO2naA0wo,KApThxJUUN8MPuzcMANrQR" />
               <Link Id="SzpDIwWCzPCLp5YNCwezdw" Ids="GGN60yJegBwL8TG9p1JwBZ,CcgcdQHYZH8P9pO2naA0wo" IsHidden="true" />
-              <Patch Id="Bm4kKQT1Qc0OcozdFGTBMM" Name="Create" ParticipatingElements="ASfW3DNnvnaPkpr2gO4DB7,RWGJIINT9v9QFrHSvLOeeo,AoJ0gtoW7uDM1ZCFsQiH51">
+              <Patch Id="Bm4kKQT1Qc0OcozdFGTBMM" Name="Create" ParticipatingElements="AoJ0gtoW7uDM1ZCFsQiH51,ASfW3DNnvnaPkpr2gO4DB7,RWGJIINT9v9QFrHSvLOeeo">
                 <Pin Id="GGN60yJegBwL8TG9p1JwBZ" Name="Bounds" Kind="InputPin" />
               </Patch>
               <Patch Id="FJ84QatQZP2MX392IRi72p" Name="Update" ParticipatingElements="N8ly9ye4e8iM2DfRzsDzhD,UNd8JTkdOw8QZ1tpAfK7OB,QNof9ckJkWrO035VftCJXT,OJExv3gW6TZMhxB8mluTUh">
@@ -9279,6 +9279,13 @@
                   <Pin Id="DwDXNMkB9s7MYP4OKVVI0l" Name="Input" Kind="InputPin" />
                   <Pin Id="EZOfpzGoLGvQAOpDnnUIEA" Name="Keyboard Device" Kind="InputPin" />
                 </Node>
+                <Node Bounds="823,339,115,19" Id="Mf6SPAoIWo8P3XanIZkaZH">
+                  <p:NodeReference LastCategoryFullName="Main.Editor.Keyboard" LastDependency="GammaLauncher.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="ShowSettingsLocation" />
+                  </p:NodeReference>
+                  <Pin Id="QU2eDdR8t67PlMmOUgOgwx" Name="Keyboard Device" Kind="InputPin" />
+                </Node>
               </Canvas>
               <Patch Id="PRiTymeJPRRNSWTDvEXRRa" Name="Create" />
               <Patch Id="OICnLQGWnPgOHVS1t7sjgF" Name="Update">
@@ -9304,6 +9311,7 @@
               <Link Id="BHm3qsgN8mTNPxojBUEJoP" Ids="L9vGLKsZI4lQQqhuVIarg5,DzK5F9w82lzMrpEPZ16SA1" />
               <Link Id="CmSSvrN6YnWMk6DoJhOOny" Ids="RZj5cMsGxcpLT3HVdSadgt,EZOfpzGoLGvQAOpDnnUIEA" />
               <Link Id="TU1db0KVwwvLDrW0zZO5uv" Ids="L9vGLKsZI4lQQqhuVIarg5,DwDXNMkB9s7MYP4OKVVI0l" />
+              <Link Id="A5idPp4wfLGPEvBGBtd491" Ids="RZj5cMsGxcpLT3HVdSadgt,QU2eDdR8t67PlMmOUgOgwx" />
             </Patch>
           </Node>
           <!--
@@ -9682,6 +9690,133 @@
               <Link Id="AMC76opHwuPN2om680Zzkp" Ids="Oa46vkCgeapMwQGHasFDvr,PwwZnEkrQedLKUrpsXzaXs" />
             </Patch>
           </Node>
+          <!--
+
+    ************************ ShowSettingsLocation ************************
+
+-->
+          <Node Name="ShowSettingsLocation" Bounds="363,638" Id="GSgqMMv52LhOKVLYAhBaDo">
+            <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+              <Choice Kind="ContainerDefinition" Name="Process" />
+            </p:NodeReference>
+            <Patch Id="NcB55d5j55EPiaT9QcUZ9v">
+              <Canvas Id="UnOrLsakpBjO4H752D1n5a" CanvasType="Group">
+                <Node Bounds="451,311,81,19" Id="MUNcEhIaSKCOkynBGZ9QBH">
+                  <p:NodeReference LastCategoryFullName="IO.Keyboard" LastDependency="VL.Skia.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="KeyboardState" />
+                    <CategoryReference Kind="Category" Name="Keyboard" NeedsToBeDirectParent="true">
+                      <p:OuterCategoryReference Kind="Category" Name="IO" NeedsToBeDirectParent="true" />
+                    </CategoryReference>
+                  </p:NodeReference>
+                  <Pin Id="FPIA48gDKoAQMCzorTrYMo" Name="Keyboard Device" Kind="InputPin" />
+                  <Pin Id="DhbCfnxudNmQERvfzrLzaW" Name="Pressed Keys" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="451,360,60,19" Id="RzkOXhTXuatPddYp0IunOA">
+                  <p:NodeReference LastCategoryFullName="IO.Keyboard" LastDependency="VL.Skia.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="KeyMatch" />
+                  </p:NodeReference>
+                  <Pin Id="KtMlfngBwRRNoXXRpQmsEZ" Name="Keys" Kind="InputPin" />
+                  <Pin Id="KJsAc0pqDrOOgsWIwOql1P" Name="Key Name" Kind="InputPin" DefaultValue="ControlKey">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                      <Choice Kind="TypeFlag" Name="String" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="Q5rALSvSgcmNqu7F9v0S7s" Name="Is Down" Kind="OutputPin" />
+                </Node>
+                <ControlPoint Id="HoPiKkZDB89NedANIH52R6" Bounds="453,280" />
+                <Node Bounds="451,443,56,19" Id="B6mbYlkD6idM1Yleea2HWZ">
+                  <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="TogEdge" />
+                  </p:NodeReference>
+                  <Pin Id="Az95Bvv5HRLQD5zWcHwh3t" Name="Value" Kind="InputPin" />
+                  <Pin Id="Qps0Ko2V5dgNktmd5TJL9P" Name="Up Edge" Kind="OutputPin" />
+                  <Pin Id="IQvedhuuVODMCVuAsN8kIY" Name="Down Edge" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="534,360,60,19" Id="PapUcq90RtwL62BGpW6pTW">
+                  <p:NodeReference LastCategoryFullName="IO.Keyboard" LastDependency="VL.Skia.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="KeyMatch" />
+                  </p:NodeReference>
+                  <Pin Id="R6zId0zdWYfMPMHQabBRjg" Name="Keys" Kind="InputPin" />
+                  <Pin Id="KR8F2TaRDSpM2xnAhXYWZJ" Name="Key Name" Kind="InputPin" DefaultValue="Oemcomma">
+                    <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                      <Choice Kind="TypeFlag" Name="String" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                  <Pin Id="EsgFTtigrT9MnPoRmdHh41" Name="Is Down" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="451,401,37,19" Id="Ao4vmPNOZiuPIcfdh9YDJE">
+                  <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="AND" />
+                  </p:NodeReference>
+                  <Pin Id="IDb9IU2MojwLUAvH8MJYAE" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="PVq16FADtV7MaUfKheBSws" Name="Input 2" Kind="InputPin" />
+                  <Pin Id="JriOtmbYMPMNZfRdMDCKoR" Name="Output" Kind="StateOutputPin" />
+                </Node>
+                <Node Bounds="238,530,125,19" Id="BdlaqCfv4f0QBft6PA71pu">
+                  <p:NodeReference LastCategoryFullName="System" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="Executor" />
+                  </p:NodeReference>
+                  <Pin Id="FsA4jdelDzOOsqMLUGX2kJ" Name="File Name" Kind="InputPin" DefaultValue="explorer.exe" />
+                  <Pin Id="Lu5goPsceshPmJcvmvqOCP" Name="Arguments" Kind="InputPin" />
+                  <Pin Id="LKarxutXFAeN0x8WqJ1tJr" Name="Working Directory" Kind="InputPin" />
+                  <Pin Id="T4FjSvX0l4yO5pM8vkLb0q" Name="Execute" Kind="InputPin" />
+                  <Pin Id="GXXy3wd6QyuNXBW3uwDOIO" Name="State Output" Kind="StateOutputPin" />
+                  <Pin Id="GJjqvNmDnylMKJmUQtqA0t" Name="Output" Kind="OutputPin" />
+                  <Pin Id="CI5OBSx3xqBLIO4LByfP7F" Name="Error" Kind="OutputPin" />
+                  <Pin Id="Iyfbf7Qrv11Pd2aUkc4jB3" Name="Exited" Kind="OutputPin" />
+                  <Pin Id="DatQJ0oU6sVN2jdiNPyCRM" Name="Id" Kind="OutputPin" />
+                  <Pin Id="KBv36uS5FbZOyk8VCdNIy1" Name="IsRunning" Kind="OutputPin" />
+                  <Pin Id="Bl0FcQRsgjgLBjO7ZZhQjw" Name="Exit Code" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="278,463,93,19" Id="PeCMFsCOKwSNAQ0MfY8Lho">
+                  <p:NodeReference LastCategoryFullName="Main.Utils" LastDependency="GammaLauncher.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="UserSettingsPath" />
+                  </p:NodeReference>
+                  <Pin Id="LxN9i54T0n4PsrvwsF2qMo" Name="Result" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="278,499,57,19" Id="TLhEIF4HoIPPzPcCCkrc6v">
+                  <p:NodeReference LastCategoryFullName="IO.Path" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="OperationCallFlag" Name="Filename (Split)" />
+                  </p:NodeReference>
+                  <Pin Id="K6wStXYWJIFOuI3TULy64v" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="EMuNiOXLGs0NVOUATCJtSj" Name="Directory" Kind="OutputPin" />
+                  <Pin Id="HdOt3NQ1JdrLqaV7MeYfTf" Name="Filename" Kind="OutputPin" />
+                  <Pin Id="R6oUezgQYV0OVwkZo16JZl" Name="Extension" Kind="OutputPin" />
+                </Node>
+              </Canvas>
+              <Patch Id="DZiahF1xvlnOvC6Z0GEbrc" Name="Create" />
+              <Patch Id="VneP2RXJ2STPTHXqvpAQ2K" Name="Update">
+                <Pin Id="ILNbG45S7SFMszKtHtSVZa" Name="Keyboard Device" Kind="InputPin" Bounds="350,499" />
+              </Patch>
+              <!--
+
+    ************************  ************************
+
+-->
+              <ProcessDefinition Id="U5vVYF8QCVEN1DqQNKE2ec">
+                <Fragment Id="T1QRgLfpXpvLtZG3WYF1hq" Patch="DZiahF1xvlnOvC6Z0GEbrc" Enabled="true" />
+                <Fragment Id="KqxQbHaMKUrL4XSvvCvBd9" Patch="VneP2RXJ2STPTHXqvpAQ2K" Enabled="true" />
+              </ProcessDefinition>
+              <Link Id="Kd6oJAGbd6GML969cdSZmn" Ids="DhbCfnxudNmQERvfzrLzaW,KtMlfngBwRRNoXXRpQmsEZ" />
+              <Link Id="Ke8ImpPd9HyQNQmv2HWsBs" Ids="HoPiKkZDB89NedANIH52R6,FPIA48gDKoAQMCzorTrYMo" />
+              <Link Id="I4lITpxCqY1M4g6E66RcWM" Ids="ILNbG45S7SFMszKtHtSVZa,HoPiKkZDB89NedANIH52R6" IsHidden="true" />
+              <Link Id="VS3MAvXeZ68O2eYFm9b20I" Ids="DhbCfnxudNmQERvfzrLzaW,R6zId0zdWYfMPMHQabBRjg" />
+              <Link Id="LgTwxDB5kniLloFwa2LLFg" Ids="EsgFTtigrT9MnPoRmdHh41,PVq16FADtV7MaUfKheBSws" />
+              <Link Id="Fb0CyCW9ZRSNqK2KFsnkfh" Ids="Q5rALSvSgcmNqu7F9v0S7s,IDb9IU2MojwLUAvH8MJYAE" />
+              <Link Id="PyOfL0I6KXlLtDVpZAmtrm" Ids="JriOtmbYMPMNZfRdMDCKoR,Az95Bvv5HRLQD5zWcHwh3t" />
+              <Link Id="HPjbpsYZuGkN02sNpMGYzz" Ids="LxN9i54T0n4PsrvwsF2qMo,K6wStXYWJIFOuI3TULy64v" />
+              <Link Id="O9HXq65iY8aOSun3UHK1Fb" Ids="EMuNiOXLGs0NVOUATCJtSj,Lu5goPsceshPmJcvmvqOCP" />
+              <Link Id="DPm9QbqfLaAMrZMFrkL6qA" Ids="Qps0Ko2V5dgNktmd5TJL9P,T4FjSvX0l4yO5pM8vkLb0q" />
+            </Patch>
+          </Node>
         </Canvas>
       </Canvas>
       <Canvas Id="TCzrVrqZAhXLEJdiTofT9D" Name="App" Position="92,306">
@@ -9854,7 +9989,7 @@
                   <Choice Kind="OperationCallFlag" Name="MakePath" />
                 </p:NodeReference>
                 <Pin Id="ICYicEbqEBeL0mWjX5o9ey" Name="Input" Kind="InputPin" />
-                <Pin Id="HEto0tBzBSTQLnA9LJJUdb" Name="Input 2" Kind="InputPin" DefaultValue="GammaLauncher\settings.xml" />
+                <Pin Id="HEto0tBzBSTQLnA9LJJUdb" Name="Input 2" Kind="InputPin" DefaultValue="GammaLauncher\launcher-settings.xml" />
                 <Pin Id="U68TXhU3auRQADx7ZnIZeN" Name="Output" Kind="OutputPin" />
               </Node>
             </Canvas>
