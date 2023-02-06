@@ -10,4 +10,10 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <ApplicationIcon>$(MsBuildThisFileDirectory)ico.ico</ApplicationIcon>
   </PropertyGroup>
+  <ItemGroup>
+    <ContentWithTargetPath Include="$(MsBuildThisFileDirectory)ico.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>ico.ico</TargetPath>
+    </ContentWithTargetPath>
+  </ItemGroup>
 </Project>
