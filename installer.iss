@@ -36,7 +36,7 @@ LaunchProgram=Start GammaLauncher after finishing installation
 
 
 [Files]
-Source: "D:\Documents\vvvv\gamma-preview\Exports\GammaLauncher\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "build\GammaLauncher\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{group}\GammaLauncher"; Filename: "{app}\GammaLauncher.exe"
