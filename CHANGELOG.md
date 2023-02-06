@@ -1,5 +1,23 @@
 ## Changelog
 
+### 5.0.0
+
+#### New
+
+- Rewrote UI using VL.ImGUI
+- Commes with a super cool installer
+- Settings are now handled with a GUI : no need to manually tweak an XML file anymore!
+- Settings are applied live : no need to restart the launcher when updating them
+
+#### Fixes
+
+- Now retrieves vvvv 5.0 preview builds
+- Faster startup times!
+
+#### Droped
+
+- No more system tray icon. With the move to .NET 6 I could not repatch this one, will tackle it in a future update
+
 ### 4.2.0
 
 - The settings file gets a new `CustomArg` element where one can type an arbitrary command-line argument that will be used every time.

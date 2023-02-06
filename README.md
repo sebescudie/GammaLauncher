@@ -27,7 +27,7 @@ Open the app and go to the _Settings_ tab. There you can specify the follwing pr
 - Extra args : arbitrary arguments the launcher will use when starting a vvvv instance
 - Package repositories : all folders you add in this section will be used as package sources. More information [here](https://thegraybook.vvvv.org/reference/extending/contributing.html#source-package-repositories)
 
-Then go to the _Launch_ tab and press <kbd>F5</kbd>, this will re-scan your installed vvvversions and populate the dropdown menu. Now pick the version you want to work with in the drop down, select startup arguments with the checkboxes and click the _Launch_ button!
+Then go to the _Launch_ tab and pick the version you want to work with in the drop down, select startup arguments with the checkboxes and click the _Launch_ button!
 
 ### Updates
 
