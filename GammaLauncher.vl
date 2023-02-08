@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2022.5.0-0546-ga89794b889" Version="0.128">
-  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2022.5.0-0546-ga89794b889" />
+<Document xmlns:p="property" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2022.5.0-0570-g77c905300e" Version="0.128">
+  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2022.5.0-0570-g77c905300e" />
   <Patch Id="VwtUUR3K9mbPm4q6fszgF3">
     <Canvas Id="Cn8FrGu71DtOiQColm6Utc" DefaultCategory="Main" CanvasType="FullCategory">
       <Canvas Id="A8kMw5cSAh9N9pwyyLzDKt" Name="Model" Position="92,129">
@@ -9774,14 +9774,14 @@
                   <Pin Id="KBv36uS5FbZOyk8VCdNIy1" Name="IsRunning" Kind="OutputPin" />
                   <Pin Id="Bl0FcQRsgjgLBjO7ZZhQjw" Name="Exit Code" Kind="OutputPin" />
                 </Node>
-                <Node Bounds="278,463,93,19" Id="PeCMFsCOKwSNAQ0MfY8Lho">
+                <Node Bounds="278,414,93,19" Id="PeCMFsCOKwSNAQ0MfY8Lho">
                   <p:NodeReference LastCategoryFullName="Main.Utils" LastDependency="GammaLauncher.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="ProcessAppFlag" Name="UserSettingsPath" />
                   </p:NodeReference>
                   <Pin Id="LxN9i54T0n4PsrvwsF2qMo" Name="Result" Kind="OutputPin" />
                 </Node>
-                <Node Bounds="278,499,57,19" Id="TLhEIF4HoIPPzPcCCkrc6v">
+                <Node Bounds="278,450,57,19" Id="TLhEIF4HoIPPzPcCCkrc6v">
                   <p:NodeReference LastCategoryFullName="IO.Path" LastDependency="VL.CoreLib.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="OperationCallFlag" Name="Filename (Split)" />
@@ -9791,16 +9791,12 @@
                   <Pin Id="HdOt3NQ1JdrLqaV7MeYfTf" Name="Filename" Kind="OutputPin" />
                   <Pin Id="R6oUezgQYV0OVwkZo16JZl" Name="Extension" Kind="OutputPin" />
                 </Node>
+                <Pad Id="IEMWuLjKQQuOwjN7msgPfk" SlotId="Qrixu4QRzc6NLe5isZ8gVP" Bounds="280,499" />
               </Canvas>
-              <Patch Id="DZiahF1xvlnOvC6Z0GEbrc" Name="Create" />
+              <Patch Id="DZiahF1xvlnOvC6Z0GEbrc" Name="Create" ParticipatingElements="TLhEIF4HoIPPzPcCCkrc6v,HPjbpsYZuGkN02sNpMGYzz,GATAq1ooR1JLiMurgGe1tR" />
               <Patch Id="VneP2RXJ2STPTHXqvpAQ2K" Name="Update">
                 <Pin Id="ILNbG45S7SFMszKtHtSVZa" Name="Keyboard Device" Kind="InputPin" Bounds="350,499" />
               </Patch>
-              <!--
-
-    ************************  ************************
-
--->
               <ProcessDefinition Id="U5vVYF8QCVEN1DqQNKE2ec">
                 <Fragment Id="T1QRgLfpXpvLtZG3WYF1hq" Patch="DZiahF1xvlnOvC6Z0GEbrc" Enabled="true" />
                 <Fragment Id="KqxQbHaMKUrL4XSvvCvBd9" Patch="VneP2RXJ2STPTHXqvpAQ2K" Enabled="true" />
@@ -9813,8 +9809,10 @@
               <Link Id="Fb0CyCW9ZRSNqK2KFsnkfh" Ids="Q5rALSvSgcmNqu7F9v0S7s,IDb9IU2MojwLUAvH8MJYAE" />
               <Link Id="PyOfL0I6KXlLtDVpZAmtrm" Ids="JriOtmbYMPMNZfRdMDCKoR,Az95Bvv5HRLQD5zWcHwh3t" />
               <Link Id="HPjbpsYZuGkN02sNpMGYzz" Ids="LxN9i54T0n4PsrvwsF2qMo,K6wStXYWJIFOuI3TULy64v" />
-              <Link Id="O9HXq65iY8aOSun3UHK1Fb" Ids="EMuNiOXLGs0NVOUATCJtSj,Lu5goPsceshPmJcvmvqOCP" />
               <Link Id="DPm9QbqfLaAMrZMFrkL6qA" Ids="Qps0Ko2V5dgNktmd5TJL9P,T4FjSvX0l4yO5pM8vkLb0q" />
+              <Slot Id="Qrixu4QRzc6NLe5isZ8gVP" Name="Directory" />
+              <Link Id="GATAq1ooR1JLiMurgGe1tR" Ids="EMuNiOXLGs0NVOUATCJtSj,IEMWuLjKQQuOwjN7msgPfk" />
+              <Link Id="OTh64gi1Jj4Qd30PwWBVLM" Ids="IEMWuLjKQQuOwjN7msgPfk,Lu5goPsceshPmJcvmvqOCP" />
             </Patch>
           </Node>
         </Canvas>
@@ -14431,15 +14429,15 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2022.5.0-0546-ga89794b889" />
+  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2022.5.0-0570-g77c905300e" />
   <PlatformDependency Id="PR2RZQLpnGKNZvYQVn3Ead" Location="mscorlib" />
   <PlatformDependency Id="Ow5sjuC3immNloZfvkN1g7" Location="System.Windows.Forms" />
   <PlatformDependency Id="HMEsYQpErI5OqaqpKnu53t" Location="System.Drawing" />
   <NugetDependency Id="A7QaxZnKLQBPrEoH3eQWQY" Location="RestSharp" Version="106.15.0" />
-  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2022.5.0-0546-ga89794b889" />
+  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2022.5.0-0570-g77c905300e" />
   <NugetDependency Id="Vnl8tgKwbGMP0yvGw64Adv" Location="Semver" Version="2.0.6" />
-  <NugetDependency Id="IscN5qIHnL6N2GQSwSz602" Location="VL.ImGui" Version="2022.5.0-0546-ga89794b889" />
-  <NugetDependency Id="DueOVdpuzHRN7xQZ6gn9H6" Location="VL.ImGui.Skia" Version="2022.5.0-0546-ga89794b889" />
+  <NugetDependency Id="IscN5qIHnL6N2GQSwSz602" Location="VL.ImGui" Version="2022.5.0-0570-g77c905300e" />
+  <NugetDependency Id="DueOVdpuzHRN7xQZ6gn9H6" Location="VL.ImGui.Skia" Version="2022.5.0-0570-g77c905300e" />
   <DocumentDependency Id="K4SG30vxDXFQCQQq5jLvaS" Location="./GammaLauncher.Proxies.vl" />
   <NugetDependency Id="ObULv8xpK0APMCczaZvh3u" Location="Downloader" Version="3.0.3" />
   <NugetDependency Id="ExFUESH6MHIL8sAEZQOefx" Location="VL.WinFormsUtils" Version="1.0.9" />
