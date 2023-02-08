@@ -496,9 +496,9 @@
                 <Pin Id="LBmnUk6XAmpPWhj3OmknMH" Name="Application Model" Kind="InputPin" />
                 <Pin Id="UzQpW4IpwNnMRyqZ4PIWbc" Name="Output" Kind="StateOutputPin" />
               </Node>
-              <Pad Id="Nc69LcXt0sCMHlpRNd69OK" SlotId="Cx0KB2m4XcEPj3BUz0uszE" Bounds="184,576" />
+              <Pad Id="Nc69LcXt0sCMHlpRNd69OK" SlotId="Cx0KB2m4XcEPj3BUz0uszE" Bounds="184,516" />
               <ControlPoint Id="K53qajMA7nIOHDiwzZJA7i" Bounds="451,179" />
-              <ControlPoint Id="KcWa6wVem9EPbOOodZYq20" Bounds="184,646" />
+              <ControlPoint Id="KcWa6wVem9EPbOOodZYq20" Bounds="184,691" />
               <Node Bounds="182,307,120,26" Id="Lnj8RUujb24OPdr3lyhNWh">
                 <p:NodeReference LastCategoryFullName="Main.Runtime.LaunchTabRuntime" LastDependency="GammaLauncher.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -519,9 +519,9 @@
                 <Pin Id="NfiYmrqRqSLQMh7nldlCzM" Name="App Version" Kind="InputPin" />
                 <Pin Id="HCJrmp9quNLPjl38HKbb2N" Name="Output" Kind="StateOutputPin" />
               </Node>
-              <Pad Id="KWsMvLA8rVEPsEWwdifYKs" SlotId="Pq0ZIIBNSw8OWDsG0qpvaH" Bounds="452,576" />
-              <ControlPoint Id="QwhqY6nKkcVOw93T6cIfUb" Bounds="452,646" />
-              <Node Bounds="497,595,88,26" Id="S6LUaqrXhCTNkLWbjgpMdb">
+              <Pad Id="KWsMvLA8rVEPsEWwdifYKs" SlotId="Pq0ZIIBNSw8OWDsG0qpvaH" Bounds="452,516" />
+              <ControlPoint Id="QwhqY6nKkcVOw93T6cIfUb" Bounds="452,691" />
+              <Node Bounds="493,580,88,26" Id="S6LUaqrXhCTNkLWbjgpMdb">
                 <p:NodeReference LastCategoryFullName="Main.Runtime.UpdatesTabRuntime" LastDependency="GammaLauncher.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="ClassType" Name="UpdatesTabRuntime" NeedsToBeDirectParent="true" />
@@ -529,6 +529,7 @@
                 </p:NodeReference>
                 <Pin Id="EjFaSZq5oONOzb4xmY0hMj" Name="Input" Kind="StateInputPin" />
                 <Pin Id="AVccLVB44lBOhHqditmx4k" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="JODroonHBz3NtrOQDYkwTs" Name="Apply" Kind="InputPin" />
               </Node>
               <Node Bounds="450,438,126,26" Id="Vjaz2CK8vlSQBDCvCH70pQ">
                 <p:NodeReference LastCategoryFullName="Main.Runtime.UpdatesTabRuntime" LastDependency="GammaLauncher.vl">
@@ -539,7 +540,7 @@
                 <Pin Id="FxC8VfVv3h2P4cK2M0M34u" Name="Input" Kind="StateInputPin" />
                 <Pin Id="OFtVSAli6AfNHAUf88FhWs" Name="Output" Kind="StateOutputPin" />
               </Node>
-              <Node Bounds="231,605" Id="Iw8ZgRjXbxsO8yN82e4cot">
+              <Node Bounds="215,580,85,26" Id="Iw8ZgRjXbxsO8yN82e4cot">
                 <p:NodeReference LastCategoryFullName="Main.Runtime.LaunchTabRuntime" LastDependency="GammaLauncher.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <CategoryReference Kind="ClassType" Name="LaunchTabRuntime" NeedsToBeDirectParent="true" />
@@ -547,8 +548,27 @@
                 </p:NodeReference>
                 <Pin Id="MiY6JpxwjAQLXCENXvwNrq" Name="Input" Kind="StateInputPin" />
                 <Pin Id="LrvS0s32bnpLW5fKZcWcWs" Name="Output" Kind="StateOutputPin" />
+                <Pin Id="S1RMhDmjj8FPM6HKTrq0Dn" Name="Apply" Kind="InputPin" />
               </Node>
               <ControlPoint Id="PyTuJdYOfMvPEBtfw9cbZN" Bounds="535,235" />
+              <Pad Id="F3bqOputGJlPbC1zx11hx6" Comment="Apply" Bounds="297,561,35,15" ShowValueBox="true" isIOBox="true" Value="False">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+                  <CategoryReference Kind="Category" Name="Primitive" />
+                </p:TypeAnnotation>
+                <p:ValueBoxSettings>
+                  <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
+                </p:ValueBoxSettings>
+              </Pad>
+              <Pad Id="VXIKG7tk4ruLsYwUADOsYD" Comment="Apply" Bounds="578,561,35,15" ShowValueBox="true" isIOBox="true" Value="False">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+                  <CategoryReference Kind="Category" Name="Primitive" />
+                </p:TypeAnnotation>
+                <p:ValueBoxSettings>
+                  <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Toggle</p:buttonmode>
+                </p:ValueBoxSettings>
+              </Pad>
             </Canvas>
             <ProcessDefinition Id="RiLxbh1WoYcOnXeoczL5mz" HasStateOut="true">
               <Fragment Id="DxzpAEvNdmZL33pbfwCuCP" Patch="P9nfKCTthZoLYHr56S29Si" Enabled="true" />
@@ -607,6 +627,8 @@
               <Pin Id="J156i8rDaeBMFR1LWBRDEp" Name="Updates Tab Runtime" Kind="OutputPin" />
             </Patch>
             <Link Id="EInuOSIhP3FPtjv8epjAvj" Ids="PyTuJdYOfMvPEBtfw9cbZN,NfiYmrqRqSLQMh7nldlCzM" />
+            <Link Id="I0Rmq12QbIuPZlXrB9jXR4" Ids="F3bqOputGJlPbC1zx11hx6,S1RMhDmjj8FPM6HKTrq0Dn" />
+            <Link Id="MTnuJut7oAtLe9MFhsnyYK" Ids="VXIKG7tk4ruLsYwUADOsYD,JODroonHBz3NtrOQDYkwTs" />
           </Patch>
         </Node>
         <!--
