@@ -1,5 +1,15 @@
 ## Changelog
 
+### 5.1.0
+
+#### New
+
+- You can now specify "Editable packages" in the settings tab. Typing the name of a package here and starting vvvv will allow you to edit this package. Thanks to @gregsn for this one!
+
+#### Fixed
+
+- The launcher should now accept vvvv installations with new version format
+
 ### 5.0.0
 
 #### New
