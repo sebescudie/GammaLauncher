@@ -1,5 +1,21 @@
 ## Changelog
 
+### 5.1.0
+
+#### New
+
+- You can now specify "Editable packages" in the settings tab. Typing the name of a package here and starting vvvv will allow you to edit this package. Thanks to @gregsn for this one!
+
+#### Fixed
+
+- The launcher should now accept vvvv installations using the new version format
+- When you uninstall a version, the launcher will select the latest available after the uninstaller has ran. This should get rid of the weird behavior where an uninstalled version would still be displayed in the dropdown
+- Now shows a warning if a user tries to open the nuget folder without having selected a vvvversion first (which should only happen in vvvvery rare occasions)
+
+#### Updated
+
+- Installer exit code is now logged in the _Updates_ tab
+
 ### 5.0.0
 
 #### New
