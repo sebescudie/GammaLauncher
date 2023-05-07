@@ -21,10 +21,10 @@
               <ControlPoint Id="Gs0ZLfFXwOlMdqpfHQTPxC" Bounds="213,610" />
               <ControlPoint Id="AY4JTWIrsD9MQ6olpJqvZw" Bounds="213,490" />
               <ControlPoint Id="TM8XmjNnIcjLM4uUNNNETw" Bounds="367,486" />
-              <Pad Id="IhFhgHG1M80PdNrhrafOJV" SlotId="PRVYonqIN8HLQbxA212MIO" Bounds="681,540" />
-              <ControlPoint Id="V8dlmMkxUHLM8B2xBjGmVm" Bounds="681,484" />
-              <ControlPoint Id="LBXoassUyaROV1a8FCbZPn" Bounds="681,610" />
-              <ControlPoint Id="FLOBfgzpQkuLDq4gnVX4tL" Bounds="715,509" />
+              <Pad Id="IhFhgHG1M80PdNrhrafOJV" SlotId="PRVYonqIN8HLQbxA212MIO" Bounds="831,540" />
+              <ControlPoint Id="V8dlmMkxUHLM8B2xBjGmVm" Bounds="831,484" />
+              <ControlPoint Id="LBXoassUyaROV1a8FCbZPn" Bounds="831,610" />
+              <ControlPoint Id="FLOBfgzpQkuLDq4gnVX4tL" Bounds="865,509" />
               <Pad Id="SaAYYUU4q4XNTXYtjMmzL9" SlotId="BjfuAeqUdGiLc2dKp96PsJ" Bounds="526,540" />
               <Pad Id="KVridSVnvm9NA977GV7Enh" Comment="Version" Bounds="526,499,45,15" ShowValueBox="true" isIOBox="true" Value="5.1.0">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
@@ -35,7 +35,13 @@
               <ControlPoint Id="HbjqU8KgprUNnXHWPsn0cg" Bounds="235,582" />
               <ControlPoint Id="JpHxea6spn1LQiuTU14mfC" Bounds="388,582" />
               <ControlPoint Id="VT1ZzIrW7AiK9mxvuuPd0o" Bounds="549,582" />
-              <ControlPoint Id="OEkTClAciBALx14yrya4PK" Bounds="703,582" />
+              <ControlPoint Id="OEkTClAciBALx14yrya4PK" Bounds="853,582" />
+              <Pad Id="TLyyvUzSHiQOn9Y3YpavHv" SlotId="FxwJTSHy4KbN76x0zxkD8R" Bounds="675,539" />
+              <Pad Id="MzzcxJY1pLAPG7P1dZFlV0" Comment="Settings Revision" Bounds="675,495,35,15" ShowValueBox="true" isIOBox="true" Value="2">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="Integer32" />
+                </p:TypeAnnotation>
+              </Pad>
             </Canvas>
             <ProcessDefinition Id="HwyYPlPJeANPWLlJB7Q2Jl" IsHidden="true">
               <Fragment Id="Lb6hwjRfpafMXN1ENL1bSu" Patch="UeVkUKbB99rOPSx1n1EH1B" Enabled="true" />
@@ -92,7 +98,7 @@
             <Link Id="FsIMio5rPqvOCXbo2kzbU6" Ids="VT1ZzIrW7AiK9mxvuuPd0o,QXsSr5kTN05LHh3rjPWDO1" IsHidden="true" />
             <Link Id="FbbtcPXGZpVMFhvPGNWU5r" Ids="IhFhgHG1M80PdNrhrafOJV,OEkTClAciBALx14yrya4PK" />
             <Link Id="L8Dcq9FdZ8UNt1vZZuABHV" Ids="OEkTClAciBALx14yrya4PK,Pc20tGFvOoIOXukcAWdyfl" IsHidden="true" />
-            <Patch Id="UeVkUKbB99rOPSx1n1EH1B" Name="Create" ParticipatingElements="Ltce6H8ourDLLLnH9BNSju,QZ5R4jYCTSTL6cpKf9930u,IOm4KfMzUp7PD8VqrbzhGX,TzR6CwW4ClqOOWvuYN6lbm">
+            <Patch Id="UeVkUKbB99rOPSx1n1EH1B" Name="Create" ParticipatingElements="Ltce6H8ourDLLLnH9BNSju,QZ5R4jYCTSTL6cpKf9930u,IOm4KfMzUp7PD8VqrbzhGX,TzR6CwW4ClqOOWvuYN6lbm,At0w7sKJSWbP0k3Qn8zdsK">
               <Pin Id="OjNu7BqIZkuLoZ80MlBW9N" Name="Launch Tab Model" Kind="InputPin" />
               <Pin Id="DN0TFFHDpZgL0TW5SmLkwi" Name="Settings Model" Kind="InputPin" />
               <Pin Id="SCxWhtd0zTRQFu558X48HR" Name="Window Bounds" Kind="InputPin" Bounds="610,509" />
@@ -118,6 +124,12 @@
               <Pin Id="U8PZ4C1k51fPbTxzr20ZOJ" Name="Settings Model" Kind="OutputPin" />
               <Pin Id="Pc20tGFvOoIOXukcAWdyfl" Name="Window Bounds" Kind="OutputPin" />
             </Patch>
+            <Slot Id="FxwJTSHy4KbN76x0zxkD8R" Name="Settings Revision">
+              <p:TypeAnnotation p:Type="TypeReference">
+                <Choice Kind="TypeFlag" Name="Integer32" />
+              </p:TypeAnnotation>
+            </Slot>
+            <Link Id="At0w7sKJSWbP0k3Qn8zdsK" Ids="MzzcxJY1pLAPG7P1dZFlV0,TLyyvUzSHiQOn9Y3YpavHv" />
           </Patch>
         </Node>
         <!--
