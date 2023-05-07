@@ -635,7 +635,7 @@
                 <Pin Id="LrvS0s32bnpLW5fKZcWcWs" Name="Output" Kind="StateOutputPin" />
                 <Pin Id="S1RMhDmjj8FPM6HKTrq0Dn" Name="Apply" Kind="InputPin" />
               </Node>
-              <Pad Id="F3bqOputGJlPbC1zx11hx6" Comment="Apply" Bounds="297,561,35,15" ShowValueBox="true" isIOBox="true" Value="True">
+              <Pad Id="F3bqOputGJlPbC1zx11hx6" Comment="Apply" Bounds="297,561,35,15" ShowValueBox="true" isIOBox="true" Value="False">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
                   <CategoryReference Kind="Category" Name="Primitive" />
@@ -18311,6 +18311,44 @@
             <Pin Id="Lw9O5JbB4XJMsdoNmBfAfU" Name="Application" Kind="InputPin" />
             <Pin Id="Q7BOO0RprLrLpZ96F1OLnv" Name="Output" Kind="OutputPin" />
           </Node>
+          <Node Bounds="274,277,96,26" Id="IvOdwbtnUd3NHEGDA7CCvr">
+            <p:NodeReference LastCategoryFullName="Main.App.App" LastDependency="GammaLauncher.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="GetModelChannel" />
+            </p:NodeReference>
+            <Pin Id="IUHz7YkoVbuMXDNip4cxmu" Name="Input" Kind="StateInputPin" />
+            <Pin Id="KF20VntvACVM0B2sd3lc7o" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="D6xGdWgQFuRNT5Oi5LXZWP" Name="Application Model Channel" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="353,335,45,26" Id="I9BLdPgFUJSPw0CfWIQQNH">
+            <p:NodeReference LastCategoryFullName="Reactive.Channel" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="MutableInterfaceType" Name="Channel" />
+              <Choice Kind="OperationCallFlag" Name="Value" />
+            </p:NodeReference>
+            <Pin Id="BT6qWLmoBUlOzI6gQMirdR" Name="Input" Kind="StateInputPin" />
+            <Pin Id="FdaLaRMaDF7MoyvwqFCUx2" Name="Output" Kind="StateOutputPin" />
+            <Pin Id="CV2HGp1esy5NO07qNBCGTZ" Name="Value" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="361,391,97,26" Id="DUWyRLeyPHpNjYix5yBwma">
+            <p:NodeReference LastCategoryFullName="Main.Model.ApplicationModel" LastDependency="GammaLauncher.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="RecordType" Name="ApplicationModel" />
+              <Choice Kind="OperationCallFlag" Name="LaunchTabModel" />
+            </p:NodeReference>
+            <Pin Id="FkaVEscNEL7OmafwFkgUM7" Name="Input" Kind="StateInputPin" />
+            <Pin Id="A1vVr7gEz83PMJULoxINMo" Name="Launch Tab Model" Kind="OutputPin" />
+          </Node>
+          <Node Bounds="312,445,104,26" Id="TRnr13bApdJMdnJy7HOWML">
+            <p:NodeReference LastCategoryFullName="Main.Model.LaunchTabModel" LastDependency="GammaLauncher.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <CategoryReference Kind="RecordType" Name="LaunchTabModel" />
+              <Choice Kind="OperationCallFlag" Name="GetSelectedVersion" />
+            </p:NodeReference>
+            <Pin Id="Q0rID2su4M1On3KeACSNha" Name="Input" Kind="StateInputPin" />
+            <Pin Id="SYizuy7TMJSMk45Bm3YU07" Name="Selected Vvvv Version" Kind="OutputPin" />
+          </Node>
+          <Pad Id="Jm7Gh71PxgQO7EeNa9tydh" Comment="Selected Vvvv Version" Bounds="306,538,143,15" ShowValueBox="true" isIOBox="true" />
         </Canvas>
         <Patch Id="KKnejguk59iOlItt5SMhF8" Name="Create" />
         <Patch Id="CKL6bDvGpbBMcPbl7oUMJl" Name="Update" />
@@ -18323,6 +18361,11 @@
         <Link Id="JyL7QuGqd5wLTQNjMNlILH" Ids="Q7BOO0RprLrLpZ96F1OLnv,C66dxMfii8eLTpXdFi2Z0a" />
         <Link Id="EDFh0Zc82h2PBIILqosifZ" Ids="VUqK419WdeSL73H3YcC0hP,Lw9O5JbB4XJMsdoNmBfAfU" />
         <Link Id="BdFXnNBECfsLvMOOc34cW6" Ids="PXt4MhFPF7sM49glNMIYkB,FOtvu5ptxnCMfy4a61eBXT" />
+        <Link Id="H5sytVjImZLLFfPEk1lYLl" Ids="VUqK419WdeSL73H3YcC0hP,IUHz7YkoVbuMXDNip4cxmu" />
+        <Link Id="HDVnysk3bP1MOgBA0geZYM" Ids="D6xGdWgQFuRNT5Oi5LXZWP,BT6qWLmoBUlOzI6gQMirdR" />
+        <Link Id="PvJBNqKS29dMiziw1mbvTt" Ids="CV2HGp1esy5NO07qNBCGTZ,FkaVEscNEL7OmafwFkgUM7" />
+        <Link Id="FaB3uz038p9OYnpMJmfoyu" Ids="A1vVr7gEz83PMJULoxINMo,Q0rID2su4M1On3KeACSNha" />
+        <Link Id="PtoK7ShlZKVNkhklIBX0eL" Ids="SYizuy7TMJSMk45Bm3YU07,Jm7Gh71PxgQO7EeNa9tydh" />
       </Patch>
     </Node>
   </Patch>
