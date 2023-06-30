@@ -1,8 +1,8 @@
 #define MyAppName "GammaLauncher"
-#define MyAppVersion "5.1.0"
+#define MyAppVersion "5.2.0_preview01"
 #define MyAppPublisher "sebescudie"
 #define MyAppURL "www.sebescudie.github.io"
-#define MyAppExeName "gammalauncher_5.1.0_installer"
+#define MyAppExeName "gammalauncher_5.2.0_preview01_installer"
 
 
 [Setup]
