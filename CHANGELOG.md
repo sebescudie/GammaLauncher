@@ -9,6 +9,7 @@ _No stable released yet, preview version only_
 - App can minimize to system tray, thanks [bj-rn](https://github.com/sebescudie/GammaLauncher/commit/072e043aa58f49867e9b83185e94b1d916c191db)!
 - A new _App Settings_ section in the _Settings_ tab allows to set whether to enable that feature or not
 - You can now enable or disable editable packages and repositories folders without deleting them. Kinda like a mute button. Thanks [mhusinsky](https://github.com/sebescudie/GammaLauncher/issues/57) for proposing that feature!
+- vvvv versions installed via the launcher will now be installed to the directory specified in the _vvvv installation path_ setting, thanks again [bj-rn](https://github.com/sebescudie/GammaLauncher/pull/63)!
 
 ### 5.1.0
 
