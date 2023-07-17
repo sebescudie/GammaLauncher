@@ -11,6 +11,10 @@ _No stable released yet, preview version only_
 - You can now enable or disable editable packages and repositories folders without deleting them. Kinda like a mute button. Thanks [mhusinsky](https://github.com/sebescudie/GammaLauncher/issues/57) for proposing that feature!
 - vvvv versions installed via the launcher will now be installed to the directory specified in the _vvvv installation path_ setting, thanks again [bj-rn](https://github.com/sebescudie/GammaLauncher/pull/63)!
 
+#### Changed
+
+- The "Yep" button that monsterkills vvvv instances is now bigger and closer to the _Kill vvvv_ button so that you don't have to aim for it in panic situations. Thanks [fleischverpackung](https://github.com/fleischverpackung) for the suggestion!
+
 ### 5.1.0
 
 #### New
