@@ -14,7 +14,19 @@ GammaLauncher is a simple application that allows to launch vvvv gamma instances
 
 ## Installation
 
-The latest release is available [here](https://github.com/sebescudie/GammaLauncher/releases/latest). Simply download and run the installer. You can find the changelog in the [Releases section](https://github.com/sebescudie/GammaLauncher/releases) or by reading `CHANGELOG.md`.
+### Winget
+
+Open a Terminal window and type
+
+```
+winget install GammaLauncher
+```
+
+This method will install the launcher and its dependencies (.NET6, `vcredist`)
+
+### Manual
+
+The latest release is available [here](https://github.com/sebescudie/GammaLauncher/releases/latest). You can choose between an installer and a portable version.
 
 ## Usage
 
@@ -26,6 +38,7 @@ Open the app and go to the _Settings_ tab. There you can specify the follwing pr
 - Nuget override : if you want to override the default nuget folder with your own, specify it here
 - Extra args : arbitrary arguments the launcher will use when starting a vvvv instance
 - Package repositories : all folders you add in this section will be used as package sources. More information [here](https://thegraybook.vvvv.org/reference/extending/contributing.html#source-package-repositories)
+- Editable packages : allows listed packages to be modified. Otherwise, vvvv precompiles them and they're read-only
 
 Then go to the _Launch_ tab and pick the version you want to work with in the drop down, select startup arguments with the checkboxes and click the _Launch_ button!
 
