@@ -4,21 +4,21 @@
 
 #### New
 
-- You can now install stable and preview vvvversions from the launcher! (#32, #58)
-- App can minimize to system tray. A new _App Settings_ section in the _Settings_ allows to enable or disable this feature (#59)
-- You can now enable or disable editable packages and repositories folders without deleting them. Kinda like a mute button (#57)
-- vvvv versions installed via the launcher will now be installed to the directory specified in the _vvvv installation path_ setting (#63)
-- The launcher can now be installed via `winget`! Type `winget install GammaLauncher` and enjoy (#12, #66)
+- You can now install stable and preview vvvversions from the launcher! ([#32](https://github.com/sebescudie/GammaLauncher/issues/32), [#58](https://github.com/sebescudie/GammaLauncher/issues/58))
+- App can minimize to system tray. A new _App Settings_ section in the _Settings_ allows to enable or disable this feature ([#59](https://github.com/sebescudie/GammaLauncher/issues/59) by [bj-rn](https://github.com/bj-rn))
+- You can now enable or disable editable packages and repositories folders without deleting them. Kinda like a mute button ([#57](https://github.com/sebescudie/GammaLauncher/issues/57))
+- vvvv versions installed via the launcher will now be installed to the directory specified in the _vvvv installation path_ setting ([#63](https://github.com/sebescudie/GammaLauncher/issues/63))
+- The launcher can now be installed via `winget`! Type `winget install GammaLauncher` and enjoy ([#12](https://github.com/sebescudie/GammaLauncher/issues/12), [#66](https://github.com/sebescudie/GammaLauncher/issues/66))
 
 #### Changed
 
-- The "Yep" button that monsterkills vvvv instances is now bigger and closer to the _Kill vvvv_ button so that you don't have to aim for it in panic situations (#50)
-- Hovering startup options shows the correspondant startup flag (#61)
+- The "Yep" button that monsterkills vvvv instances is now bigger and closer to the _Kill vvvv_ button so that you don't have to aim for it in panic situations ([#50](https://github.com/sebescudie/GammaLauncher/issues/50))
+- Hovering startup options shows the correspondant startup flag ([#61](https://github.com/sebescudie/GammaLauncher/issues/61))
 
 #### Fixed
 
-- The launcher now discards failed vvvv builds in the Updates tab (#67)
-- Fixes handling of paths with spaces when opening a document (#60)
+- The launcher now discards failed vvvv builds in the Updates tab ([#67](https://github.com/sebescudie/GammaLauncher/issues/67))
+- Fixes handling of paths with spaces when opening a document ([#60](https://github.com/sebescudie/GammaLauncher/issues/60))
 
 ### 5.1.0
 
