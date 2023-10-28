@@ -14,8 +14,6 @@ GammaLauncher is a simple application that allows to launch vvvv gamma instances
 
 ## Installation
 
-Several options are available :
-
 ### Winget
 
 Open a Terminal window and type
