@@ -2,18 +2,23 @@
 
 ### 5.2.0
 
-_No stable released yet, preview version only_
-
 #### New
 
-- App can minimize to system tray, thanks [bj-rn](https://github.com/sebescudie/GammaLauncher/commit/072e043aa58f49867e9b83185e94b1d916c191db)!
-- A new _App Settings_ section in the _Settings_ tab allows to set whether to enable that feature or not
-- You can now enable or disable editable packages and repositories folders without deleting them. Kinda like a mute button. Thanks [mhusinsky](https://github.com/sebescudie/GammaLauncher/issues/57) for proposing that feature!
-- vvvv versions installed via the launcher will now be installed to the directory specified in the _vvvv installation path_ setting, thanks again [bj-rn](https://github.com/sebescudie/GammaLauncher/pull/63)!
+- You can now install stable and preview vvvversions from the launcher! (#32, #58)
+- App can minimize to system tray. A new _App Settings_ section in the _Settings_ allows to enable or disable this feature (#59)
+- You can now enable or disable editable packages and repositories folders without deleting them. Kinda like a mute button (#57)
+- vvvv versions installed via the launcher will now be installed to the directory specified in the _vvvv installation path_ setting (#63)
+- The launcher can now be installed via `winget`! Type `winget install GammaLauncher` and enjoy (#12, #66)
 
 #### Changed
 
-- The "Yep" button that monsterkills vvvv instances is now bigger and closer to the _Kill vvvv_ button so that you don't have to aim for it in panic situations. Thanks [fleischverpackung](https://github.com/fleischverpackung) for the suggestion!
+- The "Yep" button that monsterkills vvvv instances is now bigger and closer to the _Kill vvvv_ button so that you don't have to aim for it in panic situations (#50)
+- Hovering startup options shows the correspondant startup flag (#61)
+
+#### Fixed
+
+- The launcher now discards failed vvvv builds in the Updates tab (#67)
+- Fixes handling of paths with spaces when opening a document (#60)
 
 ### 5.1.0
 
