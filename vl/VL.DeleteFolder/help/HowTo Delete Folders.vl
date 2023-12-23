@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document xmlns:p="property" xmlns:r="reflection" Id="TEoViClnIiPLPD6d5SyQmz" LanguageVersion="2023.5.3-0423-gee17475a3a" Version="0.128">
+  <NugetDependency Id="R3sWC8Aqk6BOEAE2UjKeGh" Location="VL.CoreLib" Version="2023.5.3-0423-gee17475a3a" />
+  <Patch Id="EeTlA4Q3fthPdUynd1PrC4">
+    <Canvas Id="JDCTBaxsmzqOxqFLyMxKgM" DefaultCategory="Main" BordersChecked="false" CanvasType="FullCategory" />
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="LxIcqvjMj24Oqnn28HWSGa">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <CategoryReference Kind="Category" Name="Primitive" />
+      </p:NodeReference>
+      <Patch Id="MbRsIfAhLUzQIdJQtLozQg">
+        <Canvas Id="IGnkmNJWACSPew5GdbEtiZ" CanvasType="Group">
+          <Node Bounds="370,77,154,310" Id="A1MvfOL10IDLBtfQGb6Yml">
+            <p:NodeReference LastCategoryFullName="System.Progress`1" LastDependency="System.Runtime.dll" OverloadStrategy="AllPinsThatAreNotCommon">
+              <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
+              <CategoryReference Kind="AssemblyCategory" Name="Progress`1" />
+              <Choice Kind="OperationCallFlag" Name="Create" />
+              <PinReference Kind="InputPin" Name="Handler" />
+            </p:NodeReference>
+            <Pin Id="HhF1Htl6e8mN7ie7sBFOiz" Name="Output" Kind="StateOutputPin" />
+            <Patch Id="QY7e6PRWqGkOe9uomQW9Vh" Name="Handler" ManuallySortedPins="true">
+              <ControlPoint Id="TkHyCjhNFzQMgnEMsMEVzE" Bounds="404,85" />
+              <Pin Id="NIwugZ6EGsoLMbWL60vM8W" Name="Input" Kind="InputPin">
+                <p:TypeAnnotation LastCategoryFullName="DeleteFolders.Utils" LastDependency="DeleteFolders.Utils.csproj">
+                  <Choice Kind="TypeFlag" Name="DeleteProgress" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Node Bounds="382,294,85,19" Id="VLhVFdMsylJQcWlkPDo9f8">
+                <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="StringType" Name="String" NeedsToBeDirectParent="true" />
+                  <Choice Kind="OperationCallFlag" Name="Format" />
+                </p:NodeReference>
+                <Pin Id="K9eCl6kzwxCLYKLl3PlDTQ" Name="Format" Kind="InputPin" DefaultValue="Deleting {0}: {1} of {2} files deleted." />
+                <Pin Id="C5miNJMBR2RPQCVkgSUvhm" Name="Input" Kind="StateInputPin" />
+                <Pin Id="UCTgrQzpFOuNhSkxRMxGrM" Name="Input 2" Kind="InputPin" />
+                <Pin Id="GfZsitvknD7L6YkKgC8rqC" Name="Input 3" Kind="InputPin" />
+                <Pin Id="FnKzTyFkFtbQQ7ru3htZ8y" Name="Input 4" Kind="InputPin" />
+                <Pin Id="EGaKCZ6lEOCLRL1pz5sMSr" Name="Output" Kind="StateOutputPin" />
+              </Node>
+              <Node Bounds="402,125,79,26" Id="D6uO5sqSssZOTgUPHmFQoG">
+                <p:NodeReference LastCategoryFullName="DeleteFolders.Utils.DeleteProgress" LastDependency="DeleteFolders.Utils.csproj">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="CurrentFolder" />
+                </p:NodeReference>
+                <Pin Id="PlFyqphez5vNh2MAhwiiOH" Name="Input" Kind="StateInputPin" />
+                <Pin Id="SaZ78vnMCOrPPaAFg8Fcfr" Name="Output" Kind="OutputPin" IsHidden="true" />
+                <Pin Id="KruK5OcDWT1MWoleqi11Kn" Name="Current Folder" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="422,159,72,26" Id="R49033QHNvFMjF3vDDGcYk">
+                <p:NodeReference LastCategoryFullName="DeleteFolders.Utils.DeleteProgress" LastDependency="DeleteFolders.Utils.csproj">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="FilesDeleted" />
+                </p:NodeReference>
+                <Pin Id="PrqzvEUfEJANw0RNiVeVAF" Name="Input" Kind="StateInputPin" />
+                <Pin Id="DmrIdxjUp5lQOaax995YYC" Name="Output" Kind="OutputPin" IsHidden="true" />
+                <Pin Id="Gt546mQhHWcN7lzYTJjfKq" Name="Files Deleted" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="422,197,55,19" Id="Or91y4AiQpuNfFrXF89SkQ">
+                <p:NodeReference LastCategoryFullName="System.Conversion" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="ToString" />
+                </p:NodeReference>
+                <Pin Id="BF2wopMhqUwLbEHfgvBUi3" Name="Input" Kind="InputPin" />
+                <Pin Id="HfLVxu39N33Nggkdr3FU52" Name="Result" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="442,225,70,26" Id="CrMMXuL5Bu5QVPETROPGBY">
+                <p:NodeReference LastCategoryFullName="DeleteFolders.Utils.DeleteProgress" LastDependency="DeleteFolders.Utils.csproj">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="TotalFiles" />
+                </p:NodeReference>
+                <Pin Id="Qtwmvt3Eu2SNwINDKUcaQT" Name="Input" Kind="StateInputPin" />
+                <Pin Id="BmX0U6NBZ3QLEIVCheCuQE" Name="Output" Kind="OutputPin" IsHidden="true" />
+                <Pin Id="L0HUmcRAIMpPIhH6ISErZs" Name="Total Files" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="442,263,55,19" Id="KFhgt55bzr0Mv02UzZJ1nN">
+                <p:NodeReference LastCategoryFullName="System.Conversion" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="ToString" />
+                </p:NodeReference>
+                <Pin Id="HQfnZiVOqZ4L6oBPlO8oiM" Name="Input" Kind="InputPin" />
+                <Pin Id="G58uRssgUvTOTDMgGWHtAB" Name="Result" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="382,341,58,26" Id="OihloEixEbYL5rmwHFNM40">
+                <p:NodeReference LastCategoryFullName="System.Console" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="ClassType" Name="Console" NeedsToBeDirectParent="true" />
+                  <Choice Kind="OperationCallFlag" Name="WriteLine" />
+                </p:NodeReference>
+                <Pin Id="Fm5cOPfi1IFOyJSOlIVt2x" Name="Value" Kind="InputPin" />
+                <Pin Id="IUGNux2p7N9LGyhDI2LERK" Name="Apply" Kind="InputPin" DefaultValue="True" />
+              </Node>
+            </Patch>
+          </Node>
+          <Pad Id="IPedhJ1oFnZPTAGoZAU0VE" SlotId="KCo6B90TfOnNsoXJnT79vc" Bounds="372,439" />
+          <Node Bounds="235,575,253,78" Id="LQuqlRzKUEFO292ZZf7KRz">
+            <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+              <Choice Kind="ProcessAppFlag" Name="AsyncTask" />
+            </p:NodeReference>
+            <Pin Id="S5ThueNa5I5PcCjnfPDc5R" Name="Node Context" Kind="InputPin" IsHidden="true" />
+            <Pin Id="BiKL7FbPJ2wOj2ztwRKIor" Name="Trigger" Kind="InputPin" />
+            <Pin Id="SFy2sZzKmDwNw1iPsk83hf" Name="Abort" Kind="InputPin" />
+            <Pin Id="IjxRgHE2NosPBwWU6qXiWC" Name="Result" Kind="OutputPin" />
+            <Pin Id="VMAw6DItqiuQH1WWnofJUy" Name="In Progress" Kind="OutputPin" />
+            <Patch Id="QSB3mzhtC1nNRpOlDVXd6f" ManuallySortedPins="true">
+              <ControlPoint Id="IppGHSNgsmaMfvbVfML7lH" Bounds="432,593" />
+              <ControlPoint Id="AaynWjZOqQHMaJQkABaphD" Bounds="433,646" />
+              <Node Bounds="247,598,129,19" Id="Q4UVkOqsrbKL8F2E5rPyyn">
+                <p:NodeReference LastCategoryFullName="Utils" LastDependency="DeleteFolders.Utils.csproj">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="DeleteFoldersRecursively" />
+                </p:NodeReference>
+                <Pin Id="Vr8P8vAxLlSQCHmqCvPK0F" Name="Folders" Kind="InputPin" />
+                <Pin Id="VAEIzHMahMGNoqbhjiMdr2" Name="Progress" Kind="InputPin" />
+              </Node>
+              <Patch Id="PWDnRwCsbq2NZIPaixVs9e" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="MXoMkwCPSJiL0jzs7sR0NL" Name="Update" ManuallySortedPins="true">
+                <Pin Id="RIKcUPfg2SCLEAre7KBhUN" Name="Input 1" Kind="InputPin" />
+                <Pin Id="LjOFhPqlXXIQJ4J1lV1q6A" Name="Output" Kind="OutputPin">
+                  <p:TypeAnnotation LastCategoryFullName="System.Reactive" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="TypeFlag" Name="Unit" />
+                  </p:TypeAnnotation>
+                </Pin>
+              </Patch>
+            </Patch>
+          </Node>
+          <Node Bounds="139,397,79,65" Id="NUJojdwaEHxMPZ6UxWgqIO">
+            <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+              <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+              <CategoryReference Kind="Category" Name="Primitive" />
+              <Choice Kind="ApplicationStatefulRegion" Name="ForEach" />
+            </p:NodeReference>
+            <Pin Id="HxZ43u4tf0ZMSxdmh663b3" Name="Break" Kind="OutputPin" />
+            <Patch Id="Q3nPfXW4pwAPJfzlGEhVy0" ManuallySortedPins="true">
+              <Patch Id="Tqs5lX7ITXUMeYz3reZUMx" Name="Create" ManuallySortedPins="true" />
+              <Patch Id="LUqjJrv5qAcNdUB7ctB1ib" Name="Update" ManuallySortedPins="true" />
+              <Patch Id="FimzZodWsbzOyjb5WdjFGw" Name="Dispose" ManuallySortedPins="true" />
+              <Node Bounds="151,420,55,19" Id="SDUjlm9gJ3GOPQNqz6jynV">
+                <p:NodeReference LastCategoryFullName="System.Conversion" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="ToString" />
+                </p:NodeReference>
+                <Pin Id="Ih5oIIqbnL2LCEQvmGVraf" Name="Input" Kind="InputPin" />
+                <Pin Id="QBonu1Sg3UTMDdMnA7eHNU" Name="Result" Kind="OutputPin" />
+              </Node>
+            </Patch>
+            <ControlPoint Id="AtRhNhqOKFWMRbBc7IZLwL" Bounds="153,403" Alignment="Top" />
+            <ControlPoint Id="HKMSflPEHJHM712ltBVkLg" Bounds="153,456" Alignment="Bottom" />
+          </Node>
+          <Pad Id="T9FJECZhO2sMviIiLMlRey" Bounds="153,287,102,95" ShowValueBox="true" isIOBox="true">
+            <p:TypeAnnotation LastCategoryFullName="Collections" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Spread" />
+              <p:TypeArguments>
+                <TypeReference>
+                  <Choice Kind="ImmutableTypeFlag" Name="Path" />
+                </TypeReference>
+              </p:TypeArguments>
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:pathtype p:Assembly="VL.Core" p:Type="VL.Core.PathType">Directory</p:pathtype>
+            </p:ValueBoxSettings>
+            <p:Value>
+              <Item>C:\Program Files\vvvv\vvvv_gamma_5.3-0277-g191026bcb8</Item>
+              <Item>C:\Program Files\vvvv\vvvv_gamma_5.3-0280-g7a559dd2ee</Item>
+              <Item>C:\Program Files\vvvv\vvvv_gamma_5.3-0289-ged16c3026c</Item>
+              <Item>C:\Program Files\vvvv\vvvv_gamma_5.3-0301-g032aa8c1d1</Item>
+              <Item>C:\Program Files\vvvv\vvvv_gamma_5.3-0380-g4d7f3342a6</Item>
+            </p:Value>
+          </Pad>
+          <Pad Id="BXlQvOFwoogMDtTAtUkRUA" Comment="Trigger" Bounds="464,479,35,35" ShowValueBox="true" isIOBox="true" Value="False">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+              <Choice Kind="ImmutableTypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+            <p:ValueBoxSettings>
+              <p:buttonmode p:Assembly="VL.UI.Forms" p:Type="VL.HDE.PatchEditor.Editors.ButtonModeEnum">Bang</p:buttonmode>
+            </p:ValueBoxSettings>
+          </Pad>
+        </Canvas>
+        <Patch Id="HEESEEOhZ8HNAmx3nOCyNZ" Name="Create" ParticipatingElements="Uhr6nvZ8LOmOib49W1C5Nm" />
+        <Patch Id="UtfCQhaKmSqPTSfm3HufVk" Name="Update" />
+        <ProcessDefinition Id="LQKAGzmipdpMgOMHsPP99t">
+          <Fragment Id="QzMYA9kUvfEOmH4aKTH12c" Patch="HEESEEOhZ8HNAmx3nOCyNZ" Enabled="true" />
+          <Fragment Id="LWxR5p9Jd4aPJI8iywJaHn" Patch="UtfCQhaKmSqPTSfm3HufVk" Enabled="true" />
+        </ProcessDefinition>
+        <Slot Id="KCo6B90TfOnNsoXJnT79vc" Name="Progress" />
+        <Link Id="P6HstuZjwz6M8Vb6b8nydl" Ids="NIwugZ6EGsoLMbWL60vM8W,TkHyCjhNFzQMgnEMsMEVzE" IsHidden="true" />
+        <Link Id="AtN8JPKCl81MJY5XwTysRk" Ids="TkHyCjhNFzQMgnEMsMEVzE,PlFyqphez5vNh2MAhwiiOH" />
+        <Link Id="V0VBzFmBAuwN2kBFE87tF2" Ids="KruK5OcDWT1MWoleqi11Kn,C5miNJMBR2RPQCVkgSUvhm" />
+        <Link Id="BpUbTutma82OFP34LRNcGv" Ids="TkHyCjhNFzQMgnEMsMEVzE,PrqzvEUfEJANw0RNiVeVAF" />
+        <Link Id="PzWTL7IqwWkLfovaOxoezJ" Ids="Gt546mQhHWcN7lzYTJjfKq,BF2wopMhqUwLbEHfgvBUi3" />
+        <Link Id="TQnw554JHszNhrgh8eNoa4" Ids="HfLVxu39N33Nggkdr3FU52,UCTgrQzpFOuNhSkxRMxGrM" />
+        <Link Id="ST9TlLkOeTGNnlZ8Rf5QZR" Ids="TkHyCjhNFzQMgnEMsMEVzE,Qtwmvt3Eu2SNwINDKUcaQT" />
+        <Link Id="D4ZGIAOr05bPbIT82wK1ON" Ids="L0HUmcRAIMpPIhH6ISErZs,HQfnZiVOqZ4L6oBPlO8oiM" />
+        <Link Id="NzOOZI3EfdxNhOvaqWM6TV" Ids="G58uRssgUvTOTDMgGWHtAB,GfZsitvknD7L6YkKgC8rqC" />
+        <Link Id="QMPmAfC6G85MiDP9fQAyKb" Ids="EGaKCZ6lEOCLRL1pz5sMSr,Fm5cOPfi1IFOyJSOlIVt2x" />
+        <Link Id="Uhr6nvZ8LOmOib49W1C5Nm" Ids="HhF1Htl6e8mN7ie7sBFOiz,IPedhJ1oFnZPTAGoZAU0VE" />
+        <Link Id="KX5dIW2GhDaPqoP6jzMbn5" Ids="RIKcUPfg2SCLEAre7KBhUN,IppGHSNgsmaMfvbVfML7lH" IsHidden="true" />
+        <Link Id="EkW2zrZYEEVNsELwSLRTgk" Ids="AaynWjZOqQHMaJQkABaphD,LjOFhPqlXXIQJ4J1lV1q6A" IsHidden="true" />
+        <Link Id="V2OHAIE2jwJLXqHPiXyNpK" Ids="IPedhJ1oFnZPTAGoZAU0VE,VAEIzHMahMGNoqbhjiMdr2" />
+        <Link Id="K1MtWv9iU2ILixuRKwdvGv" Ids="T9FJECZhO2sMviIiLMlRey,AtRhNhqOKFWMRbBc7IZLwL" />
+        <Link Id="Ns6xRb2yKk9MfhHZVZTrBR" Ids="AtRhNhqOKFWMRbBc7IZLwL,Ih5oIIqbnL2LCEQvmGVraf" />
+        <Link Id="FojA1WiNWj9LUIhnc0vF12" Ids="QBonu1Sg3UTMDdMnA7eHNU,HKMSflPEHJHM712ltBVkLg" />
+        <Link Id="NO04uaVdOmtOTkhnluH1QO" Ids="BXlQvOFwoogMDtTAtUkRUA,BiKL7FbPJ2wOj2ztwRKIor" />
+        <Link Id="D5CWjNbkEfGLtqvSEB24eu" Ids="HKMSflPEHJHM712ltBVkLg,Vr8P8vAxLlSQCHmqCvPK0F" />
+      </Patch>
+    </Node>
+  </Patch>
+  <PlatformDependency Id="R2bvGUcT24yOpF4vxmfo7e" Location="System.Runtime" />
+  <ProjectDependency Id="HdCGnSDjgI5Oi6Hcopj66j" Location="../csharp/DeleteFolders.Utils/DeleteFolders.Utils.csproj" />
+</Document>
