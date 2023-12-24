@@ -2,34 +2,31 @@ using DeleteFolders.Utils;
 using System;
 using System.IO;
 using System.Linq;
+using System.Reactive.Linq;
 
 namespace DeleteFolders.Utils
 {
     public class Utils
     {
-        public static void DeleteFoldersRecursively(Spread<string> folders, IProgress<DeleteProgress> progress)
+        public static void DeleteFoldersRecursively(Spread<string> folders)
         {
-            var deleteProgress = new DeleteProgress();
             foreach (var folder in folders)
             {
                 if (Directory.Exists(folder))
                 {
-                    DeleteFolder(folder, deleteProgress, progress);
+                    DeleteFolder(folder);
                 }
             }
         }
 
-        private static void DeleteFolder(string folder, DeleteProgress deleteProgress, IProgress<DeleteProgress> progress)
+        private static async Task DeleteFolder(string folder)
         {
             var files = Directory.GetFiles(folder, "*", SearchOption.AllDirectories);
-            deleteProgress.TotalFiles += files.Length;
-            deleteProgress.CurrentFolder = folder;
+
 
             foreach (var file in files)
             {
                 File.Delete(file);
-                deleteProgress.FilesDeleted++;
-                progress.Report(deleteProgress);
             }
 
             var directories = new DirectoryInfo(folder).GetDirectories();
