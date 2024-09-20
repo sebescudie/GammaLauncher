@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2024.6.7-0015-gec2235a293" Version="0.128">
-  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2024.6.7-0015-gec2235a293" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2024.6.7-0148-g892efc0a20" Version="0.128">
+  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2024.6.7-0148-g892efc0a20" />
   <Patch Id="VwtUUR3K9mbPm4q6fszgF3">
     <Canvas Id="Cn8FrGu71DtOiQColm6Utc" DefaultCategory="Main" CanvasType="FullCategory">
       <Canvas Id="A8kMw5cSAh9N9pwyyLzDKt" Name="Model" Position="92,129">
@@ -4144,7 +4144,7 @@
                 <Pin Id="GxPiFmerdsrO5EPvuchbKZ" Name="Input" Kind="StateInputPin" />
                 <Pin Id="VlmQBhPEfgeO34MGUyVfpW" Name="Output" Kind="StateOutputPin" />
               </Node>
-              <Node Bounds="270,2378,258,88" Id="LFducYZZt5DLkGNUe0uqLI">
+              <Node Bounds="270,2378,290,88" Id="LFducYZZt5DLkGNUe0uqLI">
                 <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
                   <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
@@ -4171,7 +4171,7 @@
                     <Pin Id="DzeS81aPDLNQaLj6ObR59k" Name="Limit" Kind="InputPin" />
                     <Pin Id="QgTpjYkfI4IOgTBuNY3mSs" Name="Result" Kind="OutputPin" />
                   </Node>
-                  <Node Bounds="461,2409,55,26" Id="CQpxORZuDFDODtRLg4HwoW">
+                  <Node Bounds="493,2403,55,26" Id="CQpxORZuDFDODtRLg4HwoW">
                     <p:NodeReference LastCategoryFullName="Reactive.Channel" LastDependency="VL.CoreLib.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <CategoryReference Kind="ClassType" Name="Channel" NeedsToBeDirectParent="true" />
@@ -15908,7 +15908,7 @@
               </Node>
               <ControlPoint Id="Bbg9Ii86ifQLYCKOzx05XF" Bounds="614,433" />
               <Pin Id="Fhbz09qm5MsLJEsyRA6CmZ" Name="Client" Kind="InputPin" Bounds="445,419" />
-              <Pin Id="RrPbz6lzbp2MlIha1Hto38" Name="Build Type" Kind="InputPin" Bounds="508,356" DefaultValue="vvvv_gamma_Build">
+              <Pin Id="RrPbz6lzbp2MlIha1Hto38" Name="Build Type" Kind="InputPin" Bounds="508,356" DefaultValue="vvvv_gamma_Build20225">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="String" />
                 </p:TypeAnnotation>
@@ -16771,7 +16771,7 @@
     ************************ GetSuccessfulBuildsFromMainBranch ************************
 
 -->
-          <Node Name="GetSuccessfulBuildsFromMainBranch" Bounds="803,133,144,151" Id="IDSSxmdAnWFNjoh0AXhBkm">
+          <Node Name="GetSuccessfulBuildsFromMainBranch" Bounds="803,79,527,205" Id="IDSSxmdAnWFNjoh0AXhBkm">
             <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
               <Choice Kind="OperationDefinition" Name="Operation" />
             </p:NodeReference>
@@ -16817,6 +16817,12 @@
                 </p:TypeAnnotation>
               </Pin>
               <Pin Id="CGPDNIJj2A3QaVPUTk8eWq" Name="Result" Kind="OutputPin" Bounds="817,222" />
+              <Pad Id="PzAay43Js1SN1wEYjBt9Wp" Comment="" Bounds="852,107,447,15" ShowValueBox="true" isIOBox="true" Value="builds?locator=branch:main,buildType:vvvv_gamma_Build20225,lookupLimit:{0},status:SUCCESS">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+              </Pad>
+              <Link Id="K1ZpIlJlSXnNhISGh0Yfzu" Ids="PzAay43Js1SN1wEYjBt9Wp,JPM240iZJqdPDSazdDUBRh" />
             </Patch>
           </Node>
         </Canvas>
@@ -22937,18 +22943,18 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2024.6.7-0015-gec2235a293" />
+  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2024.6.7-0148-g892efc0a20" />
   <PlatformDependency Id="PR2RZQLpnGKNZvYQVn3Ead" Location="mscorlib" />
   <PlatformDependency Id="Ow5sjuC3immNloZfvkN1g7" Location="System.Windows.Forms" />
   <PlatformDependency Id="HMEsYQpErI5OqaqpKnu53t" Location="System.Drawing" />
   <NugetDependency Id="A7QaxZnKLQBPrEoH3eQWQY" Location="RestSharp" Version="106.15.0" />
-  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2024.6.7-0015-gec2235a293" />
+  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2024.6.7-0148-g892efc0a20" />
   <NugetDependency Id="Vnl8tgKwbGMP0yvGw64Adv" Location="Semver" Version="2.0.6" />
-  <NugetDependency Id="IscN5qIHnL6N2GQSwSz602" Location="VL.ImGui" Version="2024.6.7-0015-gec2235a293" />
-  <NugetDependency Id="DueOVdpuzHRN7xQZ6gn9H6" Location="VL.ImGui.Skia" Version="2024.6.7-0015-gec2235a293" />
+  <NugetDependency Id="IscN5qIHnL6N2GQSwSz602" Location="VL.ImGui" Version="2024.6.7-0148-g892efc0a20" />
+  <NugetDependency Id="DueOVdpuzHRN7xQZ6gn9H6" Location="VL.ImGui.Skia" Version="2024.6.7-0148-g892efc0a20" />
   <DocumentDependency Id="K4SG30vxDXFQCQQq5jLvaS" Location="./GammaLauncher.Proxies.vl" />
   <NugetDependency Id="ObULv8xpK0APMCczaZvh3u" Location="Downloader" Version="3.0.6" />
   <NugetDependency Id="ExFUESH6MHIL8sAEZQOefx" Location="VL.WinFormsUtils" Version="1.0.9" />
   <PlatformDependency Id="VR1jnqPcjfvLcoXBk3XpJ2" Location="System.Runtime" />
-  <ProjectDependency Id="R4EKL4H4b3bNJt1ZkjFVpl" Location="./csharp/DeleteFolders.Utils/DeleteFolders.Utils.csproj" />
+  <ProjectDependency Id="SUmux7zai3tPbxDrYUcTEr" Location="./csharp/DeleteFolders.Utils/DeleteFolders.Utils.csproj" />
 </Document>
