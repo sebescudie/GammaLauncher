@@ -16,4 +16,19 @@ public static class Operations
         	}
 		}
 	}
+
+    public static void HasBorder(IntPtr windowHandle, bool apply, out bool success)
+    {
+        success = false;
+        if (apply && windowHandle != null && windowHandle != IntPtr.Zero)
+        {
+            WINDOWINFO wi = new WINDOWINFO();
+            if (Interop.GetWindowInfo(windowHandle, ref wi))
+            {
+
+                success = wi.cxWindowBorders > 0 || wi.cyWindowBorders > 0;
+            }
+        }
+    }
+
 }

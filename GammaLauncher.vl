@@ -2177,7 +2177,7 @@
                 <Pin Id="Fy4RKrdkHgWMAIWJKgEomE" Name="Apply" Kind="InputPin" />
                 <Pin Id="FFEO4rvumnXOAG8AUbIkp2" Name="Output" Kind="StateOutputPin" />
               </Node>
-              <Node Bounds="372,517,379,372" Id="JnZFFZLFqOOMyVQ0TZuuAb">
+              <Node Bounds="372,517,403,400" Id="JnZFFZLFqOOMyVQ0TZuuAb">
                 <p:NodeReference LastCategoryFullName="System.Windows.Automation.Automation" LastDependency="UIAutomationClient.dll">
                   <Choice Kind="RegionFlag" Name="Region (Stateless)" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="AddAutomationEventHandler" />
@@ -2272,7 +2272,7 @@
                     <Pin Id="JY59rPSYHisQX8Q4wQ9ezs" Name="Output" Kind="StateOutputPin" />
                     <Pin Id="Kou0YryBaltNDIUnm0LnoY" Name="Value" Kind="OutputPin" />
                   </Node>
-                  <Node Bounds="589,850,116,19" Id="TWtNHqxXg7mL2J56X5WMUY">
+                  <Node Bounds="589,878,116,19" Id="TWtNHqxXg7mL2J56X5WMUY">
                     <p:NodeReference LastCategoryFullName="Win32.Operations" LastDependency="VL.Windows.TitleBar.csproj">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                       <Choice Kind="OperationCallFlag" Name="EnableWindowTitleBar" />
@@ -2290,7 +2290,15 @@
                     <Pin Id="Lo8VMttnzc4PGYRiqCHzzU" Name="Input" Kind="StateInputPin" />
                     <Pin Id="RlozoqwCl35Lq5Ma7CSJUi" Name="Result" Kind="OutputPin" />
                   </Node>
-                  <ControlPoint Id="OeGdoc846zDQTOJf8B7PV5" Bounds="702,779" />
+                  <Node Bounds="700,851,63,19" Id="S3mea0OVpvQOFrZHbSUklE">
+                    <p:NodeReference LastCategoryFullName="Win32.Operations" LastDependency="VL.Windows.TitleBar.csproj">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <Choice Kind="OperationCallFlag" Name="HasBorder" />
+                    </p:NodeReference>
+                    <Pin Id="B9dv82GOF3yMAOJHrqr9hM" Name="Window Handle" Kind="InputPin" />
+                    <Pin Id="Ma9AfqvkC5aMfiCta3MGzH" Name="Apply" Kind="InputPin" />
+                    <Pin Id="CMXxfvT2usJMRBjEgXTcUZ" Name="Success" Kind="OutputPin" />
+                  </Node>
                 </Patch>
               </Node>
               <Node Bounds="372,467,111,19" Id="SJ0RLWsHsCNLkmWGdTIGmM">
@@ -2335,6 +2343,15 @@
                 <p:ValueBoxSettings>
                   <p:fontsize p:Type="Int32">9</p:fontsize>
                   <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Link</p:stringtype>
+                </p:ValueBoxSettings>
+              </Pad>
+              <Pad Id="E5QNe35iQeeQZTUVlfxcGt" Bounds="789,858,333,79" ShowValueBox="true" isIOBox="true" Value="checking for borders to differentiate between the splash screen and the editor window. there might be more elegant methods... without it it still works only the splash also gets a titlebar">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="TypeFlag" Name="String" />
+                </p:TypeAnnotation>
+                <p:ValueBoxSettings>
+                  <p:fontsize p:Type="Int32">9</p:fontsize>
+                  <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
                 </p:ValueBoxSettings>
               </Pad>
             </Canvas>
@@ -2566,9 +2583,11 @@
             <Link Id="JheLjKLJvuENpC6nad1kPM" Ids="Kou0YryBaltNDIUnm0LnoY,RqTp9xngBdpMdkpLU6clgJ" />
             <Link Id="Ow7bpPERrc2Lth2eX785bN" Ids="KW3FfgpuV8SNChBQS3RfAu,VUR0Zv6mTE6OkH5VoQStAx" />
             <Link Id="EwYjxGxQqQ0LIMgC8Og2n5" Ids="V4yu5c28zNdLw5hQGd7RDe,O4mZ7ZAInHWNQM3Wcu9v9H" />
-            <Link Id="RLYLUe9PEIwM0vjtTfCQto" Ids="AazSKxF3zCDMDLSzyXMJ4G,OeGdoc846zDQTOJf8B7PV5,Dsh61J6Q1qCPZ4CgXHE3Z5" />
             <Link Id="NBYcAIx1vIvMFf3fwko3GY" Ids="RihwxdozJr0Mpbkp7Kp46s,Lo8VMttnzc4PGYRiqCHzzU" />
             <Link Id="MfdwRjLknRZMyeiN5GNhnw" Ids="RlozoqwCl35Lq5Ma7CSJUi,Vd1Sb7TonebOaf3G3SqcZE" />
+            <Link Id="VsX9GVtFAZwM8otXIU7611" Ids="AazSKxF3zCDMDLSzyXMJ4G,Ma9AfqvkC5aMfiCta3MGzH" />
+            <Link Id="RU6UM1UAFKtOWnynxSZMm6" Ids="RlozoqwCl35Lq5Ma7CSJUi,B9dv82GOF3yMAOJHrqr9hM" />
+            <Link Id="VGhhKXUSo9OLG86QOIC5xr" Ids="CMXxfvT2usJMRBjEgXTcUZ,Dsh61J6Q1qCPZ4CgXHE3Z5" />
           </Patch>
         </Node>
         <!--
