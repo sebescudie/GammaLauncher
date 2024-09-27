@@ -11,6 +11,12 @@
     <ApplicationIcon>$(MsBuildThisFileDirectory)ico.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <!--
+      needed to be able to use Windows UIAutomation in .net (core)
+      https://stackoverflow.com/a/68228874
+     -->
+    <FrameworkReference Include="Microsoft.WindowsDesktop.App" />
+    
     <ContentWithTargetPath Include="$(MsBuildThisFileDirectory)ico.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <TargetPath>ico.ico</TargetPath>
