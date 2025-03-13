@@ -26,7 +26,7 @@
               <ControlPoint Id="LBXoassUyaROV1a8FCbZPn" Bounds="831,610" />
               <ControlPoint Id="FLOBfgzpQkuLDq4gnVX4tL" Bounds="865,509" />
               <Pad Id="SaAYYUU4q4XNTXYtjMmzL9" SlotId="BjfuAeqUdGiLc2dKp96PsJ" Bounds="526,540" />
-              <Pad Id="KVridSVnvm9NA977GV7Enh" Comment="Version" Bounds="526,499,45,15" ShowValueBox="true" isIOBox="true" Value="5.2.3">
+              <Pad Id="KVridSVnvm9NA977GV7Enh" Comment="" Bounds="588,460,36,15" ShowValueBox="true" isIOBox="true" Value="5.2.3">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="String" />
                 </p:TypeAnnotation>
@@ -42,6 +42,17 @@
                   <Choice Kind="TypeFlag" Name="Integer32" />
                 </p:TypeAnnotation>
               </Pad>
+              <Node Bounds="524,490,67,19" Id="PWS6ZjRU8dJNo7m2RDiLcP">
+                <p:NodeReference LastCategoryFullName="System.Application" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="ConfigItem" />
+                </p:NodeReference>
+                <Pin Id="DDbrPI0mfavNlIimBC2Nw4" Name="Node Context" Kind="InputPin" IsHidden="true" />
+                <Pin Id="NeYYPCvd7YIMyVNbV0yyah" Name="Section" Kind="InputPin" />
+                <Pin Id="UjkvYcdVhfhPQFf9ZeJshN" Name="Key" Kind="InputPin" DefaultValue="version" />
+                <Pin Id="JBq6Vce7Qh7MzOaufMiEEG" Name="Default" Kind="InputPin" />
+                <Pin Id="UpCoRJRk2eUMaIHNORs2er" Name="Value" Kind="OutputPin" />
+              </Node>
             </Canvas>
             <ProcessDefinition Id="HwyYPlPJeANPWLlJB7Q2Jl" IsHidden="true">
               <Fragment Id="Lb6hwjRfpafMXN1ENL1bSu" Patch="UeVkUKbB99rOPSx1n1EH1B" Enabled="true" />
@@ -87,7 +98,6 @@
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
             </Slot>
-            <Link Id="TzR6CwW4ClqOOWvuYN6lbm" Ids="KVridSVnvm9NA977GV7Enh,SaAYYUU4q4XNTXYtjMmzL9" />
             <Link Id="P2O5o97C49hLReqkqRWfL6" Ids="SaAYYUU4q4XNTXYtjMmzL9,SuxMSH9MdbzLNhIRIF7hnP" />
             <Link Id="PGU7Md1gE97OcM07IzPAQR" Ids="SuxMSH9MdbzLNhIRIF7hnP,Nl95eLzNBYLMqM0sSTCxZ7" IsHidden="true" />
             <Link Id="AhKi7aTIDoeNWWloKRbz5O" Ids="Ftcnv2ue3ITOhTh41TzEQu,HbjqU8KgprUNnXHWPsn0cg" />
@@ -98,7 +108,7 @@
             <Link Id="FsIMio5rPqvOCXbo2kzbU6" Ids="VT1ZzIrW7AiK9mxvuuPd0o,QXsSr5kTN05LHh3rjPWDO1" IsHidden="true" />
             <Link Id="FbbtcPXGZpVMFhvPGNWU5r" Ids="IhFhgHG1M80PdNrhrafOJV,OEkTClAciBALx14yrya4PK" />
             <Link Id="L8Dcq9FdZ8UNt1vZZuABHV" Ids="OEkTClAciBALx14yrya4PK,Pc20tGFvOoIOXukcAWdyfl" IsHidden="true" />
-            <Patch Id="UeVkUKbB99rOPSx1n1EH1B" Name="Create" ParticipatingElements="Ltce6H8ourDLLLnH9BNSju,QZ5R4jYCTSTL6cpKf9930u,IOm4KfMzUp7PD8VqrbzhGX,TzR6CwW4ClqOOWvuYN6lbm,At0w7sKJSWbP0k3Qn8zdsK">
+            <Patch Id="UeVkUKbB99rOPSx1n1EH1B" Name="Create" ParticipatingElements="Ltce6H8ourDLLLnH9BNSju,QZ5R4jYCTSTL6cpKf9930u,IOm4KfMzUp7PD8VqrbzhGX,At0w7sKJSWbP0k3Qn8zdsK,EJY4SKTyoHTOOSGpKI6ekO">
               <Pin Id="OjNu7BqIZkuLoZ80MlBW9N" Name="Launch Tab Model" Kind="InputPin" />
               <Pin Id="DN0TFFHDpZgL0TW5SmLkwi" Name="Settings Model" Kind="InputPin" />
               <Pin Id="SCxWhtd0zTRQFu558X48HR" Name="Window Bounds" Kind="InputPin" Bounds="610,509" />
@@ -130,6 +140,8 @@
               </p:TypeAnnotation>
             </Slot>
             <Link Id="At0w7sKJSWbP0k3Qn8zdsK" Ids="MzzcxJY1pLAPG7P1dZFlV0,TLyyvUzSHiQOn9Y3YpavHv" />
+            <Link Id="ARFwEPFCzt2OWSNy9Nn6GT" Ids="KVridSVnvm9NA977GV7Enh,JBq6Vce7Qh7MzOaufMiEEG" />
+            <Link Id="EJY4SKTyoHTOOSGpKI6ekO" Ids="UpCoRJRk2eUMaIHNORs2er,SaAYYUU4q4XNTXYtjMmzL9" />
           </Patch>
         </Node>
         <!--
@@ -22893,6 +22905,61 @@
           </Node>
         </Canvas>
       </Canvas>
+      <!--
+
+    ************************ Config ************************
+
+-->
+      <Node Name="Config" Bounds="92,440" Id="FHpLWWDHbbZNUfPNs4wUf9">
+        <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
+          <Choice Kind="ClassDefinition" Name="Class" />
+        </p:NodeReference>
+        <p:Interfaces>
+          <TypeReference LastCategoryFullName="Main" LastDependency="callmenames-2023-10-04.vl">
+            <Choice Kind="MutableInterfaceType" Name="IStartup" />
+          </TypeReference>
+        </p:Interfaces>
+        <Patch Id="TENvp10Yxo4PhqJ3oBJh1f">
+          <Canvas Id="VGDkFdYD5WENSwIsV7rptw" CanvasType="Group">
+            <ControlPoint Id="KUKhvbYPWtlNdEQN20L4dX" Bounds="130,171" />
+            <Node Bounds="128,260,155,26" Id="F36zriUv9GcL2UNn91zdaI">
+              <p:NodeReference LastCategoryFullName="Microsoft.Extensions.Configuration.CommandLineConfigurationExtensions" LastDependency="Microsoft.Extensions.Configuration.CommandLine.dll" OverloadStrategy="UserSelectedPins">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="AddCommandLine" />
+                <PinReference Kind="InputPin" Name="Args" />
+              </p:NodeReference>
+              <Pin Id="TWb3yGlNO9aOYVIUJiHxMQ" Name="Input" Kind="StateInputPin" />
+              <Pin Id="EpMJ97zEvhYPU7uv8f749f" Name="Args" Kind="InputPin" />
+              <Pin Id="UldX3Ud6NFZOMj3R5wjoZh" Name="Output" Kind="OutputPin" />
+            </Node>
+            <Node Bounds="278,220,118,19" Id="O4W8Evg7typPO7o6iZKRQL">
+              <p:NodeReference LastCategoryFullName="System.Environment" LastDependency="mscorlib.dll">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <CategoryReference Kind="AssemblyCategory" Name="Environment" NeedsToBeDirectParent="true" />
+                <Choice Kind="OperationCallFlag" Name="GetCommandLineArgs" />
+              </p:NodeReference>
+              <Pin Id="RRujxcaMtU5PkSt7Ta7D4H" Name="Result" Kind="OutputPin" />
+            </Node>
+          </Canvas>
+          <ProcessDefinition Id="Dd64s1J2h8CQR8cfdAIwvj" IsHidden="true">
+            <Fragment Id="U0plQXb3kRHLrwfTTY9Dhb" Patch="GFOPuSFKUuQPuwVC2XL8Iq" Enabled="true" />
+            <Fragment Id="VbWDQPcVBa4OXUT9HDUMds" Patch="TVdgdiQa1qfQMIVx3X9oHs" />
+            <Fragment Id="FNtjmyyEiUjL5mZQy8S8Ks" Patch="AO9HUN3B0drMVhovjI4vNv" />
+          </ProcessDefinition>
+          <Link Id="H12Tm2yumbvLAtjOKKg33L" Ids="BleGcHlGwRjQTYaLx6coI2,KUKhvbYPWtlNdEQN20L4dX" IsHidden="true" />
+          <Link Id="QzW4dJxPQFXNsa4SWObwKz" Ids="KUKhvbYPWtlNdEQN20L4dX,TWb3yGlNO9aOYVIUJiHxMQ" />
+          <Patch Id="GFOPuSFKUuQPuwVC2XL8Iq" Name="Create" />
+          <Patch Id="TVdgdiQa1qfQMIVx3X9oHs" Name="SetupLogging">
+            <Pin Id="UWLnCPrjsYPQBtPaE76wWW" Name="App Host" Kind="InputPin" />
+            <Pin Id="Li7IXCGpTenNNFt6Hfrbhc" Name="Logging Builder" Kind="InputPin" />
+          </Patch>
+          <Patch Id="AO9HUN3B0drMVhovjI4vNv" Name="SetupConfiguration">
+            <Pin Id="GL61GyH3PvqPqnPcTTRpt3" Name="App Host" Kind="InputPin" />
+            <Pin Id="BleGcHlGwRjQTYaLx6coI2" Name="Configuration Builder" Kind="InputPin" />
+          </Patch>
+          <Link Id="EdFWN7J3zoaNbOR5QVCF2t" Ids="RRujxcaMtU5PkSt7Ta7D4H,EpMJ97zEvhYPU7uv8f749f" />
+        </Patch>
+      </Node>
     </Canvas>
     <!--
 
@@ -22964,4 +23031,5 @@
   <NugetDependency Id="ExFUESH6MHIL8sAEZQOefx" Location="VL.WinFormsUtils" Version="1.0.11" />
   <PlatformDependency Id="VR1jnqPcjfvLcoXBk3XpJ2" Location="System.Runtime" />
   <ProjectDependency Id="R4EKL4H4b3bNJt1ZkjFVpl" Location="./csharp/DeleteFolders.Utils/DeleteFolders.Utils.csproj" />
+  <NugetDependency Id="NZGwfegHrHbLjsdyccCvnP" Location="Microsoft.Extensions.Configuration.CommandLine" Version="9.0.3" />
 </Document>
