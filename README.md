@@ -18,17 +18,6 @@ GammaLauncher is a simple application that allows to launch vvvv gamma instances
 
 The latest release is available [here](https://github.com/sebescudie/GammaLauncher/releases/latest). You can choose between an installer and a portable version.
 
-### Winget
-
-Open a Terminal window and type
-
-```
-winget install GammaLauncher
-```
-
-This method will install the launcher and its dependencies (.NET6, `vcredist`). Please note that it takes a few days after a release for the Winget package to be updated.
-
-
 ## Usage
 
 ### Initial setup
