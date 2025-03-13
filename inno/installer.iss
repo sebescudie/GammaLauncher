@@ -23,8 +23,8 @@ OutputDir=.
 ArchitecturesAllowed=x64
 WizardStyle=classic
 PrivilegesRequired=admin
-WizardSmallImageFile=ico.bmp
-SetupIconFile=ico.ico
+WizardSmallImageFile=img\ico.bmp
+SetupIconFile=img\ico.ico
 
 [Run]
 Filename: {app}\{cm:AppName}.exe; Description: {cm:LaunchProgram,{cm:AppName}}; Flags: nowait postinstall skipifsilent
@@ -36,7 +36,7 @@ LaunchProgram=Start GammaLauncher after finishing installation
 
 
 [Files]
-Source: "build\GammaLauncher\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "output\GammaLauncher\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{group}\GammaLauncher"; Filename: "{app}\GammaLauncher.exe"

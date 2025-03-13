@@ -1,7 +1,7 @@
 # GammaLauncher
 
 <p align="center">
-<img src="capture.png" title="" alt="GitHub Logo" width="259">
+<img src="img/capture.png" title="" alt="GitHub Logo" width="259">
 </p>
 
 _A simple launcher for vvvv gamma_
