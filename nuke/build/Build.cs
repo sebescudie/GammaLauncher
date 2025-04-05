@@ -9,11 +9,13 @@ using Nuke.Common.Execution;
 using Nuke.Common.IO;
 using Nuke.Common.ProjectModel;
 using Nuke.Common.Tooling;
+using System.IO;
 using Nuke.Common.Utilities.Collections;
 using Nuke.Common.IO;
 using static Nuke.Common.EnvironmentInfo;
 using static Nuke.Common.IO.PathConstruction;
 using System.Text.RegularExpressions;
+using System.Xml;
 
 class Build : NukeBuild
 {
@@ -83,14 +85,21 @@ class Build : NukeBuild
         .Requires(() => !string.IsNullOrWhiteSpace(Version))
         .Executes(() =>
         {
-            var compilerPath = "C:\\Program Files\\vvvv\\vvvv_gamma_7.0-0262-g359ae76748-win-x64\\vvvvc.exe";
+            // Parse GammaLauncher entry point to find the vvvversion it was saved with
+            // and infer compiler path from that
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(File.ReadAllText(VvvvSourceFile));
+            var xmlVersion = xmlDoc.SelectSingleNode("//Document/@LanguageVersion").Value ?? throw new InvalidDataException("Could not parse vvvv source file");
 
-            // Overwrite version
-            var content = File.ReadAllText(VvvvVersionTemplate);
-            content = content.Replace("##VERSION##", Version);
-            File.WriteAllText(VvvvVersionFile, content);
+            // For now we're hardcoding the architecture but should find something more elegant at some point
+            var vvvvFolderName = $"vvvv_gamma_{xmlVersion.Remove(0, 5)}-win-x64";
+            var compilerPath = Path.Combine("C:\\Program Files\\vvvv", vvvvFolderName,"vvvvc.exe");
+            Console.WriteLine($"GammaLauncher was last saved with {xmlVersion}");
+            Console.WriteLine($"Expecting to find compiler in {compilerPath}");
+            if(File.Exists(compilerPath))
+                Console.WriteLine("Found corresponding CLI compiler");
 
-            // Compile patch
+            //Compile patch
             var compilationProcess = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --clean");
             compilationProcess.WaitForExit();
         });
