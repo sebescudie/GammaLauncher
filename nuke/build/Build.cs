@@ -21,6 +21,8 @@ class Build : NukeBuild
 {
     public static int Main() => Execute<Build>(x => x.Clean);
 
+    string VersionMagicString = "##VERSION##";
+
     string InnoFolder = RootDirectory / .. / "inno";
     string InnoTemplate= RootDirectory / .. / "inno/installer.iss.template";
     string InnoScript = RootDirectory / .. / "inno/installer.iss";
@@ -31,8 +33,8 @@ class Build : NukeBuild
     string ChocoFolder = RootDirectory /.. / "choco";
     
     string VvvvOutputDirectory = RootDirectory / .. / "output";
-    string VvvvVersionTemplate = RootDirectory / .. / "Version.template";
-    string VvvvVersionFile = RootDirectory / .. /"Version.vl";
+    string VvvvPropsTemplate = RootDirectory / .. / "GammaLauncher.props.template";
+    string VvvvPropsFile = RootDirectory / .. /"GammaLauncher.props";
     string VvvvSourceFile = RootDirectory / .. /"GammaLauncher.vl";
 
     [Parameter("Version")]
@@ -70,6 +72,10 @@ class Build : NukeBuild
             // Delete generated nuspec
             if(File.Exists(NuspecFile))
                 File.Delete(NuspecFile);
+
+            // Delete generated props file
+            if(File.Exists(VvvvPropsFile))
+                File.Delete(VvvvPropsFile);
         });
 
     Target Restore => _ => _
@@ -99,6 +105,11 @@ class Build : NukeBuild
             if(File.Exists(compilerPath))
                 Console.WriteLine("Found corresponding CLI compiler");
 
+            // Generate props file from template
+            var content = File.ReadAllText(VvvvPropsTemplate);
+            content = content.Replace(VersionMagicString, Version);
+            File.WriteAllText(VvvvPropsFile, content);
+
             //Compile patch
             var compilationProcess = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --clean");
             compilationProcess.WaitForExit();
@@ -111,7 +122,7 @@ class Build : NukeBuild
         {
             // Write version in template and render it
             var content = File.ReadAllText(InnoTemplate);
-            content = content.Replace("##VERSION##", Version);
+            content = content.Replace(VersionMagicString, Version);
             File.WriteAllText(InnoScript, content);
 
             var innoCompilerPath = "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe";
