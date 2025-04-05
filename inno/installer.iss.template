@@ -4,6 +4,7 @@
 #define MyAppURL "www.sebescudie.github.io"
 #define MyAppExeName "gammalauncher_##VERSION##_installer"
 
+#include "CodeDependencies.iss"
 
 [Setup]
 AppId=GammmaLauncher
@@ -20,11 +21,20 @@ Uninstallable=yes
 UninstallDisplayIcon={app}\GammaLauncher.exe
 Compression=lzma2
 OutputDir=.
-ArchitecturesAllowed=x64
+ArchitecturesAllowed=x64compatible
+ArchitecturesInstallIn64BitMode=x64compatible
 WizardStyle=classic
 PrivilegesRequired=admin
 WizardSmallImageFile=..\img\ico.bmp
 SetupIconFile=..\img\ico.ico
+
+[Code]
+function InitializeSetup: Boolean;
+begin
+  Dependency_ForceX86 := False;
+  Dependency_AddDotNet80Desktop;;
+  Result := True;
+end;
 
 [Run]
 Filename: {app}\{cm:AppName}.exe; Description: {cm:LaunchProgram,{cm:AppName}}; Flags: nowait postinstall skipifsilent
