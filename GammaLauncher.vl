@@ -5344,7 +5344,7 @@
                     </Node>
                   </Patch>
                 </Node>
-                <Node Bounds="412,394,145,19" Id="I3WJOUCtKMGMgV9Rwb6xph">
+                <Node Bounds="412,394,165,19" Id="I3WJOUCtKMGMgV9Rwb6xph">
                   <p:NodeReference LastCategoryFullName="Graphics.Skia" LastDependency="VL.Skia.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="ProcessAppFlag" Name="Renderer" />
@@ -12158,24 +12158,6 @@
                     <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
                   </p:ValueBoxSettings>
                 </Pad>
-                <Node Bounds="485,500,65,19" Id="VBPpzs5tNdmLizZba675VX">
-                  <p:NodeReference LastCategoryFullName="System.Application" LastDependency="VL.CoreLib.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="IsExported" />
-                  </p:NodeReference>
-                  <Pin Id="QKTH3QX0vWvOiU0zZVUMVx" Name="Is Exported" Kind="OutputPin" />
-                </Node>
-                <Node Bounds="485,562,45,19" Id="PCdEfuLAV6wQIDOnNjchol">
-                  <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
-                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <CategoryReference Kind="Category" Name="Control" NeedsToBeDirectParent="true" />
-                    <Choice Kind="OperationCallFlag" Name="Switch" />
-                  </p:NodeReference>
-                  <Pin Id="RA3Ei57jZUTMWfDrbyvKPo" Name="Index" Kind="InputPin" />
-                  <Pin Id="BDp3GvW970nOSmcI0MYaXT" Name="Input" Kind="InputPin" DefaultValue="DEV" />
-                  <Pin Id="PxBuQEf4YyXPhHyYQEye39" Name="Input 2" Kind="InputPin" DefaultValue="GammaLauncher" />
-                  <Pin Id="M4dhTH9FWcYMkkhwMb29hO" Name="Output" Kind="OutputPin" />
-                </Node>
                 <Node Bounds="735,110,38,19" Id="U7CRAX47lONNurpWBk8Y32">
                   <p:NodeReference LastCategoryFullName="Main.Editor.UI" LastDependency="GammaLauncher.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -12793,6 +12775,29 @@
                   <Pin Id="Dk3uBTFOAfBL4Yx7k2N3bA" Name="Output" Kind="OutputPin" />
                   <Pin Id="N5vRqiaFtBcMfON9cU7YGl" Name="Value" Kind="OutputPin" />
                 </Node>
+                <Node Bounds="505,520,102,19" Id="EpVYexWez8iNwzGoMeimcf">
+                  <p:NodeReference LastCategoryFullName="System.Application" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <Choice Kind="ProcessAppFlag" Name="ApplicationVersion" />
+                  </p:NodeReference>
+                  <Pin Id="B7LoaVmMHiXPj8ThOqfD7X" Name="Output" Kind="OutputPin" />
+                  <Pin Id="KOZFaObIKemQcV6Lu2V1ZM" Name="Node Context" Kind="InputPin" IsHidden="true" />
+                </Node>
+                <Node Bounds="485,551,85,19" Id="JojEynZfZ4XQIFjQucy2oY">
+                  <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="StringType" Name="String" NeedsToBeDirectParent="true">
+                      <p:OuterCategoryReference Kind="Category" Name="Primitive" NeedsToBeDirectParent="true" />
+                    </CategoryReference>
+                    <Choice Kind="OperationCallFlag" Name="Format" />
+                  </p:NodeReference>
+                  <Pin Id="D5KdbOgsUPyPxE28bOtHHE" Name="Format" Kind="InputPin" DefaultValue="GammaLauncher {0}" />
+                  <Pin Id="SStDnzAwY8GOUQnQR8bVhW" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="Vf2bMBtwjQxQaypIRoWkeT" Name="Input 2" Kind="InputPin" />
+                  <Pin Id="T85MKrQSVikO0bkwwa3hVv" Name="Input 3" Kind="InputPin" />
+                  <Pin Id="DQ8aXPa5JWSPOLiWJq18T6" Name="Input 4" Kind="InputPin" />
+                  <Pin Id="H7iUcBwAdMPLkisYM6CEuw" Name="Output" Kind="StateOutputPin" />
+                </Node>
               </Canvas>
               <ProcessDefinition Id="GJ1MuldFPStOxgWQnx9ZN6">
                 <Fragment Id="E0AYloWrji9NeKyn663gCn" Patch="Bm4kKQT1Qc0OcozdFGTBMM" Enabled="true" />
@@ -12880,8 +12885,6 @@
               <Link Id="Nh2RGPBCEAeN9E3k7bRAaV" Ids="MsXn8GD3ru8L5PTtlTQPYD,O3BjRFpZvCkP4gw5M3UzN5" />
               <Link Id="JZo565kavNWQEpGBdCgWZa" Ids="BM5xOYEUm10N4JSMJL9cMY,UIi4h8cEjR8LFNne2k8dXp" />
               <Link Id="TMwLH28ThZVN4rhruTxsNA" Ids="GVJDiGa6cwpNTgu2NhduXG,CQZ4P1ohqtjLp1Ua8uF0JC" />
-              <Link Id="QkyrEmGTl2QORaPlUTt68J" Ids="QKTH3QX0vWvOiU0zZVUMVx,RA3Ei57jZUTMWfDrbyvKPo" />
-              <Link Id="N8jeh1XS7DdQO03LaaoZH9" Ids="M4dhTH9FWcYMkkhwMb29hO,NSTvm3IGMXbLAInDPnwVPA" />
               <Link Id="E5EfRkbDCBnL9vXP00NOW4" Ids="Dde20gP8OQYNUZubtJnTGi,BJ1cBOiOennMTZwRRMn9i2" />
               <Link Id="BQNZnp34s85OUKigOBOXAX" Ids="R4fcc8t56HoMq1NKdYGTkB,RnBicouoopWOF82NkQwVQs" />
               <Link Id="I3nBq1Hu5xnOW6YttOMmzj" Ids="KBBkkAkjBIxMLsymdBxhLP,Sy6zm1p59yMPqiEfBRGUQo" />
@@ -12892,6 +12895,8 @@
               <Link Id="Dzvfs26CkagPuwdoQveBGu" Ids="S1hy7CTIXObOE9dSX0YdNN,DQHBpTRjNHNLNcTcuVRrm6" />
               <Link Id="JweB0OkUh3KO4AyKwPf4DN" Ids="EyXW35ALOHXNCeQ66dG7tk,HdT1YZrN6HDOjjp1i6VOuS" />
               <Link Id="Qc23XPakw0VQR7W5G3EMpZ" Ids="U5yE42cAVxUQeAR87IEKNe,VGIGPG758WZLoa1VGSYncj" />
+              <Link Id="SYEft4dhJfhNJBggarW8q3" Ids="B7LoaVmMHiXPj8ThOqfD7X,SStDnzAwY8GOUQnQR8bVhW" />
+              <Link Id="D13ayGMKuzNLQaEwlIDoYN" Ids="H7iUcBwAdMPLkisYM6CEuw,NSTvm3IGMXbLAInDPnwVPA" />
             </Patch>
           </Node>
           <!--
