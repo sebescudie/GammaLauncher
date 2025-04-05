@@ -12,9 +12,9 @@
     <ApplicationIcon>$(MsBuildThisFileDirectory)img\ico.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <ContentWithTargetPath Include="$(MsBuildThisFileDirectory)img\ico.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <TargetPath>img\ico.ico</TargetPath>
+    <ContentWithTargetPath Include="$(MsBuildThisFileDirectory)img\**\*">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  <TargetPath>img\%(RecursiveDir)%(FileName)%(Extension)</TargetPath>
     </ContentWithTargetPath>
   </ItemGroup>
 </Project>
