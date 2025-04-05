@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2025.7.0-0262-g359ae76748" Version="0.128">
-  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2025.7.0-0262-g359ae76748" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2025.7.0-0287-ge0531bcb65" Version="0.128">
+  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2025.7.0-0287-ge0531bcb65" />
   <Patch Id="VwtUUR3K9mbPm4q6fszgF3">
     <Canvas Id="Cn8FrGu71DtOiQColm6Utc" DefaultCategory="Main" CanvasType="FullCategory">
       <Canvas Id="A8kMw5cSAh9N9pwyyLzDKt" Name="Model" Position="92,129">
@@ -37,13 +37,13 @@
                   <Choice Kind="TypeFlag" Name="Integer32" />
                 </p:TypeAnnotation>
               </Pad>
-              <Node Bounds="524,470,51,19" Id="Jui6hY3QDhKPOHQIq3n1uq">
-                <p:NodeReference LastCategoryFullName="GammaLauncher.Version" LastDependency="Version.vl">
+              <Node Bounds="524,480,102,19" Id="UTVVmdpdV1bNxUpTrrLiy9">
+                <p:NodeReference LastCategoryFullName="System.Application" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <CategoryReference Kind="Category" Name="Version" />
-                  <Choice Kind="OperationCallFlag" Name="Version" />
+                  <Choice Kind="ProcessAppFlag" Name="ApplicationVersion" />
                 </p:NodeReference>
-                <Pin Id="MujL8DetJKcO5t56yVfrBd" Name="Output" Kind="OutputPin" />
+                <Pin Id="LQLjgCUZEjBPn14la1NRU4" Name="Output" Kind="OutputPin" />
+                <Pin Id="U1bEQboRnpjMU1bXMJbbbu" Name="Node Context" Kind="InputPin" IsHidden="true" />
               </Node>
             </Canvas>
             <ProcessDefinition Id="HwyYPlPJeANPWLlJB7Q2Jl" IsHidden="true">
@@ -100,7 +100,7 @@
             <Link Id="FsIMio5rPqvOCXbo2kzbU6" Ids="VT1ZzIrW7AiK9mxvuuPd0o,QXsSr5kTN05LHh3rjPWDO1" IsHidden="true" />
             <Link Id="FbbtcPXGZpVMFhvPGNWU5r" Ids="IhFhgHG1M80PdNrhrafOJV,OEkTClAciBALx14yrya4PK" />
             <Link Id="L8Dcq9FdZ8UNt1vZZuABHV" Ids="OEkTClAciBALx14yrya4PK,Pc20tGFvOoIOXukcAWdyfl" IsHidden="true" />
-            <Patch Id="UeVkUKbB99rOPSx1n1EH1B" Name="Create" ParticipatingElements="Ltce6H8ourDLLLnH9BNSju,QZ5R4jYCTSTL6cpKf9930u,IOm4KfMzUp7PD8VqrbzhGX,At0w7sKJSWbP0k3Qn8zdsK,LBddxfToqkdPgR8LHpiGoV">
+            <Patch Id="UeVkUKbB99rOPSx1n1EH1B" Name="Create" ParticipatingElements="Ltce6H8ourDLLLnH9BNSju,QZ5R4jYCTSTL6cpKf9930u,IOm4KfMzUp7PD8VqrbzhGX,At0w7sKJSWbP0k3Qn8zdsK,J2n7UpeMqTqMPge7R1lN2B">
               <Pin Id="OjNu7BqIZkuLoZ80MlBW9N" Name="Launch Tab Model" Kind="InputPin" />
               <Pin Id="DN0TFFHDpZgL0TW5SmLkwi" Name="Settings Model" Kind="InputPin" />
               <Pin Id="SCxWhtd0zTRQFu558X48HR" Name="Window Bounds" Kind="InputPin" Bounds="610,509" />
@@ -132,7 +132,7 @@
               </p:TypeAnnotation>
             </Slot>
             <Link Id="At0w7sKJSWbP0k3Qn8zdsK" Ids="MzzcxJY1pLAPG7P1dZFlV0,TLyyvUzSHiQOn9Y3YpavHv" />
-            <Link Id="LBddxfToqkdPgR8LHpiGoV" Ids="MujL8DetJKcO5t56yVfrBd,SaAYYUU4q4XNTXYtjMmzL9" />
+            <Link Id="J2n7UpeMqTqMPge7R1lN2B" Ids="LQLjgCUZEjBPn14la1NRU4,SaAYYUU4q4XNTXYtjMmzL9" />
           </Patch>
         </Node>
         <!--
@@ -21751,7 +21751,7 @@
             <Patch Id="Boeq9eovVWZMhABD2lj8GN">
               <ControlPoint Id="DN3DQ6Z557ZMCQq5CYRvnd" Bounds="357,687" />
               <Link Id="Uq4xlbgCA1jMwcB6AS1ff0" Ids="Bd2JisiJ614PJMLLjf7AdU,DN3DQ6Z557ZMCQq5CYRvnd" IsHidden="true" />
-              <Pin Id="Bd2JisiJ614PJMLLjf7AdU" Name="Input" Kind="InputPin" PinGroupDefaultCount="1">
+              <Pin Id="Bd2JisiJ614PJMLLjf7AdU" Name="Input" Kind="InputPin">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="String" />
                 </p:TypeAnnotation>
@@ -22953,20 +22953,19 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2025.7.0-0262-g359ae76748" />
+  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2025.7.0-0287-ge0531bcb65" />
   <PlatformDependency Id="PR2RZQLpnGKNZvYQVn3Ead" Location="mscorlib" />
   <PlatformDependency Id="Ow5sjuC3immNloZfvkN1g7" Location="System.Windows.Forms" />
   <PlatformDependency Id="HMEsYQpErI5OqaqpKnu53t" Location="System.Drawing" />
   <NugetDependency Id="A7QaxZnKLQBPrEoH3eQWQY" Location="RestSharp" Version="106.15.0" />
-  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2025.7.0-0262-g359ae76748" />
+  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2025.7.0-0287-ge0531bcb65" />
   <NugetDependency Id="Vnl8tgKwbGMP0yvGw64Adv" Location="Semver" Version="2.0.6" />
-  <NugetDependency Id="IscN5qIHnL6N2GQSwSz602" Location="VL.ImGui" Version="2025.7.0-0262-g359ae76748" />
-  <NugetDependency Id="DueOVdpuzHRN7xQZ6gn9H6" Location="VL.ImGui.Skia" Version="2025.7.0-0262-g359ae76748" />
+  <NugetDependency Id="IscN5qIHnL6N2GQSwSz602" Location="VL.ImGui" Version="2025.7.0-0287-ge0531bcb65" />
+  <NugetDependency Id="DueOVdpuzHRN7xQZ6gn9H6" Location="VL.ImGui.Skia" Version="2025.7.0-0287-ge0531bcb65" />
   <DocumentDependency Id="K4SG30vxDXFQCQQq5jLvaS" Location="./GammaLauncher.Proxies.vl" />
   <NugetDependency Id="ObULv8xpK0APMCczaZvh3u" Location="Downloader" Version="3.0.6" />
   <NugetDependency Id="ExFUESH6MHIL8sAEZQOefx" Location="VL.WinFormsUtils" Version="1.0.11" />
   <PlatformDependency Id="VR1jnqPcjfvLcoXBk3XpJ2" Location="System.Runtime" />
   <ProjectDependency Id="R4EKL4H4b3bNJt1ZkjFVpl" Location="./csharp/DeleteFolders.Utils/DeleteFolders.Utils.csproj" />
   <NugetDependency Id="NZGwfegHrHbLjsdyccCvnP" Location="Microsoft.Extensions.Configuration.CommandLine" Version="8.0.0" />
-  <DocumentDependency Id="H8degzdYjY8MsCdZkTNoIn" Location="./Version.vl" />
 </Document>
