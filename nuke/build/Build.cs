@@ -110,9 +110,13 @@ class Build : NukeBuild
             content = content.Replace(VersionMagicString, Version);
             File.WriteAllText(VvvvPropsFile, content);
 
-            //Compile patch
-            var compilationProcess = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --clean");
-            compilationProcess.WaitForExit();
+            // Compile win-x64
+            var buildWinx64 = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --output-type WinExe --platform x64 --clean");
+            buildWinx64.WaitForExit();
+
+            // Compile win-arm
+            var buildWinArm = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --output-type WinExe --platform Arm --clean");
+            buildWinArm.WaitForExit();
         });
 
     // Create installer
