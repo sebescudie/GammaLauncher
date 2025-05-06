@@ -111,11 +111,11 @@ class Build : NukeBuild
             File.WriteAllText(VvvvPropsFile, content);
 
             // Compile win-x64
-            var buildWinx64 = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --output-type WinExe --platform x64 --clean");
+            var buildWinx64 = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --output-type WinExe --rid win-x64 --clean");
             buildWinx64.WaitForExit();
 
             // Compile win-arm
-            var buildWinArm = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --output-type WinExe --platform Arm --clean");
+            var buildWinArm = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --output-type WinExe --rid win-arm64 --clean");
             buildWinArm.WaitForExit();
         });
 
