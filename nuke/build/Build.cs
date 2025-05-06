@@ -59,23 +59,38 @@ class Build : NukeBuild
             // was not moved to /tools
             var exeInTools = Directory.EnumerateFiles(ChocoToolsFolder).FirstOrDefault(f => Path.GetFileName(f).EndsWith("exe"));
             if(!exeInTools.IsNullOrEmpty())
+            {
+                Console.WriteLine("Deleting outdated exe from Choco /tools folder")
                 File.Delete(exeInTools);
-
+            }
+            
             var exeInInno = Directory.EnumerateFiles(InnoFolder).FirstOrDefault(f => Path.GetFileName(f).EndsWith("exe"));
             if(!exeInInno.IsNullOrEmpty())
+            {
+                Console.WriteLine("Deleting outdated installer");
                 File.Delete(exeInInno);
+            }
 
             // Delete generated inno script
             if(File.Exists(InnoScript))
+            {
+                Console.WriteLine("Deleting outdated Inno script");
                 File.Delete(InnoScript);
+            }
 
             // Delete generated nuspec
             if(File.Exists(NuspecFile))
+            {
+                Console.WriteLine("Deleting outdated nuspec");
                 File.Delete(NuspecFile);
-
+            }
+                
             // Delete generated props file
             if(File.Exists(VvvvPropsFile))
+            {
+                Console.WriteLine("Deleting outdated props file");
                 File.Delete(VvvvPropsFile);
+            }
         });
 
     Target Restore => _ => _
