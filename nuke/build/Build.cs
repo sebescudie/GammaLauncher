@@ -60,7 +60,7 @@ class Build : NukeBuild
             var exeInTools = Directory.EnumerateFiles(ChocoToolsFolder).FirstOrDefault(f => Path.GetFileName(f).EndsWith("exe"));
             if(!exeInTools.IsNullOrEmpty())
             {
-                Console.WriteLine("Deleting outdated exe from Choco /tools folder")
+                Console.WriteLine("Deleting outdated exe from Choco /tools folder");
                 File.Delete(exeInTools);
             }
             
