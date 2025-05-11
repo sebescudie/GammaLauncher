@@ -1,0 +1,15 @@
+meta {
+  name: Get Changes For Build
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{endpoint}}/changes?locator=build:(id:39025)
+  body: none
+  auth: inherit
+}
+
+params:query {
+  locator: build:(id:39025)
+}
