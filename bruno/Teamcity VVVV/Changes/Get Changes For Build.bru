@@ -1,15 +1,16 @@
 meta {
   name: Get Changes For Build
   type: http
-  seq: 1
+  seq: 3
 }
 
 get {
-  url: {{endpoint}}/changes?locator=build:(id:39025)
+  url: {{endpoint}}/changes?locator=build:(id:39025)&fields=count,change:(version,username,date,href,comment,files)
   body: none
   auth: inherit
 }
 
 params:query {
   locator: build:(id:39025)
+  fields: count,change:(version,username,date,href,comment,files)
 }
