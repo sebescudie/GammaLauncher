@@ -22,6 +22,7 @@ class Build : NukeBuild
     public static int Main() => Execute<Build>(x => x.Clean);
 
     string VersionMagicString = "##VERSION##";
+    string TargetMagicString = "##TARGET##";
 
     string InnoFolder = RootDirectory / .. / "inno";
     string InnoTemplate= RootDirectory / .. / "inno/installer.iss.template";
@@ -52,7 +53,11 @@ class Build : NukeBuild
         {
             // Clean vvvv output folder
             if(Path.Exists(VvvvOutputDirectory))
+            {
+                Console.WriteLine("Deleting outdated vvvv output dir");
                 Directory.Delete(VvvvOutputDirectory, true);
+            }
+                
 
             // Delete installer from inno and choco/tools folders
             // We search in both folder in case something got wrong during previous run and the installer
@@ -120,14 +125,23 @@ class Build : NukeBuild
             if(File.Exists(compilerPath))
                 Console.WriteLine("Found corresponding CLI compiler");
 
-            // Generate props file from template
+            // Generate props file from template for x64
             var content = File.ReadAllText(VvvvPropsTemplate);
-            content = content.Replace(VersionMagicString, Version);
+            content = content.Replace(VersionMagicString, Version)
+                             .Replace(TargetMagicString, $"win-x64");
             File.WriteAllText(VvvvPropsFile, content);
 
             // Compile win-x64
             var buildWinx64 = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --output-type WinExe --rid win-x64 --clean");
             buildWinx64.WaitForExit();
+
+            // Generate props file from template for arm
+            if(File.Exists(VvvvPropsFile))
+                File.Delete(VvvvPropsFile);
+            content = File.ReadAllText(VvvvPropsTemplate);
+            content = content.Replace(VersionMagicString, Version)
+                             .Replace(TargetMagicString, $"win-arm64");
+            File.WriteAllText(VvvvPropsFile, content);
 
             // Compile win-arm
             var buildWinArm = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --output-type WinExe --rid win-arm64 --clean");
