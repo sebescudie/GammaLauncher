@@ -1,5 +1,32 @@
 ## Changelog
 
+### 5.3.0
+
+#### New
+
+- A _Show Package Cache_ entry in the _Edit_ menu shows the vvvv package cache, thanks @bj-rn!
+- A new button allows to open a `cmd` window in the selected vvvversion
+- The installer now takes care of installing the .NET runtime for you
+- A new _Export bat file_ in the _Tools_ menu allows to generate a bat file with the current launcher settings, thanks @lasalillo and @seltzdesign for asking!
+- Now allows to download win-arm64 builds
+- The launcher now exists in win-arm64 flavor, thanks @azeno for fixing the `vvvvc` command thing!
+- A Log window can now be open from the _Tools_ menu
+- The _Updates_ tab now shows an in-app changelog for every remote build, thanks @berkut0 for the request!
+- Now shows a progress bar when downloading a build
+- A new startup option allows to start vvvv as admin
+
+#### Changed
+
+- Start and uninstall buttons are now icons instead of text, thanks @joreg for requesting!
+- Updates tab now shows a `*` when a new build is available instead of coloring the tab yellow
+- The _Kill_ button now enumerates processes, looks for vvvv and kills them instead of just making a taskkill. Thanks @seltzdesign for the report!
+- Reworked _Updates_ tab UI
+- The version dropdown now shows the architecture next to the version number
+
+#### Fixed
+
+- Now checks whether all `package-repositories` folder exist before attempting to start vvvv. Was making it crash, thanks @TremensS for the report!
+
 ### 5.2.0
 
 #### New
