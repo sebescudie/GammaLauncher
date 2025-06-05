@@ -21,9 +21,14 @@ class Build : NukeBuild
 {
     public static int Main() => Execute<Build>(x => x.Clean);
 
-    string VersionMagicString = "##VERSION##";
-    string TargetMagicString = "##TARGET##";
+    const string VersionMagicString           = "##VERSION##";
+    const string TargetMagicString            = "##TARGET##";
 
+    const string winx64TargetString     = "win-x64";
+    const string winArm64TargetString   = "win-arm64";
+
+    const string innoCompilerPath = "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe";
+    
     string InnoFolder = RootDirectory / .. / "inno";
     string InnoTemplate= RootDirectory / .. / "inno/installer.iss.template";
     string InnoScript = RootDirectory / .. / "inno/installer.iss";
@@ -57,8 +62,7 @@ class Build : NukeBuild
                 Console.WriteLine("Deleting outdated vvvv output dir");
                 Directory.Delete(VvvvOutputDirectory, true);
             }
-                
-
+            
             // Delete installer from inno and choco/tools folders
             // We search in both folder in case something got wrong during previous run and the installer
             // was not moved to /tools
@@ -128,7 +132,7 @@ class Build : NukeBuild
             // Generate props file from template for x64
             var content = File.ReadAllText(VvvvPropsTemplate);
             content = content.Replace(VersionMagicString, Version)
-                             .Replace(TargetMagicString, $"win-x64");
+                             .Replace(TargetMagicString, winx64TargetString);
             File.WriteAllText(VvvvPropsFile, content);
 
             // Compile win-x64
@@ -140,7 +144,7 @@ class Build : NukeBuild
                 File.Delete(VvvvPropsFile);
             content = File.ReadAllText(VvvvPropsTemplate);
             content = content.Replace(VersionMagicString, Version)
-                             .Replace(TargetMagicString, $"win-arm64");
+                             .Replace(TargetMagicString, winArm64TargetString);
             File.WriteAllText(VvvvPropsFile, content);
 
             // Compile win-arm
@@ -153,14 +157,25 @@ class Build : NukeBuild
         .DependsOn(Compile)
         .Executes(() =>
         {
-            // Write version in template and render it
+            // Write version in template and render it for winx64
             var content = File.ReadAllText(InnoTemplate);
-            content = content.Replace(VersionMagicString, Version);
+            content = content.Replace(VersionMagicString, Version)
+                             .Replace(TargetMagicString, winx64TargetString);
             File.WriteAllText(InnoScript, content);
 
-            var innoCompilerPath = "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe";
-            var installerCompileProcess = ProcessTasks.StartProcess(innoCompilerPath, InnoScript);
-            installerCompileProcess.WaitForExit();
+            // Build winx64 installer
+            var winX64installerCompileProcess = ProcessTasks.StartProcess(innoCompilerPath, InnoScript);
+            winX64installerCompileProcess.WaitForExit();
+
+            // Write version in template and render it for winArm64
+            content = File.ReadAllText(InnoTemplate);
+            content = content.Replace(VersionMagicString, Version)
+                             .Replace(TargetMagicString, winArm64TargetString);
+            File.WriteAllText(InnoScript, content);
+
+            // Build arm64 installer
+            var Arm64installerCompileProcess = ProcessTasks.StartProcess(innoCompilerPath, InnoScript);
+            Arm64installerCompileProcess.WaitForExit();
         });
 
     // Create Chocolatey package
