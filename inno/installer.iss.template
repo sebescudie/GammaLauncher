@@ -2,7 +2,7 @@
 #define MyAppVersion "##VERSION##"
 #define MyAppPublisher "sebescudie"
 #define MyAppURL "www.sebescudie.github.io"
-#define MyAppExeName "gammalauncher_##VERSION##_installer"
+#define MyAppExeName "gammalauncher_##VERSION##_##TARGET##_installer"
 
 #include "CodeDependencies.iss"
 
@@ -46,7 +46,7 @@ LaunchProgram=Start GammaLauncher after finishing installation
 
 
 [Files]
-Source: "..\output\GammaLauncher\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\output\##TARGET##\GammaLauncher\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{group}\GammaLauncher"; Filename: "{app}\GammaLauncher.exe"
