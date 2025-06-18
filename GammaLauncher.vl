@@ -15239,14 +15239,15 @@
                   <Pin Id="PQfio77No41NPO02mxQj0K" Name="Node Context" Kind="InputPin" IsHidden="true" />
                   <Pin Id="R4fcc8t56HoMq1NKdYGTkB" Name="Output" Kind="OutputPin" />
                 </Node>
-                <Node Bounds="472,304,33,19" Id="P1wRLltccmUMmMCi1q2quC">
+                <Node Bounds="472,304,96,19" Id="P1wRLltccmUMmMCi1q2quC">
                   <p:NodeReference LastCategoryFullName="Main.Utils.What" LastDependency="GammaLauncher.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <CategoryReference Kind="Category" Name="What" NeedsToBeDirectParent="true" />
-                    <Choice Kind="ProcessAppFlag" Name="Egg" />
+                    <Choice Kind="ProcessAppFlag" Name="FramerateOverlay" />
                   </p:NodeReference>
                   <Pin Id="IBCMsZZtmfiP2pY0VoagYH" Name="Node Context" Kind="InputPin" IsHidden="true" />
                   <Pin Id="KBBkkAkjBIxMLsymdBxhLP" Name="Output" Kind="OutputPin" />
+                  <Pin Id="MfazbPSVow1PAgRHkgkuAr" Name="Enable" Kind="InputPin" DefaultValue="False" />
                 </Node>
                 <!--
 
@@ -29702,17 +29703,17 @@
           </Node>
           <!--
 
-    ************************ Egg ************************
+    ************************ FramerateOverlay ************************
 
 -->
-          <Node Name="Egg" Bounds="532,267" Id="Ezk15DNeB55QM3zFtOn3V5">
+          <Node Name="FramerateOverlay" Bounds="532,267" Id="Ezk15DNeB55QM3zFtOn3V5">
             <p:NodeReference LastCategoryFullName="Primitive" LastDependency="Builtin">
               <Choice Kind="ContainerDefinition" Name="Process" />
             </p:NodeReference>
             <Patch Id="Q8tCSelrhIcLyNhUyMJK1y">
               <Canvas Id="U1fcNVeTMySO3pNdhV70oB" CanvasType="Group">
                 <ControlPoint Id="IoZk74QYBNXMxLAe5pevUz" Bounds="345,795" />
-                <Node Bounds="331,420,65,19" Id="MoFvvzUYb72NVidZFgQ6c4">
+                <Node Bounds="383,430,65,19" Id="MoFvvzUYb72NVidZFgQ6c4">
                   <p:NodeReference LastCategoryFullName="System.Application" LastDependency="VL.CoreLib.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <CategoryReference Kind="Category" Name="Application" NeedsToBeDirectParent="true">
@@ -29807,18 +29808,21 @@
                   <ControlPoint Id="OBElrhUw572P80vxlhK8SJ" Bounds="345,755" Alignment="Bottom" />
                   <ControlPoint Id="HUy5qMaQsEGOJI9zRvxKu2" Bounds="345,512" Alignment="Top" />
                 </Node>
-                <Node Bounds="331,460,37,19" Id="My29ERmCix3LhIszs31B4y">
+                <Node Bounds="331,460,57,19" Id="TxUZRfqJDQkLJRev7yEAdP">
                   <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastDependency="VL.CoreLib.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                    <Choice Kind="OperationCallFlag" Name="NOT" />
+                    <Choice Kind="OperationCallFlag" Name="ANDNOT" />
                   </p:NodeReference>
-                  <Pin Id="B9iqdc9EfWHPbWQW62fUP4" Name="Input" Kind="StateInputPin" />
-                  <Pin Id="EN5JK8msiiEMZ2RrrpKglx" Name="Output" Kind="StateOutputPin" />
+                  <Pin Id="E3uOKZaaiGfNbs9izSectZ" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="Igo1KrWKgZJOtE1sFtpZoP" Name="Input 2" Kind="InputPin" />
+                  <Pin Id="OnU4GzK68F0LJwAd90NEa2" Name="Output" Kind="StateOutputPin" />
                 </Node>
+                <ControlPoint Id="VbTUCVJP3rEOxLNUHBZq13" Bounds="333,400" />
               </Canvas>
               <Patch Id="CjgA5kNXbtcPMlKIRpa2AR" Name="Create" />
               <Patch Id="I6KpzDHDM5OMlKIiZxU4P9" Name="Update">
                 <Pin Id="GC1WVO075OQL1RXaoZNLmz" Name="Output" Kind="OutputPin" Bounds="483,413" />
+                <Pin Id="Ll682gVBuTnPnHMXN6SSE4" Name="Enable" Kind="InputPin" />
               </Patch>
               <ProcessDefinition Id="SsLE4YucAV0LrvlgD8hGb9">
                 <Fragment Id="JYLhTXZ1OkNOEaaI9Zebql" Patch="CjgA5kNXbtcPMlKIRpa2AR" Enabled="true" />
@@ -29828,13 +29832,15 @@
               <Link Id="ExJHXVeQ7JtMswe2VMtFo2" Ids="ODLO6ySAlRzOHVPoGUIDrb,NNcut6RqyXzOgJiGgG8NKK" />
               <Link Id="O5EglU3bheuMKKeTH0ZMcV" Ids="HUy5qMaQsEGOJI9zRvxKu2,OBElrhUw572P80vxlhK8SJ" IsFeedback="true" />
               <Link Id="AsLNuI6Dw1nLOHzo3aO86g" Ids="OBElrhUw572P80vxlhK8SJ,IoZk74QYBNXMxLAe5pevUz" />
-              <Link Id="Lp7vw7cmHznPZkXYqYMlXR" Ids="MLtmpGuYxYSQF8AaAi42XW,B9iqdc9EfWHPbWQW62fUP4" />
-              <Link Id="CyF78bJV9BNLuDHALMxrzO" Ids="EN5JK8msiiEMZ2RrrpKglx,E5giGTOM4XvMwlq0dmsC4x" />
               <Link Id="IJ4KgnRkbkXO6CVDXDPY8K" Ids="NY2uSH2yBX6MGCx3J2Cepb,OFf4kSqwMA2OGyLaRoPrX7" />
               <Link Id="ACQtSzgneBpOCLDA8DQq9x" Ids="GIUQLhgPQLzPGtT4ebhAh5,OBElrhUw572P80vxlhK8SJ" />
               <Link Id="LNDk5ZY3SElM5C5MbvTKbU" Ids="QeTsapuIgodO8W7bd6rCCK,PfiFzKRECRrLDudGItSJ0N" />
               <Link Id="BjVqLlmkMDAOKDmw26klB4" Ids="LBWYP1Y28aYLkpplSjqvAR,QbXnPV0ZuzXNkrRBASTE1c" />
               <Link Id="VLiDehqnpqrPpy2n8FjOJz" Ids="BEoNRVKvZnkPAPkTDf0oib,GlzqXAF9GAJMFP1FZbkUZX" />
+              <Link Id="UY5XdISe1vdPbtaJxLeeH5" Ids="MLtmpGuYxYSQF8AaAi42XW,Igo1KrWKgZJOtE1sFtpZoP" />
+              <Link Id="Lw1DPCjsj1QLWe2zANGSZX" Ids="VbTUCVJP3rEOxLNUHBZq13,E3uOKZaaiGfNbs9izSectZ" />
+              <Link Id="EGEp17p8v7yMMdBpTP7kwf" Ids="Ll682gVBuTnPnHMXN6SSE4,VbTUCVJP3rEOxLNUHBZq13" IsHidden="true" />
+              <Link Id="KUCTXya31rgNgg7ppsVyLZ" Ids="OnU4GzK68F0LJwAd90NEa2,E5giGTOM4XvMwlq0dmsC4x" />
             </Patch>
           </Node>
         </Canvas>
