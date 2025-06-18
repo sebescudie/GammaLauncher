@@ -29943,21 +29943,41 @@
                 <Pin Id="NI7uel8zVcpOa1mppamUoZ" Name="Wait Accuracy" Kind="OutputPin" IsHidden="true" />
               </Node>
               <Pad Id="Vt9uFTOZDudPQEOTNrikeO" SlotId="HJuvc6KG5XpOX6rpRD4eTC" Bounds="860,350" />
-              <Pad Id="U0styIUBbbfM26fmQOykXo" Comment="Framerate" Bounds="860,270,35,15" ShowValueBox="true" isIOBox="true" Value="30">
+              <Pad Id="U0styIUBbbfM26fmQOykXo" Comment="" Bounds="860,181,35,15" ShowValueBox="true" isIOBox="true" Value="30">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="Integer32" />
                 </p:TypeAnnotation>
               </Pad>
-              <Pad Id="APnluET8qX2MPMLRqYOUQM" Comment="Framerate" Bounds="888,300,35,15" ShowValueBox="true" isIOBox="true" Value="2">
+              <Pad Id="APnluET8qX2MPMLRqYOUQM" Comment="" Bounds="947,279,35,15" ShowValueBox="true" isIOBox="true" Value="2">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="Integer32" />
                 </p:TypeAnnotation>
               </Pad>
-              <Pad Id="GrgTVvBv9LxOClHj8KBe1w" Comment="Framerate" Bounds="820,231,35,15" ShowValueBox="true" isIOBox="true" Value="30">
+              <Pad Id="GrgTVvBv9LxOClHj8KBe1w" Comment="" Bounds="761,181,35,15" ShowValueBox="true" isIOBox="true" Value="30">
                 <p:TypeAnnotation LastCategoryFullName="Primitive" LastDependency="VL.CoreLib.vl">
                   <Choice Kind="TypeFlag" Name="Integer32" />
                 </p:TypeAnnotation>
               </Pad>
+              <Node Bounds="905,219,65,19" Id="TYE56qQVGx0O7d4cy2N7zQ">
+                <p:NodeReference LastCategoryFullName="System.Application" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <CategoryReference Kind="Category" Name="Application" NeedsToBeDirectParent="true">
+                    <p:OuterCategoryReference Kind="Category" Name="System" NeedsToBeDirectParent="true" />
+                  </CategoryReference>
+                  <Choice Kind="OperationCallFlag" Name="IsExported" />
+                </p:NodeReference>
+                <Pin Id="BXMM6ZvYbugMXq1DtQkuvT" Name="Is Exported" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="905,300,45,19" Id="FcGwYcwyRIoOsIjEZ6Tmr2">
+                <p:NodeReference LastCategoryFullName="Control" LastDependency="VL.CoreLib.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="OperationCallFlag" Name="Switch (Boolean)" />
+                </p:NodeReference>
+                <Pin Id="FbBrZi8qzW3Nu8AuPLMKMJ" Name="Condition" Kind="InputPin" />
+                <Pin Id="VpjWc9OoLx7MRz3y0km02F" Name="Input" Kind="InputPin" />
+                <Pin Id="Ah75BtOMvH4QDZRuraibLT" Name="Input 2" Kind="InputPin" />
+                <Pin Id="BLu5vGJZ9MmMDLZXCV3H1V" Name="Output" Kind="OutputPin" />
+              </Node>
             </Canvas>
             <Patch Id="HKPSW1LesD8LsIyjVcYM15" Name="Create" ParticipatingElements="ITpuKzc8aDqOfK0bsVtDWq" />
             <ProcessDefinition Id="F51V14oa6YaPP72I1Clmie" HasStateOut="true">
@@ -29965,7 +29985,6 @@
               <Fragment Id="Pd9AwiyM6YIL03XApEzv3q" Patch="Du2TuF6NO7yOOT6EXCLdIr" Enabled="true" />
               <Fragment Id="VSQHtNb7mf1Oj9GxnLZQjo" Patch="HIW9UsokJLdMAnkA5zZnw6" />
               <Fragment Id="VaL6D3czbLqN2yFnBN1Utr" Patch="SXJVqsx4qX7O6dZJ23xtp1" />
-              <Fragment Id="FLycvKQyYpPLhjNyhfmxst" Patch="FRsTfeCdmg8NYPHjc9yN42" />
             </ProcessDefinition>
             <Slot Id="HJuvc6KG5XpOX6rpRD4eTC" Name="Framerate">
               <p:TypeAnnotation p:Type="TypeReference">
@@ -29975,11 +29994,13 @@
             <Link Id="DhHezeQMFSwOWiqP78V4Oa" Ids="Vt9uFTOZDudPQEOTNrikeO,AyPZaiupZnWNQrdNzKAxxr" />
             <Patch Id="Du2TuF6NO7yOOT6EXCLdIr" Name="Update" ParticipatingElements="DhHezeQMFSwOWiqP78V4Oa" />
             <Link Id="PONzpwnqzPBOkCxDvpBgEP" Ids="U0styIUBbbfM26fmQOykXo,Vt9uFTOZDudPQEOTNrikeO" />
-            <Patch Id="HIW9UsokJLdMAnkA5zZnw6" Name="GoFast" ParticipatingElements="PONzpwnqzPBOkCxDvpBgEP" />
-            <Link Id="PfmyP6HMohSL1ScFWZzCPJ" Ids="APnluET8qX2MPMLRqYOUQM,Vt9uFTOZDudPQEOTNrikeO" />
-            <Patch Id="SXJVqsx4qX7O6dZJ23xtp1" Name="GoSlow" ParticipatingElements="PfmyP6HMohSL1ScFWZzCPJ" />
+            <Patch Id="HIW9UsokJLdMAnkA5zZnw6" Summary="Sets the framerate to 30 FPS" Name="GoFast" ParticipatingElements="PONzpwnqzPBOkCxDvpBgEP" />
+            <Patch Id="SXJVqsx4qX7O6dZJ23xtp1" Summary="If the app is exported, sets the framerate to 2FPS. If running in the editor, has no effect." Name="GoSlow" ParticipatingElements="TYE56qQVGx0O7d4cy2N7zQ" />
             <Link Id="ITpuKzc8aDqOfK0bsVtDWq" Ids="GrgTVvBv9LxOClHj8KBe1w,Vt9uFTOZDudPQEOTNrikeO" />
-            <Patch Id="FRsTfeCdmg8NYPHjc9yN42" Name="Framerate" />
+            <Link Id="Uw6FmmiqrCULI73NPGupLa" Ids="BXMM6ZvYbugMXq1DtQkuvT,FbBrZi8qzW3Nu8AuPLMKMJ" />
+            <Link Id="SPc9dWtuwZVNNgjRdhQqDE" Ids="BLu5vGJZ9MmMDLZXCV3H1V,Vt9uFTOZDudPQEOTNrikeO" />
+            <Link Id="QEUA2LdzVwBOF4rUBcxbzg" Ids="APnluET8qX2MPMLRqYOUQM,Ah75BtOMvH4QDZRuraibLT" />
+            <Link Id="VvcTLniZuLuPhoZ1hGBv65" Ids="U0styIUBbbfM26fmQOykXo,VpjWc9OoLx7MRz3y0km02F" />
           </Patch>
         </Node>
       </Canvas>
