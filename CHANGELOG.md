@@ -5,7 +5,8 @@
 #### New
 
 - A _Show Package Cache_ entry in the _Edit_ menu shows the vvvv package cache, thanks @bj-rn!
-- A new button allows to open a `cmd` window in the selected vvvversion
+- A _Show vvvv documents_ entry in the _Edit_ menu shows the relevant vvvv gamma folder (stable or preview, depending on which version you have selected) in your Documents folder, as requested by @joreg. Thanks!
+- A new button allows to open a `cmd` window in the selected vvvversion, which was also requested by @joreg
 - The installer now takes care of installing the .NET runtime for you
 - A new _Export bat file_ in the _Tools_ menu allows to generate a bat file with the current launcher settings, thanks @lasalillo and @seltzdesign for asking!
 - Now allows to download win-arm64 builds
@@ -13,7 +14,7 @@
 - A Log window can now be open from the _Tools_ menu
 - The _Updates_ tab now shows an in-app changelog for every remote build, thanks @berkut0 for the request!
 - Now shows a progress bar when downloading a build
-- A new startup option allows to start vvvv as admin
+- A new startup option allows to start vvvv as admin, as requested by @joreg, thanks!
 - A new _Log Current Startup String_ in the _Tools_ menu allows to log the command the launcher would actually run if the _Start_ button was clicked
 - Added `--export-package-sources` startup arg, available when enabling Advanced Arguments
 
@@ -28,6 +29,7 @@
 #### Fixed
 
 - Now checks whether all `package-repositories` folder exist before attempting to start vvvv. Was making it crash, thanks @TremensS for the report!
+- Hovering a package repositories/editable packages/export package source entry in the _Settings_ tab will show its tooltip even if the item is disabled, thanks @joreg for suggesting!
 
 ### 5.2.0
 
