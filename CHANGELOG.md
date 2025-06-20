@@ -9,11 +9,13 @@
 - The installer now takes care of installing the .NET runtime for you
 - A new _Export bat file_ in the _Tools_ menu allows to generate a bat file with the current launcher settings, thanks @lasalillo and @seltzdesign for asking!
 - Now allows to download win-arm64 builds
-- The launcher now exists in win-arm64 flavor, thanks @azeno for fixing the `vvvvc` command thing!
+- The launcher now exists in win-arm64 flavor, thanks @azeno for fixing the `vvvvc` command thing, and to @everyoneishappy, @benju and @azeno for beta-testing!
 - A Log window can now be open from the _Tools_ menu
 - The _Updates_ tab now shows an in-app changelog for every remote build, thanks @berkut0 for the request!
 - Now shows a progress bar when downloading a build
 - A new startup option allows to start vvvv as admin
+- A new _Log Current Startup String_ in the _Tools_ menu allows to log the command the launcher would actually run if the _Start_ button was clicked
+- Added `--export-package-sources` startup arg, available when enabling Advanced Arguments
 
 #### Changed
 
