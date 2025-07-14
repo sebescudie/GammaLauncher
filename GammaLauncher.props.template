@@ -3,13 +3,12 @@
   <PropertyGroup>
     <VLAssetBehavior>RelativeToOutput</VLAssetBehavior>
     <VLCleanBuildDirectory>True</VLCleanBuildDirectory>
-	<Version>##VERSION##</Version>
+	  <Version>##VERSION##</Version>
     <VLExportPath>$(MsBuildThisFileDirectory)output\##TARGET##</VLExportPath>
     <VLTargetOS>Windows</VLTargetOS>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <ApplicationIcon>$(MsBuildThisFileDirectory)img\ico.ico</ApplicationIcon>
-	<RuntimeHostConfigurationOption Include="System.Net.DisableIPv6" Value="true" />
   </PropertyGroup>
   <ItemGroup>
     <ContentWithTargetPath Include="$(MsBuildThisFileDirectory)img\**\*">
