@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2025.7.0-0449-gd8ccccbee2" Version="0.128">
-  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2025.7.0-0449-gd8ccccbee2" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2025.7.0-0487-g49a9786a41" Version="0.128">
+  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2025.7.0-0487-g49a9786a41" />
   <Patch Id="VwtUUR3K9mbPm4q6fszgF3">
     <Canvas Id="Cn8FrGu71DtOiQColm6Utc" DefaultCategory="Main" CanvasType="FullCategory">
       <Canvas Id="A8kMw5cSAh9N9pwyyLzDKt" Name="Model" Position="92,129">
@@ -8059,6 +8059,7 @@
                                           </Node>
                                         </Patch>
                                         <ControlPoint Id="TMm6nKMHmTROinFsDbU8ce" Bounds="655,560" Alignment="Bottom" />
+                                        <Pin Id="MlqSvs5gVyDM4lL9PakrOv" Name="Warn" Kind="InputPin" />
                                       </Node>
                                       <Node Bounds="653,420,123,19" Id="AiPfvdtitA0OgSrkjKVHFb">
                                         <p:NodeReference LastCategoryFullName="Main.Editor.UI.Editor.Tabs.Launch.VersionDropdown" LastDependency="GammaLauncher.vl">
@@ -18131,7 +18132,7 @@
                   <Pin Id="N5vRqiaFtBcMfON9cU7YGl" Name="Value" Kind="OutputPin" />
                   <Pin Id="CpYpQqDId4XOMvAXzhYJ0k" Name="Author" Kind="InputPin" IsHidden="true" />
                 </Node>
-                <Node Bounds="559,510,102,19" Id="SdO2XM1d0gLMwt8RFPQ8iB">
+                <Node Bounds="582,510,102,19" Id="SdO2XM1d0gLMwt8RFPQ8iB">
                   <p:NodeReference LastCategoryFullName="System.Application" LastDependency="VL.CoreLib.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="ProcessAppFlag" Name="ApplicationVersion" />
@@ -18139,19 +18140,16 @@
                   <Pin Id="UnyoU2i4JKSM0F1Wp8c86m" Name="Output" Kind="OutputPin" />
                   <Pin Id="RxxPovF1DMTPIeTKwrb2O3" Name="Node Context" Kind="InputPin" IsHidden="true" />
                 </Node>
-                <Node Bounds="539,541,85,19" Id="PMvCu8rUJANL7MNZeIvdvH">
+                <Node Bounds="539,541,48,19" Id="PMvCu8rUJANL7MNZeIvdvH">
                   <p:NodeReference LastCategoryFullName="Primitive.String" LastDependency="VL.CoreLib.vl">
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <CategoryReference Kind="StringType" Name="String" NeedsToBeDirectParent="true">
                       <p:OuterCategoryReference Kind="Category" Name="Primitive" NeedsToBeDirectParent="true" />
                     </CategoryReference>
-                    <Choice Kind="OperationNode" Name="Format (Version 1)" />
+                    <Choice Kind="OperationCallFlag" Name="Format" />
                   </p:NodeReference>
                   <Pin Id="FcRGs90eygONA8bf8as2zn" Name="Format" Kind="InputPin" DefaultValue="GammaLauncher {0}" />
                   <Pin Id="B49ouJiQkDCLh9sGDWLImg" Name="Input" Kind="StateInputPin" />
-                  <Pin Id="TjGaUyYuB7xQbzxFKlVCBE" Name="Input 2" Kind="InputPin" />
-                  <Pin Id="S6q6E75o4nLNlHnesjQDy6" Name="Input 3" Kind="InputPin" />
-                  <Pin Id="KTST7PkrmFvL6Xp9IC2hl3" Name="Input 4" Kind="InputPin" />
                   <Pin Id="McbFre5fmbQQXNUdneRRpL" Name="Output" Kind="StateOutputPin" />
                 </Node>
                 <Node Bounds="519,580,105,19" Id="Kdpy8EI7VsdO0C904FGgjj">
@@ -32662,7 +32660,7 @@
       </p:NodeReference>
       <Patch Id="F8UlxYFfbPnMePYinfRrYh">
         <Canvas Id="RCLbd3ePcrmLiAS4XEaOOm" CanvasType="Group">
-          <Node Bounds="102,120,35,19" Id="D9GJ8H74AwdOkmcKjPYJrF">
+          <Node Bounds="101,120,35,19" Id="D9GJ8H74AwdOkmcKjPYJrF">
             <p:NodeReference LastCategoryFullName="Main.App" LastDependency="GammaLauncher.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="ProcessAppFlag" Name="App" />
@@ -32743,15 +32741,15 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2025.7.0-0449-gd8ccccbee2" />
+  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2025.7.0-0487-g49a9786a41" />
   <PlatformDependency Id="PR2RZQLpnGKNZvYQVn3Ead" Location="mscorlib" />
   <PlatformDependency Id="Ow5sjuC3immNloZfvkN1g7" Location="System.Windows.Forms" />
   <PlatformDependency Id="HMEsYQpErI5OqaqpKnu53t" Location="System.Drawing" />
   <NugetDependency Id="A7QaxZnKLQBPrEoH3eQWQY" Location="RestSharp" Version="112.1.0" />
-  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2025.7.0-0449-gd8ccccbee2" />
+  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2025.7.0-0487-g49a9786a41" />
   <NugetDependency Id="Vnl8tgKwbGMP0yvGw64Adv" Location="Semver" Version="2.0.6" />
-  <NugetDependency Id="IscN5qIHnL6N2GQSwSz602" Location="VL.ImGui" Version="2025.7.0-0449-gd8ccccbee2" />
-  <NugetDependency Id="DueOVdpuzHRN7xQZ6gn9H6" Location="VL.ImGui.Skia" Version="2025.7.0-0449-gd8ccccbee2" />
+  <NugetDependency Id="IscN5qIHnL6N2GQSwSz602" Location="VL.ImGui" Version="2025.7.0-0487-g49a9786a41" />
+  <NugetDependency Id="DueOVdpuzHRN7xQZ6gn9H6" Location="VL.ImGui.Skia" Version="2025.7.0-0487-g49a9786a41" />
   <DocumentDependency Id="K4SG30vxDXFQCQQq5jLvaS" Location="./GammaLauncher.Proxies.vl" />
   <NugetDependency Id="ObULv8xpK0APMCczaZvh3u" Location="Downloader" Version="3.0.6" />
   <NugetDependency Id="ExFUESH6MHIL8sAEZQOefx" Location="VL.WinFormsUtils" Version="1.0.11" />
@@ -32759,5 +32757,5 @@
   <ProjectDependency Id="R4EKL4H4b3bNJt1ZkjFVpl" Location="./csharp/DeleteFolders.Utils/DeleteFolders.Utils.csproj" />
   <NugetDependency Id="NZGwfegHrHbLjsdyccCvnP" Location="Microsoft.Extensions.Configuration.CommandLine" Version="8.0.0" />
   <PlatformDependency Id="GGVavhARzFvOQaBB04eyWt" Location="System.Diagnostics.Process" />
-  <NugetDependency Id="BRcWT473G3sQFbJVK8Qfj4" Location="VL.LogView" Version="2025.7.0-0449-gd8ccccbee2" />
+  <NugetDependency Id="BRcWT473G3sQFbJVK8Qfj4" Location="VL.LogView" Version="2025.7.0-0487-g49a9786a41" />
 </Document>
