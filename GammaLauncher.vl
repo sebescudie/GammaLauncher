@@ -18977,6 +18977,42 @@
                 <ControlPoint Id="GlZEBiwt49CMohMHoc1f94" Bounds="1024,30" />
                 <ControlPoint Id="PKq0kVEgs90P78Ktfd3ccB" Bounds="850,580" />
                 <ControlPoint Id="IZyRQrue3FpMx5426JPGJe" Bounds="1075,570" />
+                <Node Bounds="1321,510,70,26" Id="GDkiP9jS9KjQSxunUWnvQS">
+                  <p:NodeReference LastCategoryFullName="System.Windows.Forms.Form" LastDependency="System.Windows.Forms.dll">
+                    <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                    <CategoryReference Kind="AssemblyCategory" Name="Form" />
+                    <Choice Kind="OperationCallFlag" Name="FormClosed" />
+                  </p:NodeReference>
+                  <Pin Id="NnZFTBmzZEGNAzrDsNPfNB" Name="Input" Kind="StateInputPin" />
+                  <Pin Id="VSlFy804MdPNRfBhpuh1UZ" Name="State Output" Kind="OutputPin" IsHidden="true" />
+                  <Pin Id="RP6QuUT35DrOHlk2lyX0V8" Name="Result" Kind="OutputPin" />
+                </Node>
+                <Node Bounds="1321,580,137,103" Id="Lj0IqhMOTFcLeaSWX115o5">
+                  <p:NodeReference LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="ProcessAppFlag" Name="ForEach" />
+                    <CategoryReference Kind="Category" Name="Reactive" NeedsToBeDirectParent="true" />
+                    <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                  </p:NodeReference>
+                  <Patch Id="K513fOZzshiNg5y916yPYg" ManuallySortedPins="true">
+                    <ControlPoint Id="TUBBn7SIBe8OC0875C0Cjn" Bounds="1325,588" />
+                    <ControlPoint Id="DYfElO2XZPaPPjqZKKLds3" Bounds="1355,676" />
+                    <Patch Id="LtO3SOB5KnjLsKjyx4d7th" Name="Create" ManuallySortedPins="true" />
+                    <Patch Id="SpUd1NHxCRbNEfLqtyAmLL" Name="Update" ManuallySortedPins="true">
+                      <Pin Id="RJOYJ4G6Q2qPWBUGw8Yv9J" Name="Input 1" Kind="InputPin" />
+                      <Pin Id="GQHEiC3egELLM7H1xnr7RP" Name="Output" Kind="OutputPin">
+                        <p:TypeAnnotation LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
+                          <Choice Kind="TypeFlag" Name="Unit" />
+                        </p:TypeAnnotation>
+                      </Pin>
+                    </Patch>
+                  </Patch>
+                  <Pin Id="Sw3xLNFSnBVLpsq9zUXF1i" Name="Node Context" Kind="InputPin" IsHidden="true" />
+                  <Pin Id="ROWkaP0psEPOxvEKc49pWb" Name="Messages" Kind="InputPin" />
+                  <Pin Id="INLK7UZ9REjPef4cMOjZG0" Name="Reset" Kind="InputPin" />
+                  <Pin Id="IBG9UGEcXoaPOfRB6FnNc2" Name="Output" Kind="OutputPin" />
+                  <Pin Id="DUlEFNcN27mLSAtzO9rJdT" Name="Result" Kind="OutputPin" />
+                </Node>
+                <ControlPoint Id="L9S7FvYXSqlLUN4UGCMgux" Bounds="1455,740" />
               </Canvas>
               <ProcessDefinition Id="GJ1MuldFPStOxgWQnx9ZN6">
                 <Fragment Id="E0AYloWrji9NeKyn663gCn" Patch="Bm4kKQT1Qc0OcozdFGTBMM" Enabled="true" />
@@ -19019,6 +19055,16 @@
               <Patch Id="Bm4kKQT1Qc0OcozdFGTBMM" Name="Create" ParticipatingElements="RWGJIINT9v9QFrHSvLOeeo">
                 <Pin Id="GGN60yJegBwL8TG9p1JwBZ" Name="Bounds" Kind="InputPin" />
                 <Pin Id="IXzYFl4FYIEMKgglFhTNkX" Name="Framerate Manager" Kind="InputPin" />
+                <Pin Id="TyWseYrWOKcLN82js8cHFR" Name="Form Closed" Kind="OutputPin">
+                  <p:TypeAnnotation LastCategoryFullName="Reactive" LastDependency="VL.CoreLib.vl">
+                    <Choice Kind="TypeFlag" Name="Observable" />
+                    <p:TypeArguments>
+                      <TypeReference>
+                        <Choice Kind="TypeFlag" Name="Unit" />
+                      </TypeReference>
+                    </p:TypeArguments>
+                  </p:TypeAnnotation>
+                </Pin>
               </Patch>
               <Patch Id="FJ84QatQZP2MX392IRi72p" Name="Update" ParticipatingElements="N8ly9ye4e8iM2DfRzsDzhD,UNd8JTkdOw8QZ1tpAfK7OB,QNof9ckJkWrO035VftCJXT,OJExv3gW6TZMhxB8mluTUh,I57X0r43iPwPOvQFtocKin,Th3PXncKyXcPjQq4NiuzXk">
                 <Pin Id="UfsXfkDO6UEN5qeVy46WSj" Name="Application" Kind="InputPin">
@@ -19098,6 +19144,12 @@
               <Link Id="B8ISMAtY9RqM7hNc4D08jM" Ids="IXzYFl4FYIEMKgglFhTNkX,PKq0kVEgs90P78Ktfd3ccB" IsHidden="true" />
               <Link Id="QMbkpMCe0WzQAQOtddGPvu" Ids="IXzYFl4FYIEMKgglFhTNkX,IZyRQrue3FpMx5426JPGJe" IsHidden="true" />
               <Link Id="CasSsuVmYW7Pmk6DHrH1wc" Ids="IZyRQrue3FpMx5426JPGJe,TNBi12SleJlOCBunClDg7E" />
+              <Link Id="AOmxRf2mgwTM3IYabZrr95" Ids="UFc39v4rkwTOgJLeP3qVu2,NnZFTBmzZEGNAzrDsNPfNB" />
+              <Link Id="UWHQPY0HgEHQIuxDVSKyoN" Ids="RJOYJ4G6Q2qPWBUGw8Yv9J,TUBBn7SIBe8OC0875C0Cjn" IsHidden="true" />
+              <Link Id="Rjzn5MQaNnuPFCYNcHfDMD" Ids="DYfElO2XZPaPPjqZKKLds3,GQHEiC3egELLM7H1xnr7RP" IsHidden="true" />
+              <Link Id="SX6YR8QtKgPNEm3P88FuE8" Ids="RP6QuUT35DrOHlk2lyX0V8,ROWkaP0psEPOxvEKc49pWb" />
+              <Link Id="SNAgpVzCkD5O6uWaVTtH1s" Ids="L9S7FvYXSqlLUN4UGCMgux,TyWseYrWOKcLN82js8cHFR" IsHidden="true" />
+              <Link Id="QLul2N2SiS5LvAaBLgkkFq" Ids="DUlEFNcN27mLSAtzO9rJdT,L9S7FvYXSqlLUN4UGCMgux" />
             </Patch>
           </Node>
           <!--
@@ -32682,6 +32734,7 @@
             <Pin Id="C66dxMfii8eLTpXdFi2Z0a" Name="Console" Kind="InputPin" />
             <Pin Id="OpuMahoiugBQMwjL5UlBU5" Name="Show Log Window" Kind="InputPin" />
             <Pin Id="BZ5iY9HmMi4O3N3WJ3c3ba" Name="Show Changelog Window" Kind="InputPin" />
+            <Pin Id="IFuDdIfw5NSPqsMTkZvwvN" Name="Form Closed" Kind="OutputPin" />
           </Node>
           <Node Bounds="191,160,86,19" Id="LVjAnI0SvlpPeyJdNtNIi4">
             <p:NodeReference LastCategoryFullName="Main.Editor.Keyboard" LastDependency="GammaLauncher.vl">
