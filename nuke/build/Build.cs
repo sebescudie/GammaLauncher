@@ -36,7 +36,7 @@ class Build : NukeBuild
 
     AbsolutePath NuspecFile             = RootDirectory / .. / "choco/GammaLauncher/gammalauncher.nuspec";
     AbsolutePath ChocoToolsFolder       = RootDirectory / .. / "choco/GammaLauncher/tools";
-    AbsolutePath ChocoFolder            = RootDirectory / .. / "choco";
+
 
     AbsolutePath ArtifactsDirectory    = RootDirectory / .. / "artifacts";
     AbsolutePath VvvvPropsFile          = RootDirectory / .. / "GammaLauncher.props";
@@ -67,13 +67,6 @@ class Build : NukeBuild
                 File.Delete(exeInTools);
             }
             
-            var exeInInno = Directory.EnumerateFiles(InnoFolder).FirstOrDefault(f => Path.GetFileName(f).EndsWith("exe"));
-            if(!exeInInno.IsNullOrEmpty())
-            {
-                Console.WriteLine("Deleting outdated installer");
-                File.Delete(exeInInno);
-            }
-
             // Delete generated inno script
             if(File.Exists(InnoScript))
             {
@@ -172,7 +165,7 @@ class Build : NukeBuild
             nuspecXDoc.Descendants(XName.Get("version", "http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd")).FirstOrDefault().Value = Version;
             nuspecXDoc.Save(NuspecFile);
 
-            AbsolutePath installerPath = InnoFolder / $"gammalauncher_{Version}_{winx64TargetString}_installer.exe";
+            AbsolutePath installerPath = ArtifactsDirectory / $"gammalauncher_{Version}_{winx64TargetString}_installer.exe";
             var installerTargetPath = $"{ChocoToolsFolder}/{Path.GetFileName(installerPath)}";
             File.Copy(installerPath, installerTargetPath);
 
