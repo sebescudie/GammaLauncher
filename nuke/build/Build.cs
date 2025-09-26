@@ -23,28 +23,27 @@ class Build : NukeBuild
 {
     public static int Main() => Execute<Build>(x => x.Clean);
 
-    const string TargetMagicString    = "##TARGET##";
-    const string VersionMagicString   = "##VERSION##";
-    const string winx64TargetString   = "win-x64";
-    const string winArm64TargetString = "win-arm64";
+    const string TargetMagicString      = "##TARGET##";
+    const string VersionMagicString     = "##VERSION##";
+    const string winx64TargetString     = "win-x64";
+    const string winArm64TargetString   = "win-arm64";
 
-    const string innoCompilerPath     = "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe";
-    
-    string InnoFolder                 = RootDirectory / .. / "inno";
-    string InnoTemplate               = RootDirectory / .. / "inno/installer.iss.template";
-    string InnoScript                 = RootDirectory / .. / "inno/installer.iss";
+    AbsolutePath innoCompilerPath       = "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe";
 
-    string NuspecTemplate             = RootDirectory / .. / "choco/GammaLauncher/gammalauncher.nuspec.template";
-    string NuspecFile                 = RootDirectory / .. / "choco/GammaLauncher/gammalauncher.nuspec";
-    string ChocoToolsFolder           = RootDirectory / .. / "choco/GammaLauncher/tools";
-    string ChocoFolder                = RootDirectory / .. / "choco";
-    
-    string VvvvOutputDirectory        = RootDirectory / .. / "artifacts";
-    string VvvvPropsFile              = RootDirectory / .. / "GammaLauncher.props";
-    string VvvvSourceFile             = RootDirectory / .. / "GammaLauncher.vl";
+    AbsolutePath InnoFolder             = RootDirectory / .. / "inno";
+    AbsolutePath InnoTemplate           = RootDirectory / .. / "inno/installer.iss.template";
+    AbsolutePath InnoScript             = RootDirectory / .. / "inno/installer.iss";
 
-    [Parameter("Version")]
-    readonly string Version = "";
+    AbsolutePath NuspecFile             = RootDirectory / .. / "choco/GammaLauncher/gammalauncher.nuspec";
+    AbsolutePath ChocoToolsFolder       = RootDirectory / .. / "choco/GammaLauncher/tools";
+    AbsolutePath ChocoFolder            = RootDirectory / .. / "choco";
+
+    AbsolutePath ArtifactsDirectory    = RootDirectory / .. / "artifacts";
+    AbsolutePath VvvvPropsFile          = RootDirectory / .. / "GammaLauncher.props";
+    AbsolutePath VvvvSourceFile         = RootDirectory / .. / "GammaLauncher.vl";
+
+    string Version                      = "";
+    AbsolutePath VersionFile            = RootDirectory / .. / "Version.props";
 
     [Parameter("API Key for Chocolatey feed")]
     readonly string ApiKey;
@@ -53,11 +52,10 @@ class Build : NukeBuild
     readonly string Feed;
 
     Target Clean => _ => _
-        .Before(Restore)
         .Executes(() =>
         {
             Console.WriteLine("Purging vvvv artifacts folder...");
-            Utils.DeleteDirectoryContent(VvvvOutputDirectory);
+            Utils.DeleteDirectoryContent(ArtifactsDirectory);
             
             // Delete installer from inno and choco/tools folders
             // We search in both folder in case something got wrong during previous run and the installer
@@ -82,25 +80,27 @@ class Build : NukeBuild
                 Console.WriteLine("Deleting outdated Inno script");
                 File.Delete(InnoScript);
             }
-
-            // Delete generated nuspec
-            if(File.Exists(NuspecFile))
-            {
-                Console.WriteLine("Deleting outdated nuspec");
-                File.Delete(NuspecFile);
-            }
         });
 
-    Target Restore => _ => _
-        .DependsOn(Clean)
-        .Executes(() =>
-        {
-            Console.WriteLine("Nothing to restore");
-        });
 
-    
+    Target GetVersion => _ => _
+       .Executes(() =>
+       {
+           try
+           {
+               Version = XDocument.Load(VersionFile).Descendants("Version").FirstOrDefault()?.Value ?? "0.0.0";
+               Console.WriteLine($"Attempting to build version {Version}");
+           }
+           catch
+           {
+               Console.WriteLine($"Could not extract version from {VersionFile}, aborting");
+               throw;
+           }
+       });
+
     Target Compile => _ => _
-        .DependsOn(Restore)
+        .DependsOn(Clean)
+        .DependsOn(GetVersion)
         .Executes(() =>
         {
             // Parse GammaLauncher entry point to find the vvvversion it was saved with
@@ -164,23 +164,20 @@ class Build : NukeBuild
 
     // Create Chocolatey package
     Target Pack => _ => _
+        .DependsOn(GetVersion)
         .DependsOn(BuildInstaller)
         .Executes(() =>
         {
-            // Write nuspec template and render it
-            var content = File.ReadAllText(NuspecTemplate);
-            content = content.Replace("##VERSION##", Version);
-            File.WriteAllText(NuspecFile, content);
+            var nuspecXDoc = XDocument.Load(NuspecFile);
+            nuspecXDoc.Descendants(XName.Get("version", "http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd")).FirstOrDefault().Value = Version;
+            nuspecXDoc.Save(NuspecFile);
 
-            // Retrieve installer that was built in BuildInstaller step
-            // and move it to choco tool folder
-            string pattern = @"^gammalauncher_.*_installer\.exe$";
-            var installerPath = Directory.EnumerateFiles(InnoFolder).FirstOrDefault(f => Regex.IsMatch(Path.GetFileName(f), pattern));
+            AbsolutePath installerPath = InnoFolder / $"gammalauncher_{Version}_{winx64TargetString}_installer.exe";
             var installerTargetPath = $"{ChocoToolsFolder}/{Path.GetFileName(installerPath)}";
             File.Copy(installerPath, installerTargetPath);
 
             // Pack
-            var packProcess = ProcessTasks.StartProcess("choco", $"pack {NuspecFile}");
+            var packProcess = ProcessTasks.StartProcess("choco", $"pack {NuspecFile}", ArtifactsDirectory);
             packProcess.WaitForExit();
         });
 
