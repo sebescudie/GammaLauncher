@@ -16,32 +16,32 @@ using static Nuke.Common.EnvironmentInfo;
 using static Nuke.Common.IO.PathConstruction;
 using System.Text.RegularExpressions;
 using System.Xml;
+using System.Xml.Linq;
+using _build;
 
 class Build : NukeBuild
 {
     public static int Main() => Execute<Build>(x => x.Clean);
 
-    const string VersionMagicString           = "##VERSION##";
-    const string TargetMagicString            = "##TARGET##";
+    const string TargetMagicString    = "##TARGET##";
+    const string VersionMagicString   = "##VERSION##";
+    const string winx64TargetString   = "win-x64";
+    const string winArm64TargetString = "win-arm64";
 
-    const string winx64TargetString     = "win-x64";
-    const string winArm64TargetString   = "win-arm64";
-
-    const string innoCompilerPath = "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe";
+    const string innoCompilerPath     = "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe";
     
-    string InnoFolder = RootDirectory / .. / "inno";
-    string InnoTemplate= RootDirectory / .. / "inno/installer.iss.template";
-    string InnoScript = RootDirectory / .. / "inno/installer.iss";
+    string InnoFolder                 = RootDirectory / .. / "inno";
+    string InnoTemplate               = RootDirectory / .. / "inno/installer.iss.template";
+    string InnoScript                 = RootDirectory / .. / "inno/installer.iss";
 
-    string NuspecTemplate = RootDirectory / .. / "choco/GammaLauncher/gammalauncher.nuspec.template";
-    string NuspecFile = RootDirectory / .. / "choco/GammaLauncher/gammalauncher.nuspec";
-    string ChocoToolsFolder = RootDirectory / .. / "choco/GammaLauncher/tools";
-    string ChocoFolder = RootDirectory /.. / "choco";
+    string NuspecTemplate             = RootDirectory / .. / "choco/GammaLauncher/gammalauncher.nuspec.template";
+    string NuspecFile                 = RootDirectory / .. / "choco/GammaLauncher/gammalauncher.nuspec";
+    string ChocoToolsFolder           = RootDirectory / .. / "choco/GammaLauncher/tools";
+    string ChocoFolder                = RootDirectory / .. / "choco";
     
-    string VvvvOutputDirectory = RootDirectory / .. / "output";
-    string VvvvPropsTemplate = RootDirectory / .. / "GammaLauncher.props.template";
-    string VvvvPropsFile = RootDirectory / .. /"GammaLauncher.props";
-    string VvvvSourceFile = RootDirectory / .. /"GammaLauncher.vl";
+    string VvvvOutputDirectory        = RootDirectory / .. / "artifacts";
+    string VvvvPropsFile              = RootDirectory / .. / "GammaLauncher.props";
+    string VvvvSourceFile             = RootDirectory / .. / "GammaLauncher.vl";
 
     [Parameter("Version")]
     readonly string Version = "";
@@ -56,12 +56,8 @@ class Build : NukeBuild
         .Before(Restore)
         .Executes(() =>
         {
-            // Clean vvvv output folder
-            if(Path.Exists(VvvvOutputDirectory))
-            {
-                Console.WriteLine("Deleting outdated vvvv output dir");
-                Directory.Delete(VvvvOutputDirectory, true);
-            }
+            Console.WriteLine("Purging vvvv artifacts folder...");
+            Utils.DeleteDirectoryContent(VvvvOutputDirectory);
             
             // Delete installer from inno and choco/tools folders
             // We search in both folder in case something got wrong during previous run and the installer
@@ -93,13 +89,6 @@ class Build : NukeBuild
                 Console.WriteLine("Deleting outdated nuspec");
                 File.Delete(NuspecFile);
             }
-                
-            // Delete generated props file
-            if(File.Exists(VvvvPropsFile))
-            {
-                Console.WriteLine("Deleting outdated props file");
-                File.Delete(VvvvPropsFile);
-            }
         });
 
     Target Restore => _ => _
@@ -112,7 +101,6 @@ class Build : NukeBuild
     
     Target Compile => _ => _
         .DependsOn(Restore)
-        .Requires(() => !string.IsNullOrWhiteSpace(Version))
         .Executes(() =>
         {
             // Parse GammaLauncher entry point to find the vvvversion it was saved with
@@ -129,23 +117,19 @@ class Build : NukeBuild
             if(File.Exists(compilerPath))
                 Console.WriteLine("Found corresponding CLI compiler");
 
-            // Generate props file from template for x64
-            var content = File.ReadAllText(VvvvPropsTemplate);
-            content = content.Replace(VersionMagicString, Version)
-                             .Replace(TargetMagicString, winx64TargetString);
-            File.WriteAllText(VvvvPropsFile, content);
+            // Set rid to win-x64
+            var launcherPropsXdoc = XDocument.Load(VvvvPropsFile);
+
+            launcherPropsXdoc.Descendants(XName.Get("RuntimeIdentifier", "http://schemas.microsoft.com/developer/msbuild/2003")).First().Value = winx64TargetString;
+            launcherPropsXdoc.Save(VvvvPropsFile);
 
             // Compile win-x64
             var buildWinx64 = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --output-type WinExe --rid win-x64 --clean");
             buildWinx64.WaitForExit();
 
-            // Generate props file from template for arm
-            if(File.Exists(VvvvPropsFile))
-                File.Delete(VvvvPropsFile);
-            content = File.ReadAllText(VvvvPropsTemplate);
-            content = content.Replace(VersionMagicString, Version)
-                             .Replace(TargetMagicString, winArm64TargetString);
-            File.WriteAllText(VvvvPropsFile, content);
+            // Set rid to win-arm64
+            launcherPropsXdoc.Descendants(XName.Get("RuntimeIdentifier", "http://schemas.microsoft.com/developer/msbuild/2003")).First().Value = winArm64TargetString;
+            launcherPropsXdoc.Save(VvvvPropsFile);
 
             // Compile win-arm
             var buildWinArm = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --output-type WinExe --rid win-arm64 --clean");
