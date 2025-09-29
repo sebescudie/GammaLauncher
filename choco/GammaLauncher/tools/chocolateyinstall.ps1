@@ -1,16 +1,14 @@
 ﻿$ErrorActionPreference = 'Stop'
-$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$installer = Get-ChildItem -Path $folder -Filter "*.exe" | Select-Object -First 1 -ExpandProperty FullName
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   fileType      = 'EXE'
-  file          = $fileLocation
+  file          = Join-Path $toolsDir $installer
   softwareName  = 'GammaLauncher*'
-  checksum      = ''
   checksumType  = 'sha256'
-  checksum64    = ''
-  checksumType64= 'sha256'
-  silentArgs   = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
+  silentArgs    = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
   validExitCodes= @(0)
 }
 
