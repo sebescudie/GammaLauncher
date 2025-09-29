@@ -138,7 +138,7 @@ class Build : NukeBuild
         });
 
     // Create installer
-    Target BuildInstaller => _ => _
+    Target BuildInstallers => _ => _
         .DependsOn(Compile)
         .Executes(() =>
         {
