@@ -70,18 +70,18 @@ build.cmd clean
 
 ### Compile
 
-This target compiles GammaLauncher in both `win-x64` and `arm64` directly from the command line. There, you'll have to supply a `--version` argument, with the version you're building. For instance, if you were building version 10.5.3 of the Launcher, you'd do
+This target compiles GammaLauncher in both `win-x64` and `arm64` directly from the command line. The version number will be the one you specified in `Version.props`.
 
 ```
 nuke compile --compilerpath "C:\path\to\vvvvc.exe"
 ```
 
-Executing this target will also run the `clean` target described above under the hood. Also, noted that the target does it in a somewhat smart way that it automatically detected which `vvvvc.exe` to run by parsing the version `GammaLauncher.vl` was saved with. So make sure you have that version installed on your system, otherwise you'll get a build error!
+Executing this target will also run the `clean` target described above under the hood.
 
 ### Build installers
 
 This target packages the binaries from the previous step in cool installers. For this one, you'll have to have [Inno Setup](https://jrsoftware.org/isdl.php) installed on your machine!
-This target will obviously run `clean` and `compile` under the hood for you. To run it, do the following
+This target will obviously run `clean` and `compile` under the hood for you. To run it, do the following. Agzin, the version number will be the one you specified in `Version.props`
 
 ```
 nuke buildinstallers --compilerpath "C:\path\to\vvvvc.exe"
