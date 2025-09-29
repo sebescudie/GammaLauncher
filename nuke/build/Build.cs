@@ -66,13 +66,6 @@ class Build : NukeBuild
                 Console.WriteLine("Deleting outdated exe from Choco /tools folder");
                 File.Delete(exeInTools);
             }
-            
-            // Delete generated inno script
-            if(File.Exists(InnoScript))
-            {
-                Console.WriteLine("Deleting outdated Inno script");
-                File.Delete(InnoScript);
-            }
         });
 
 
