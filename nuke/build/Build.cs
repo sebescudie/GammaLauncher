@@ -120,6 +120,22 @@ class Build : NukeBuild
             // Compile win-arm
             var buildWinArm = ProcessTasks.StartProcess(compilerPath, $"{VvvvSourceFile} --output-type WinExe --rid win-arm64 --clean");
             buildWinArm.WaitForExit();
+
+            // Delete src folders
+            var winx64SrcFolder = ArtifactsDirectory / winx64TargetString / "src";
+            if(Directory.Exists(winx64SrcFolder))
+                Directory.Delete(winx64SrcFolder, true);
+
+            var winarm64SrcFolder = ArtifactsDirectory / winArm64TargetString / "src";
+            if(Directory.Exists(winarm64SrcFolder))
+                Directory.Delete(winarm64SrcFolder, true);
+
+            // Create portable zips
+            var winx64BuildOutput = ArtifactsDirectory / winx64TargetString;
+            winx64BuildOutput.ZipTo(ArtifactsDirectory / $"gammalauncher_{Version}_win-x64_portable.zip");
+
+            var winarm64BuildOutput = ArtifactsDirectory / winArm64TargetString;
+            winarm64BuildOutput.ZipTo(ArtifactsDirectory / $"gammalauncher_{Version}_win-arm64_portable.zip");
         });
 
     // Create installer
