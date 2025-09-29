@@ -1,0 +1,71 @@
+name: release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_release:
+    name: build_release
+    runs-on: windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: build
+        run: nuke/build.cmd BuildInstaller
+      - name: version
+        run: "FIX ME"
+        id: version
+
+      - name: release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: false
+          release_name: ${{ steps.version.outputs.version }}
+          tag_name: ${{ steps.version.outputs.version }}
+          body_path: CHANGELOG.md
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: upload win-x64 installer artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./artifacts/
+          asset_name: gammalauncher_VERSION_win-x64_installer.exe
+          asset_content_type: application/gzip
+
+      - name: upload win-arm64 installer artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./artifacts/
+          asset_name: gammalauncher_VERSION_win-arm64_installer.exe
+          asset_content_type: application/gzip
+
+      - name: upload win-arm64 portable artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./artifacts/
+          asset_name: gammalauncher_VERSION_win-arm64_installer.exe
+          asset_content_type: application/gzip
+          
+      - name: upload windows artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./bin/azblogfilter.windows-amd64.zip
+          asset_name: azblogfilter.windows-amd64.zip
+          asset_content_type: application/zip
