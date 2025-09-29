@@ -44,9 +44,8 @@ Filename: "https://github.com/sebescudie/GammaLauncher/wiki"; Description: "Open
 AppName=GammaLauncher
 LaunchProgram=Start GammaLauncher after finishing installation 
 
-
 [Files]
-Source: "..\artifacts\win-arm64\GammaLauncher\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\artifacts\{#MyTarget}\GammaLauncher\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{group}\GammaLauncher"; Filename: "{app}\GammaLauncher.exe"
