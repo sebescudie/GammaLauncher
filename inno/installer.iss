@@ -1,8 +1,9 @@
 #define MyAppName "GammaLauncher"
-#define MyAppVersion "10.0.0"
+#define MyAppVersion "0.0.0"
+#define MyTarget "foo"
 #define MyAppPublisher "sebescudie"
 #define MyAppURL "www.sebescudie.github.io"
-#define MyAppExeName "gammalauncher_10.0.0_win-arm64_installer"
+#define MyAppExeName "gammalauncher_" + MyAppVersion + "_" + MyTarget + "_installer"
 
 #include "CodeDependencies.iss"
 
