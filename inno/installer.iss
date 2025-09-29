@@ -1,6 +1,10 @@
 #define MyAppName "GammaLauncher"
-#define MyAppVersion "0.0.0"
-#define MyTarget "foo"
+#ifndef MyAppVersion
+  #define MyAppVersion "0.0.0"
+#endif
+#ifndef MyTarget
+  #define MyTarget "foo"
+#endif
 #define MyAppPublisher "sebescudie"
 #define MyAppURL "www.sebescudie.github.io"
 #define MyAppExeName "gammalauncher_" + MyAppVersion + "_" + MyTarget + "_installer"
