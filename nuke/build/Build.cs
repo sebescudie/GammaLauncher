@@ -31,7 +31,6 @@ class Build : NukeBuild
     AbsolutePath innoCompilerPath       = "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe";
 
     AbsolutePath InnoFolder             = RootDirectory / .. / "inno";
-    AbsolutePath InnoTemplate           = RootDirectory / .. / "inno/installer.iss.template";
     AbsolutePath InnoScript             = RootDirectory / .. / "inno/installer.iss";
 
     AbsolutePath NuspecFile             = RootDirectory / .. / "choco/GammaLauncher/gammalauncher.nuspec";
@@ -143,21 +142,9 @@ class Build : NukeBuild
         .DependsOn(Compile)
         .Executes(() =>
         {
-            // Write version in template and render it for winx64
-            var content = File.ReadAllText(InnoTemplate);
-            content = content.Replace(VersionMagicString, Version)
-                             .Replace(TargetMagicString, winx64TargetString);
-            File.WriteAllText(InnoScript, content);
-
             // Build winx64 installer
             var winX64installerCompileProcess = ProcessTasks.StartProcess(innoCompilerPath, $"/DMyAppVersion={Version} /DMyTarget={winx64TargetString} {InnoScript}");
             winX64installerCompileProcess.WaitForExit();
-
-            // Write version in template and render it for winArm64
-            content = File.ReadAllText(InnoTemplate);
-            content = content.Replace(VersionMagicString, Version)
-                             .Replace(TargetMagicString, winArm64TargetString);
-            File.WriteAllText(InnoScript, content);
 
             // Build arm64 installer
             var Arm64installerCompileProcess = ProcessTasks.StartProcess(innoCompilerPath, $"/DMyAppVersion={Version} /DMyTarget={winArm64TargetString} {InnoScript}");
