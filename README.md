@@ -57,20 +57,15 @@ All suggestions and pull requests are welcome, don't hesitate to report problems
 
 ## Building
 
-If you want to build GammaLauncher, you'll have to install `nuke`. For more information you can have a look [here](https://nuke.build/), but in a nutshell you should open a Powershell and
-
-```
-dotnet tool install Nuke.GlobalTool --global
-```
-
-Then, `cd` in the `/nuke` folder. You'll then be able to do the following actions 
+- Write the version you're aiming to build in `Version.props`
+- `cd` in the `📂 /nuke` folder. You'll be able to do the following actions 
 
 ### Clean
 
-This target will clean all artifacts from previous builds, if any (compiled Launcher versions, Inno installers, props files and so on). To run it, do
+This target will clean all artifacts from previous builds. To run it, do
 
 ```
-nuke clean
+build.cmd clean
 ```
 
 ### Compile
@@ -78,7 +73,7 @@ nuke clean
 This target compiles GammaLauncher in both `win-x64` and `arm64` directly from the command line. There, you'll have to supply a `--version` argument, with the version you're building. For instance, if you were building version 10.5.3 of the Launcher, you'd do
 
 ```
-nuke compile --version 10.5.3
+nuke compile --compilerpath "C:\path\to\vvvvc.exe"
 ```
 
 Executing this target will also run the `clean` target described above under the hood. Also, noted that the target does it in a somewhat smart way that it automatically detected which `vvvvc.exe` to run by parsing the version `GammaLauncher.vl` was saved with. So make sure you have that version installed on your system, otherwise you'll get a build error!
@@ -89,5 +84,5 @@ This target packages the binaries from the previous step in cool installers. For
 This target will obviously run `clean` and `compile` under the hood for you. To run it, do the following
 
 ```
-nuke buildinstaller --version 10.5.3
+nuke buildinstallers --compilerpath "C:\path\to\vvvvc.exe"
 ```
