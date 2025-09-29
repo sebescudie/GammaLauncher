@@ -150,7 +150,7 @@ class Build : NukeBuild
             File.WriteAllText(InnoScript, content);
 
             // Build winx64 installer
-            var winX64installerCompileProcess = ProcessTasks.StartProcess(innoCompilerPath, $"/DMyAppVersion={Version} {InnoScript}");
+            var winX64installerCompileProcess = ProcessTasks.StartProcess(innoCompilerPath, $"/DMyAppVersion={Version} /DMyTarget={winx64TargetString} {InnoScript}");
             winX64installerCompileProcess.WaitForExit();
 
             // Write version in template and render it for winArm64
@@ -160,7 +160,7 @@ class Build : NukeBuild
             File.WriteAllText(InnoScript, content);
 
             // Build arm64 installer
-            var Arm64installerCompileProcess = ProcessTasks.StartProcess(innoCompilerPath, $"/DMyAppVersion={Version} {InnoScript}");
+            var Arm64installerCompileProcess = ProcessTasks.StartProcess(innoCompilerPath, $"/DMyAppVersion={Version} /DMyTarget={winArm64TargetString} {InnoScript}");
             Arm64installerCompileProcess.WaitForExit();
         });
 
