@@ -57,7 +57,7 @@ class Build : NukeBuild
     // RELEASE
     // =======================================================
 
-    string GithubToken = Environment.GetEnvironmentVariable("GAMMALAUNCHER_GITHUB_TOKEN");
+    string GithubToken = Environment.GetEnvironmentVariable("GAMMALAUNCHER_GITHUB_TOKEN", EnvironmentVariableTarget.User);
 
     Target Clean => _ => _
         .Executes(() =>
@@ -148,6 +148,7 @@ class Build : NukeBuild
 
     // Create Github release
     Target CreateGithubRelease => _ => _
+        .Requires(() => !string.IsNullOrWhiteSpace(GithubToken))
         .Executes(async () =>
         {
             // Create release
