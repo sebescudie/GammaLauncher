@@ -1,8 +1,10 @@
 using _build;
+using ICSharpCode.SharpZipLib.Checksum;
 using Nuke.Common;
 using Nuke.Common.IO;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.Chocolatey;
+using Nuke.Common.Tools.GitVersion;
 using Nuke.Common.Utilities.Collections;
 using Octokit;
 using System;
@@ -174,31 +176,48 @@ class Build : NukeBuild
         });
 
     // Create Chocolatey package
-    Target PackChocolatey => _ => _
-        .DependsOn(CreateGithubRelease)
-        .Executes(() =>
-        {
-            // Move installer to /tools
-            AbsolutePath installerPath = ArtifactsDirectory / $"gammalauncher_{Version}_{winX64Rid}_installer.exe";
-            AbsolutePath installerTargetPath = $"{ChocoToolsFolder}/{Path.GetFileName(installerPath)}";
-            File.Copy(installerPath, installerTargetPath);
+    //Target PackChocolatey => _ => _
+    //    .DependsOn(CreateGithubRelease)
+    //    .Executes(async () =>
+    //    {
+    //        // Fetch latest release
+    //        GitHubClient client = new GitHubClient(new ProductHeaderValue("gammalauncher.nuke"));
+    //        client.Credentials = new Credentials(GithubToken);
 
-            // Pack
-            ChocolateyTasks.ChocolateyPack(settings => settings
-                .SetPathToNuspec(installerTargetPath)
-                .SetOutputDirectory(ArtifactsDirectory)
-                .SetVersion(Version));
-        });
+    //        var lastRelease = await client.Repository.Release.GetLatest("sebescudie", "GammaLauncher");
 
-    // Publish Chocolatey package
-    Target Publish => _ => _
-        .DependsOn(PackChocolatey)
-        .Requires(() => !string.IsNullOrWhiteSpace(Feed))
-        .Requires(() => !string.IsNullOrWhiteSpace(ApiKey))
-        .Executes(() =>
-        {
-            ChocolateyTasks.ChocolateyPush(settings => settings
-                .SetProcessWorkingDirectory(ArtifactsDirectory)
-                .SetApiKey(ApiKey));
-        });
+    //        // Generate chocoInstall.ps1
+    //        var installScript = $@"
+    //        $ErrorActionPreference = 'Stop'
+
+    //        $packageArgs = @{{
+    //            packageName    = 'gammalauncher'
+    //            fileType       = 'exe'
+    //            url64bit       = '{lastRelease.Url}'
+    //            checksum64     = '{}'
+    //            checksumType64 = 'sha256'
+    //            silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
+    //            validExitCodes = @(0)
+    //        }}
+
+    //        Install-ChocolateyPackage @packageArgs".TrimStart();
+
+    //        // Pack
+    //        ChocolateyTasks.ChocolateyPack(settings => settings
+    //            .SetPathToNuspec(installerTargetPath)
+    //            .SetOutputDirectory(ArtifactsDirectory)
+    //            .SetVersion(Version));
+    //    });
+
+    //// Publish Chocolatey package
+    //Target PublishChocolatey => _ => _
+    //    .DependsOn(PackChocolatey)
+    //    .Requires(() => !string.IsNullOrWhiteSpace(Feed))
+    //    .Requires(() => !string.IsNullOrWhiteSpace(ApiKey))
+    //    .Executes(() =>
+    //    {
+    //        ChocolateyTasks.ChocolateyPush(settings => settings
+    //            .SetProcessWorkingDirectory(ArtifactsDirectory)
+    //            .SetApiKey(ApiKey));
+    //    });
 }
