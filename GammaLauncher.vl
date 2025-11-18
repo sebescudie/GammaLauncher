@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" xmlns:r="reflection" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2025.7.1-0013-g8fcece0df9" Version="0.128">
-  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2025.7.1-0013-g8fcece0df9" />
+<Document xmlns:p="property" xmlns:r="reflection" Id="PJSrtxvah1rPaRdkPeoySD" LanguageVersion="2025.7.1-0103-gf49d596041" Version="0.128">
+  <NugetDependency Id="S7VWZeBsvN1PjJuK8xKPoa" Location="VL.CoreLib" Version="2025.7.1-0103-gf49d596041" />
   <Patch Id="VwtUUR3K9mbPm4q6fszgF3">
     <Canvas Id="Cn8FrGu71DtOiQColm6Utc" DefaultCategory="Main" CanvasType="FullCategory">
       <Canvas Id="A8kMw5cSAh9N9pwyyLzDKt" Name="Model" Position="92,129">
@@ -416,7 +416,7 @@
             <Patch Id="Jky42g9MjHVOAKhz6FbQqH" Name="GetVVVVInstallationsFolder" ParticipatingElements="PPzkcZyVbOYNJt164H81ph">
               <Pin Id="Pdqwnv9lsU6ORy3yJfMUIp" Name="VVVV Installations Folder" Kind="OutputPin" />
             </Patch>
-            <Patch Id="SZLBrOSiSesLJscfhkfgVx" Name="GetPackageRepositoriesFolder" ParticipatingElements="QiwGiro3l07N5uPJ8e0kc9,JjWKmT9zHoiOnmqwb0Jd8p">
+            <Patch Id="SZLBrOSiSesLJscfhkfgVx" Name="GetPackageRepositoriesFolder" ParticipatingElements="QiwGiro3l07N5uPJ8e0kc9">
               <Pin Id="NrkMMWHQFlNNd8juwBzoVT" Name="Package Repositories Folder" Kind="OutputPin" />
             </Patch>
             <Patch Id="EYN01rus1U7P420UZmxnGn" Name="AddPackageRepositoriesFolder" ParticipatingElements="QKxQSsbmK4JMCI4zQhZpAN,DGEUNwZeqkPMrBncqrZbwH,PAccTuwyBT5LmhZhN3QMig,FyQ2B3hlzA4MPxqG5YuAvP">
@@ -7165,6 +7165,7 @@
                   <Pin Id="HLklC0opxshQMtllDNGTnO" Name="Extend Into Title Bar" Kind="InputPin" IsHidden="true" />
                   <Pin Id="VrJBu6PnEsRPhe8HFb2vrf" Name="Input" Kind="InputPin" />
                   <Pin Id="BC6c3OljvaMMvlqCa4mRYW" Name="Title" Kind="InputPin" />
+                  <Pin Id="GIWxrldvlXxOljIsEyxJI4" Name="Title Bar Interaction Width" Kind="InputPin" IsHidden="true" />
                   <Pin Id="Q1U2B2DxwN6OyuWphQYIg8" Name="Color" Kind="InputPin" DefaultValue="0.08627451, 0.08627451, 0.08627451, 1" />
                   <Pin Id="Po83XcpfoeOPPhalBGjY9c" Name="Clear" Kind="InputPin" />
                   <Pin Id="HjLbMKlDHTaNEu2sluMvEh" Name="Space" Kind="InputPin" />
@@ -17142,7 +17143,6 @@
                     <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                     <Choice Kind="ProcessAppFlag" Name="ApplicationPath" />
                   </p:NodeReference>
-                  <Pin Id="E6EH3OtBOHSNYL8Stkj22o" Name="Node Context" Kind="InputPin" IsHidden="true" />
                   <Pin Id="VUoxcYqQfAvN85rIXCVqyy" Name="Output" Kind="OutputPin" />
                 </Node>
                 <Node Bounds="509,719,25,19" Id="I3OQNR4z3JvOmfscl7qAyP">
@@ -20428,6 +20428,7 @@
                       <Pin Id="CzHGR7VpxfgQZ3CmKsh3Xf" Name="Extend Into Title Bar" Kind="InputPin" IsHidden="true" />
                       <Pin Id="LMtxKN2IiBBN9EJLe8RS7f" Name="Input" Kind="InputPin" />
                       <Pin Id="QNZpBxnrTqUOSpCwlhiDE5" Name="Title" Kind="InputPin" DefaultValue="Log" />
+                      <Pin Id="J6M9Rf1zZiKMhpNUFlIyHZ" Name="Title Bar Interaction Width" Kind="InputPin" IsHidden="true" />
                       <Pin Id="TAfuQHcUF90NFwRILH4iDg" Name="Color" Kind="InputPin" />
                       <Pin Id="IVeV00PGhlLNAABbjx0V27" Name="Clear" Kind="InputPin" />
                       <Pin Id="KyWNijDG9oLLQSHIy64iEH" Name="Space" Kind="InputPin" />
@@ -20822,6 +20823,7 @@
                       <Pin Id="BzqGimh0hCePajzbfg9lfb" Name="Extend Into Title Bar" Kind="InputPin" IsHidden="true" />
                       <Pin Id="AqyyUI0GDE4NWAGeYQyA3m" Name="Input" Kind="InputPin" />
                       <Pin Id="RsLdfqXpzWCMQeXeaMKU5F" Name="Title" Kind="InputPin" DefaultValue="Changelog" />
+                      <Pin Id="P45qktuKfHjMvhutUFncpj" Name="Title Bar Interaction Width" Kind="InputPin" IsHidden="true" />
                       <Pin Id="HkIMpJVRcYlPyjeVyfc5Dr" Name="Color" Kind="InputPin" />
                       <Pin Id="Is48RCnj1hZLABY0icTjCW" Name="Clear" Kind="InputPin" />
                       <Pin Id="HuZ75zPXbFJO8T9Z6U9fWs" Name="Space" Kind="InputPin" />
@@ -23861,7 +23863,6 @@
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="ProcessAppFlag" Name="ApplicationPath" />
                 </p:NodeReference>
-                <Pin Id="DGiRLnzS3egLfyctgfCom9" Name="Node Context" Kind="InputPin" IsHidden="true" />
                 <Pin Id="Qy9d1MpuyVMNTri5LtUUTN" Name="Output" Kind="OutputPin" />
               </Node>
               <Node Bounds="112,485,65,19" Id="Lx6m61E7WnyMnC9x52FBol">
@@ -32845,7 +32846,7 @@
               </Node>
               <Pad Id="LKqwrPcYmgRP99dRrqlTNv" Bounds="658,500" />
             </Canvas>
-            <Patch Id="Qtn9OAJTPAWOkkmHJ4cWEK" Name="Create" ParticipatingElements="C8rKVVqKu8QLO7b6DQswLi,NoCmXQsA45hOrWhDjXcINi,BrlchU8ceNPLc3GoF8Kofv,D7qUY8pXkq6NjnSNeG0Jb5,CAgxRxRkyk0OYm3Hsq49yG,G6QaMNXfNyZOjMoAzCJV1D,TJTJceZECVBLDWAsErRVAd,UPEVtAkHUA2LT0aDkE4UOz" />
+            <Patch Id="Qtn9OAJTPAWOkkmHJ4cWEK" Name="Create" ParticipatingElements="C8rKVVqKu8QLO7b6DQswLi,NoCmXQsA45hOrWhDjXcINi,D7qUY8pXkq6NjnSNeG0Jb5,G6QaMNXfNyZOjMoAzCJV1D,BrlchU8ceNPLc3GoF8Kofv,CAgxRxRkyk0OYm3Hsq49yG,TJTJceZECVBLDWAsErRVAd,UPEVtAkHUA2LT0aDkE4UOz" />
             <Patch Id="Lyu49y2JPo9QOFJFimhLqJ" Name="Update">
               <Pin Id="PFXTSkQYIJyOPTkCvz83hK" Name="Output" Kind="OutputPin" />
             </Patch>
@@ -32965,20 +32966,20 @@
       </Patch>
     </Node>
   </Patch>
-  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2025.7.1-0013-g8fcece0df9" />
+  <NugetDependency Id="Dx3hWrA5MJTP3PBl22Hc09" Location="VL.Skia" Version="2025.7.1-0103-gf49d596041" />
   <PlatformDependency Id="PR2RZQLpnGKNZvYQVn3Ead" Location="mscorlib" />
   <PlatformDependency Id="Ow5sjuC3immNloZfvkN1g7" Location="System.Windows.Forms" />
   <PlatformDependency Id="HMEsYQpErI5OqaqpKnu53t" Location="System.Drawing" />
   <NugetDependency Id="A7QaxZnKLQBPrEoH3eQWQY" Location="RestSharp" Version="112.1.0" />
-  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2025.7.1-0013-g8fcece0df9" />
+  <NugetDependency Id="F8rLPob1tJWM13C9xxfQ3P" Location="VL.CoreLib.Windows" Version="2025.7.1-0103-gf49d596041" />
   <NugetDependency Id="Vnl8tgKwbGMP0yvGw64Adv" Location="Semver" Version="2.0.6" />
-  <NugetDependency Id="IscN5qIHnL6N2GQSwSz602" Location="VL.ImGui" Version="2025.7.1-0013-g8fcece0df9" />
-  <NugetDependency Id="DueOVdpuzHRN7xQZ6gn9H6" Location="VL.ImGui.Skia" Version="2025.7.1-0013-g8fcece0df9" />
+  <NugetDependency Id="IscN5qIHnL6N2GQSwSz602" Location="VL.ImGui" Version="2025.7.1-0103-gf49d596041" />
+  <NugetDependency Id="DueOVdpuzHRN7xQZ6gn9H6" Location="VL.ImGui.Skia" Version="2025.7.1-0103-gf49d596041" />
   <DocumentDependency Id="K4SG30vxDXFQCQQq5jLvaS" Location="./GammaLauncher.Proxies.vl" />
   <NugetDependency Id="ObULv8xpK0APMCczaZvh3u" Location="Downloader" Version="3.0.6" />
   <PlatformDependency Id="VR1jnqPcjfvLcoXBk3XpJ2" Location="System.Runtime" />
   <ProjectDependency Id="R4EKL4H4b3bNJt1ZkjFVpl" Location="./csharp/DeleteFolders.Utils/DeleteFolders.Utils.csproj" />
   <NugetDependency Id="NZGwfegHrHbLjsdyccCvnP" Location="Microsoft.Extensions.Configuration.CommandLine" Version="8.0.0" />
   <PlatformDependency Id="GGVavhARzFvOQaBB04eyWt" Location="System.Diagnostics.Process" />
-  <NugetDependency Id="BRcWT473G3sQFbJVK8Qfj4" Location="VL.LogView" Version="2025.7.1-0013-g8fcece0df9" />
+  <NugetDependency Id="BRcWT473G3sQFbJVK8Qfj4" Location="VL.LogView" Version="2025.7.1-0103-gf49d596041" />
 </Document>
