@@ -28,9 +28,7 @@
         "Clean",
         "Compile",
         "CreateGithubRelease",
-        "GetVersion",
-        "PackChocolatey",
-        "Publish"
+        "GetVersion"
       ]
     },
     "Verbosity": {
@@ -106,7 +104,8 @@
       "properties": {
         "ApiKey": {
           "type": "string",
-          "description": "API Key for Chocolatey feed"
+          "description": "API Key for Chocolatey feed",
+          "default": "Secrets must be entered via 'nuke :secrets [profile]'"
         },
         "CompilerPath": {
           "type": "string",
