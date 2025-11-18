@@ -148,6 +148,7 @@ class Build : NukeBuild
 
     // Create Github release
     Target CreateGithubRelease => _ => _
+        .DependsOn(GetVersion)
         .Requires(() => !string.IsNullOrWhiteSpace(GithubToken))
         .Executes(async () =>
         {
