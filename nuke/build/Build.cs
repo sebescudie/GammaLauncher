@@ -8,6 +8,8 @@ using Nuke.Common.Tools.GitVersion;
 using Nuke.Common.Utilities.Collections;
 using Octokit;
 using System;
+using Serilog;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -172,8 +174,11 @@ class Build : NukeBuild
                 var releaseAsset = new ReleaseAssetUpload
                 {
                     FileName = artifact.Name,
-                    RawData = File.OpenRead(artifact)
+                    RawData = File.OpenRead(artifact),
+                    ContentType = "application/octet-stream"
                 };
+                Log.Information($"Uploading {releaseAsset.FileName}");
+                var upload = await client.Repository.Release.UploadAsset(lastRelease, releaseAsset);
             }
         });
 
