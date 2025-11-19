@@ -13,6 +13,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 class Build : NukeBuild
 {
@@ -182,49 +184,67 @@ class Build : NukeBuild
             }
         });
 
-    // Create Chocolatey package
-    //Target PackChocolatey => _ => _
-    //    .DependsOn(CreateGithubRelease)
-    //    .Executes(async () =>
-    //    {
-    //        // Fetch latest release
-    //        GitHubClient client = new GitHubClient(new ProductHeaderValue("gammalauncher.nuke"));
-    //        client.Credentials = new Credentials(GithubToken);
+        //Create Chocolatey package
+    Target PackChocolatey => _ => _
+        .DependsOn(GetVersion)
+        .Executes(async () =>
+        {
+            // Fetch latest release and win64 installer asset
+            GitHubClient client = new GitHubClient(new ProductHeaderValue("gammalauncher.nuke"));
+            client.Credentials = new Credentials(GithubToken);
 
-    //        var lastRelease = await client.Repository.Release.GetLatest("sebescudie", "GammaLauncher");
+            var lastRelease = await client.Repository.Release.GetLatest("sebescudie", "GammaLauncher");
 
-    //        // Generate chocoInstall.ps1
-    //        var installScript = $@"
-    //        $ErrorActionPreference = 'Stop'
+            var win64InstallerReleaseAsset = lastRelease.Assets.FirstOrDefault(asset => asset.Name.Contains("win-x64_installer.exe"))
+                ?? throw new InvalidOperationException($"Could not find win64 installer asset in release {lastRelease}");
 
-    //        $packageArgs = @{{
-    //            packageName    = 'gammalauncher'
-    //            fileType       = 'exe'
-    //            url64bit       = '{lastRelease.Url}'
-    //            checksum64     = '{}'
-    //            checksumType64 = 'sha256'
-    //            silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
-    //            validExitCodes = @(0)
-    //        }}
+            // Calculate SHA256 manually since Octokit does not return it
+            var WinX64InstallerFile = ArtifactsDirectory.GetFiles().FirstOrDefault(file => file.Name.Contains("win-x64_installer.exe"))
+                ?? throw new FileNotFoundException($"Could not locate win64 installer in {ArtifactsDirectory}");
+            
+            var WinX64InstallerHash = "";
+            
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hash = sha256.ComputeHash(File.ReadAllBytes(WinX64InstallerFile));
+                WinX64InstallerHash = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+            }
+            
+            // Generate chocoInstall.ps1
+            var installScript = $@"
+$ErrorActionPreference = 'Stop'
 
-    //        Install-ChocolateyPackage @packageArgs".TrimStart();
+$packageArgs = @{{
+packageName    = 'gammalauncher'
+fileType       = 'exe'
+url64bit       = '{win64InstallerReleaseAsset.BrowserDownloadUrl}'
+checksum64     = '{WinX64InstallerHash}'
+checksumType64 = 'sha256'
+silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
+validExitCodes = @(0)
+}}
 
-    //        // Pack
-    //        ChocolateyTasks.ChocolateyPack(settings => settings
-    //            .SetPathToNuspec(installerTargetPath)
-    //            .SetOutputDirectory(ArtifactsDirectory)
-    //            .SetVersion(Version));
-    //    });
+Install-ChocolateyPackage @packageArgs".TrimStart();
 
-    //// Publish Chocolatey package
-    //Target PublishChocolatey => _ => _
-    //    .DependsOn(PackChocolatey)
-    //    .Requires(() => !string.IsNullOrWhiteSpace(Feed))
-    //    .Requires(() => !string.IsNullOrWhiteSpace(ApiKey))
-    //    .Executes(() =>
-    //    {
-    //        ChocolateyTasks.ChocolateyPush(settings => settings
-    //            .SetProcessWorkingDirectory(ArtifactsDirectory)
-    //            .SetApiKey(ApiKey));
-    //    });
+            File.WriteAllText(ChocoToolsFolder / "chocolateyinstall.ps1", installScript);
+
+            // Pack
+            ChocolateyTasks.ChocolateyPack(settings => settings
+            .SetPathToNuspec(NuspecFile)
+            .SetOutputDirectory(ArtifactsDirectory)
+            .SetVersion(Version));
+        });
+
+    // Publish Chocolatey package
+    Target PublishChocolatey => _ => _
+        .DependsOn(PackChocolatey)
+        .Requires(() => !string.IsNullOrWhiteSpace(Feed))
+        .Requires(() => !string.IsNullOrWhiteSpace(ApiKey))
+        .Executes(() =>
+        {
+            ChocolateyTasks.ChocolateyPush(settings => settings
+                .SetProcessWorkingDirectory(ArtifactsDirectory)
+                .SetSource(Feed)
+                .SetApiKey(ApiKey));
+        });
 }
