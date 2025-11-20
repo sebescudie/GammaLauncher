@@ -6,7 +6,8 @@
 
 _A simple launcher for vvvv gamma_
 
-[![vvvv](https://img.shields.io/static/v1?label=MADE%20WITH&message=VVVV&color=191919&style=for-the-badge)](https://vvvv.org/)
+[![vvvv](https://img.shields.io/static/v1?label=MADE%20WITH&message=VVVV&color=191919&style=for-the-badge)](https://vvvv.org/) ![Chocolatey Version](https://img.shields.io/chocolatey/v/gammalauncher?include_prereleases&style=for-the-badge&logo=chocolatey&link=https%3A%2F%2Fcommunity.chocolatey.org%2Fpackages%2Fgammalauncher)
+
 
 ## Was ist das
 
