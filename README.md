@@ -14,7 +14,16 @@ _A simple launcher for vvvv gamma_
 GammaLauncher is a simple application that allows to launch vvvv gamma instances with specific arguments from a simple GUI.
 
 ## Installation
+
+### Direct download
+
 The latest release is available [here](https://github.com/sebescudie/GammaLauncher/releases/latest). You can choose between an installer and a portable version.
+
+### Chocolatey
+
+```
+choco install GammaLauncher
+```
 
 ## Usage
 
