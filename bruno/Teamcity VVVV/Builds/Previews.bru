@@ -1,0 +1,25 @@
+meta {
+  name: Previews
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{vvvv-teamcity-rest}}/builds?locator=branch:main,buildType:{{build-type}},count:{{count}},status:SUCCESS
+  body: none
+  auth: inherit
+}
+
+params:query {
+  locator: branch:main,buildType:{{build-type}},count:{{count}},status:SUCCESS
+}
+
+vars:pre-request {
+  count: 5
+  build-type: vvvv_gamma_Build20225
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

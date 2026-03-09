@@ -5,12 +5,16 @@ meta {
 }
 
 get {
-  url: {{endpoint}}/changes?locator=build:(id:39025)&fields=count,change:(version,username,date,href,comment,files)
+  url: {{vvvv-teamcity-rest}}/changes?locator=build:(id:{{build-id}})&fields=count,change:(version,username,date,href,comment,files)
   body: none
   auth: inherit
 }
 
 params:query {
-  locator: build:(id:39025)
+  locator: build:(id:{{build-id}})
   fields: count,change:(version,username,date,href,comment,files)
+}
+
+vars:pre-request {
+  build-id: 39025
 }

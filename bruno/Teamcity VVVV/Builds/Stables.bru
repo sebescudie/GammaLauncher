@@ -1,0 +1,25 @@
+meta {
+  name: Stables
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{vvvv-teamcity-rest}}/builds?locator=defaultFilter:false,tag:release,count:{{count}},buildType:{{build-type}}
+  body: none
+  auth: inherit
+}
+
+params:query {
+  locator: defaultFilter:false,tag:release,count:{{count}},buildType:{{build-type}}
+}
+
+vars:pre-request {
+  count: 5
+  build-type: vvvv_gamma_Build20225
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
