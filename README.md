@@ -83,7 +83,7 @@ build.cmd clean
 This target compiles GammaLauncher in both `win-x64` and `arm64` directly from the command line. The version number will be the one you specified in `Version.props`.
 
 ```
-nuke compile --compilerpath "C:\path\to\vvvvc.exe"
+build.cmd compile --compilerpath "C:\path\to\vvvvc.exe"
 ```
 
 Executing this target will also run the `clean` target described above under the hood.
@@ -94,5 +94,29 @@ This target packages the binaries from the previous step in cool installers. For
 This target will obviously run `clean` and `compile` under the hood for you. To run it, do the following. Agzin, the version number will be the one you specified in `Version.props`
 
 ```
-nuke buildinstallers --compilerpath "C:\path\to\vvvvc.exe"
+build.cmd buildinstallers --compilerpath "C:\path\to\vvvvc.exe"
+```
+
+### Create Github release
+
+Creates a Github release with the version specified in the `Version` file and uploads build artifacts. Requires the `GAMMALAUNCHER_GITHUB_TOKEN` environment variable to be set.
+
+```
+build.cmd creategithubrelease
+```
+
+### Create Choco package
+
+Generates a Chocolatey package in the `/artifacts` folder. Requires the Github release to be present: this target will fetch download URLs from Github and generate the `chocoInstall` script on the fly. Also requires `GAMMALAUNCHER_GITHUB_TOKEN` to be set.
+
+```
+build.cmd packchocolatey
+````
+
+### Publish Choco package
+
+Publishes the generated package to the Chocolatey public feed
+
+```
+build.cmd PublishChocolatey --feed https://push.chocolatey.org/ --api-key DEADBEEFCAFE
 ```
