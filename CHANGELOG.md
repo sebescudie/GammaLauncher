@@ -1,5 +1,46 @@
 ## Changelog
 
+### 5.5.0
+
+#### New
+
+- You can now set a vvvversion to be the default when opening `.vl` files in one click. Thanks @sebllll for the PR!
+
+### 5.4.2
+
+#### Fixed
+
+- Fixes GammaLauncher not showing TeamCity preview builds
+
+### 5.4.1
+
+#### Fixed
+
+- A non-necessary dependency to VL.Stride slipped in the previous release. It's gone, thanks to @bj-rn!
+
+### 5.4.0
+
+#### New
+
+- You can uninstall vvvv versions in batch!
+
+#### Changed
+
+- Generated .bat files are now written on a single line. The previous format where all arguments were on a new line seemed to cause issues.
+
+### 5.3.2
+
+#### Fixed
+
+- Fixes GammaLauncher throwing an Exception when uninstalling a vvvversion, reported by @chk-wrks
+- Fixes Log and Changelog windows not closing when closing the main app, as reported by @seltzdesign
+
+### 5.3.1
+
+#### Fixed
+
+- Launcher won't complain if a disabled source repository does not exist. Thanks to @tebjan and @chkw-rks for the report!
+
 ### 5.3.0
 
 #### New
