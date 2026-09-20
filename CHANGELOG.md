@@ -6,6 +6,10 @@
 
 - You can now set a vvvversion to be the default when opening `.vl` files in one click. Thanks @sebllll for the PR!
 
+#### Fixed
+
+- Selecting a stable version in the dropdown and clicking _Nugets_ will open the correct folder, thanks @maximesouvestre for [the report](https://github.com/sebescudie/GammaLauncher/issues/109)!
+
 ### 5.4.2
 
 #### Fixed
