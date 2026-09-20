@@ -26,114 +26,83 @@ class Build : FalloutBuild
 
     [Parameter("Compiler Path")]
     readonly string CompilerPath;
-
-    [Parameter("API Key for Chocolatey feed")]
-    [Secret]
-    readonly string ApiKey;
-
+    
     [Parameter("Chocolatey feed URL")]
-    readonly string Feed;
+    readonly string Feed = "https://push.chocolatey.org/";
 
     // =======================================================
     // PATHS AND MAGIC STRINGS
     // =======================================================
     
-    string Version = "";
+    string Version => XDocument.Load(VersionFile).Descendants("Version").FirstOrDefault()?.Value ?? "0.0.0";
     
-    const string winX64Rid = "win-x64";
-    const string winArm64Rid = "win-arm64";
+    const string WinX64Rid = "win-x64";
+    const string WinArm64Rid = "win-arm64";
 
-    AbsolutePath innoCompilerPath = "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe";
+    readonly AbsolutePath InnoCompilerPath = "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe";
 
-    AbsolutePath InnoScript = RootDirectory / .. / "inno/installer.iss";
+    readonly AbsolutePath InnoScript = RootDirectory / .. / "inno/installer.iss";
 
-    AbsolutePath NuspecFile = RootDirectory / .. / "choco/GammaLauncher/gammalauncher.nuspec";
-    AbsolutePath ChocoToolsFolder = RootDirectory / .. / "choco/GammaLauncher/tools";
+    readonly AbsolutePath NuspecFile = RootDirectory / .. / "choco/GammaLauncher/gammalauncher.nuspec";
+    readonly AbsolutePath ChocoToolsFolder = RootDirectory / .. / "choco/GammaLauncher/tools";
+    
+    readonly AbsolutePath ArtifactsDirectory = RootDirectory / .. / "artifacts";
+    readonly AbsolutePath VvvvPropsFile = RootDirectory / .. / "GammaLauncher.props";
+    readonly AbsolutePath VvvvSourceFile = RootDirectory / .. / "GammaLauncher.vl";
 
-
-    AbsolutePath ArtifactsDirectory = RootDirectory / .. / "artifacts";
-    AbsolutePath VvvvPropsFile = RootDirectory / .. / "GammaLauncher.props";
-    AbsolutePath VvvvSourceFile = RootDirectory / .. / "GammaLauncher.vl";
-
-    AbsolutePath VersionFile = RootDirectory / .. / "Version.props";
-
+    readonly AbsolutePath VersionFile = RootDirectory / .. / "Version.props";
+    
     // =======================================================
     // RELEASE
     // =======================================================
 
-    string GithubToken = Environment.GetEnvironmentVariable("GAMMALAUNCHER_GITHUB_TOKEN", EnvironmentVariableTarget.User);
-
+    readonly string GithubToken = Environment.GetEnvironmentVariable("GAMMALAUNCHER_GITHUB_TOKEN", EnvironmentVariableTarget.User);
+    readonly string ChocolateyApiKey = Environment.GetEnvironmentVariable("GAMMALAUNCHER_CHOCOLATEY_API_KEY", EnvironmentVariableTarget.User);
+    
     Target Clean => _ => _
         .Executes(() =>
         {
-            Console.WriteLine("Purging vvvv artifacts folder...");
-            Utils.DeleteDirectoryContent(ArtifactsDirectory);
-
-            // Delete installer from inno and choco/tools folders
-            // We search in both folder in case something got wrong during previous run and the installer
-            // was not moved to /tools
-            var exeInTools = Directory.EnumerateFiles(ChocoToolsFolder).FirstOrDefault(f => Path.GetFileName(f).EndsWith("exe"));
-            if (!exeInTools.IsNullOrEmpty())
-            {
-                Console.WriteLine("Deleting outdated exe from Choco /tools folder");
-                File.Delete(exeInTools);
-            }
+            Log.Information("Deleting outdated executables from Chocolatey /tools folder");
+            ChocoToolsFolder.GlobFiles("*.exe").DeleteFiles();
         });
-
-
-    Target GetVersion => _ => _
-       .Executes(() =>
-       {
-           try
-           {
-               Version = XDocument.Load(VersionFile).Descendants("Version").FirstOrDefault()?.Value ?? "0.0.0";
-               Console.WriteLine($"Attempting to build version {Version}");
-           }
-           catch
-           {
-               Console.WriteLine($"Could not extract version from {VersionFile}, aborting");
-               throw;
-           }
-       });
-
+    
     Target Compile => _ => _
         .DependsOn(Clean)
-        .DependsOn(GetVersion)
         .Executes(() =>
         {
             // Set rid to win-x64
             var launcherPropsXdoc = XDocument.Load(VvvvPropsFile);
 
-            launcherPropsXdoc.Descendants(XName.Get("RuntimeIdentifier", "http://schemas.microsoft.com/developer/msbuild/2003")).First().Value = winX64Rid;
+            launcherPropsXdoc.Descendants(XName.Get("RuntimeIdentifier", "http://schemas.microsoft.com/developer/msbuild/2003")).First().Value = WinX64Rid;
             launcherPropsXdoc.Save(VvvvPropsFile);
 
             // Compile win-x64
-            var buildWinx64 = ProcessTasks.StartProcess(CompilerPath, $"{VvvvSourceFile} --output-type WinExe --rid {winX64Rid} --clean");
+            var buildWinx64 = ProcessTasks.StartProcess(CompilerPath, $"{VvvvSourceFile} --output-type WinExe --rid {WinX64Rid} --clean");
             buildWinx64.WaitForExit();
 
             // Set rid to win-arm64
-            launcherPropsXdoc.Descendants(XName.Get("RuntimeIdentifier", "http://schemas.microsoft.com/developer/msbuild/2003")).First().Value = winArm64Rid;
+            launcherPropsXdoc.Descendants(XName.Get("RuntimeIdentifier", "http://schemas.microsoft.com/developer/msbuild/2003")).First().Value = WinArm64Rid;
             launcherPropsXdoc.Save(VvvvPropsFile);
 
             // Compile win-arm
-            var buildWinArm = ProcessTasks.StartProcess(CompilerPath, $"{VvvvSourceFile} --output-type WinExe --rid {winArm64Rid} --clean");
+            var buildWinArm = ProcessTasks.StartProcess(CompilerPath, $"{VvvvSourceFile} --output-type WinExe --rid {WinArm64Rid} --clean");
             buildWinArm.WaitForExit();
 
             // Delete src folders
-            var winx64SrcFolder = ArtifactsDirectory / winX64Rid / "src";
+            var winx64SrcFolder = ArtifactsDirectory / WinX64Rid / "src";
             if (Directory.Exists(winx64SrcFolder))
                 Directory.Delete(winx64SrcFolder, true);
 
-            var winarm64SrcFolder = ArtifactsDirectory / winArm64Rid / "src";
+            var winarm64SrcFolder = ArtifactsDirectory / WinArm64Rid / "src";
             if (Directory.Exists(winarm64SrcFolder))
                 Directory.Delete(winarm64SrcFolder, true);
 
             // Create portable zips
-            var winx64BuildOutput = ArtifactsDirectory / winX64Rid;
-            winx64BuildOutput.ZipTo(ArtifactsDirectory / $"gammalauncher_{Version}_{winX64Rid}_portable.zip");
+            var winx64BuildOutput = ArtifactsDirectory / WinX64Rid;
+            winx64BuildOutput.ZipTo(ArtifactsDirectory / $"gammalauncher_{Version}_{WinX64Rid}_portable.zip");
 
-            var winarm64BuildOutput = ArtifactsDirectory / winArm64Rid;
-            winarm64BuildOutput.ZipTo(ArtifactsDirectory / $"gammalauncher_{Version}_{winArm64Rid}_portable.zip");
+            var winarm64BuildOutput = ArtifactsDirectory / WinArm64Rid;
+            winarm64BuildOutput.ZipTo(ArtifactsDirectory / $"gammalauncher_{Version}_{WinArm64Rid}_portable.zip");
         });
 
     // Create installer
@@ -142,27 +111,30 @@ class Build : FalloutBuild
         .Executes(() =>
         {
             // Build winx64 installer
-            var winX64installerCompileProcess = ProcessTasks.StartProcess(innoCompilerPath, $"/DMyAppVersion={Version} /DMyTarget={winX64Rid} {InnoScript}");
-            winX64installerCompileProcess.WaitForExit();
+            var winX64InstallerCompileProcess = ProcessTasks.StartProcess(InnoCompilerPath, $"/DMyAppVersion={Version} /DMyTarget={WinX64Rid} {InnoScript}");
+            winX64InstallerCompileProcess.WaitForExit();
 
             // Build arm64 installer
-            var Arm64installerCompileProcess = ProcessTasks.StartProcess(innoCompilerPath, $"/DMyAppVersion={Version} /DMyTarget={winArm64Rid} {InnoScript}");
-            Arm64installerCompileProcess.WaitForExit();
+            var arm64InstallerCompileProcess = ProcessTasks.StartProcess(InnoCompilerPath, $"/DMyAppVersion={Version} /DMyTarget={WinArm64Rid} {InnoScript}");
+            arm64InstallerCompileProcess.WaitForExit();
         });
 
-    // Create Github release
+    // Create GitHub release
     Target CreateGithubRelease => _ => _
-        .DependsOn(GetVersion)
         .Requires(() => !string.IsNullOrWhiteSpace(GithubToken))
         .Executes(async () =>
         {
             // Create release
-            GitHubClient client = new GitHubClient(new ProductHeaderValue("gammalauncher.nuke"));
-            client.Credentials = new Credentials(GithubToken);
+            var client = new GitHubClient(new ProductHeaderValue("gammalauncher.fallout"))
+            {
+                Credentials = new Credentials(GithubToken)
+            };
 
-            var release = new NewRelease(Version);
-            release.Name = Version;
-            release.Body = "";
+            var release = new NewRelease(Version)
+            {
+                Name = Version,
+                Body = ""
+            };
 
             var result = await client.Repository.Release.Create("sebescudie", "GammaLauncher", release);
       
@@ -184,9 +156,8 @@ class Build : FalloutBuild
             }
         });
 
-        //Create Chocolatey package
+    //Create Chocolatey package
     Target PackChocolatey => _ => _
-        .DependsOn(GetVersion)
         .Executes(async () =>
         {
             // Fetch latest release and win64 installer asset
@@ -199,15 +170,15 @@ class Build : FalloutBuild
                 ?? throw new InvalidOperationException($"Could not find win64 installer asset in release {lastRelease}");
 
             // Calculate SHA256 manually since Octokit does not return it
-            var WinX64InstallerFile = ArtifactsDirectory.GetFiles().FirstOrDefault(file => file.Name.Contains("win-x64_installer.exe"))
+            var winX64InstallerFile = ArtifactsDirectory.GetFiles().FirstOrDefault(file => file.Name.Contains("win-x64_installer.exe"))
                 ?? throw new FileNotFoundException($"Could not locate win64 installer in {ArtifactsDirectory}");
             
-            var WinX64InstallerHash = "";
+            var winX64InstallerHash = "";
             
             using (SHA256 sha256 = SHA256.Create())
             {
-                byte[] hash = sha256.ComputeHash(File.ReadAllBytes(WinX64InstallerFile));
-                WinX64InstallerHash = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                byte[] hash = sha256.ComputeHash(File.ReadAllBytes(winX64InstallerFile));
+                winX64InstallerHash = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
             }
             
             // Generate chocoInstall.ps1
@@ -218,7 +189,7 @@ $packageArgs = @{{
 packageName    = 'gammalauncher'
 fileType       = 'exe'
 url64bit       = '{win64InstallerReleaseAsset.BrowserDownloadUrl}'
-checksum64     = '{WinX64InstallerHash}'
+checksum64     = '{winX64InstallerHash}'
 checksumType64 = 'sha256'
 silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
 validExitCodes = @(0)
@@ -239,12 +210,12 @@ Install-ChocolateyPackage @packageArgs".TrimStart();
     Target PublishChocolatey => _ => _
         .DependsOn(PackChocolatey)
         .Requires(() => !string.IsNullOrWhiteSpace(Feed))
-        .Requires(() => !string.IsNullOrWhiteSpace(ApiKey))
+        .Requires(() => !string.IsNullOrWhiteSpace(ChocolateyApiKey))
         .Executes(() =>
         {
             ChocolateyTasks.ChocolateyPush(settings => settings
                 .SetProcessWorkingDirectory(ArtifactsDirectory)
                 .SetSource(Feed)
-                .SetApiKey(ApiKey));
+                .SetApiKey(ChocolateyApiKey));
         });
 }

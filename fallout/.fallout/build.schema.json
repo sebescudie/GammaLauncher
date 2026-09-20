@@ -28,7 +28,6 @@
         "Clean",
         "Compile",
         "CreateGithubRelease",
-        "GetVersion",
         "PackChocolatey",
         "PublishChocolatey"
       ]
@@ -43,7 +42,7 @@
         "Quiet"
       ]
     },
-    "NukeBuild": {
+    "FalloutBuild": {
       "properties": {
         "Continue": {
           "type": "boolean",
@@ -97,6 +96,13 @@
         "Verbosity": {
           "description": "Logging verbosity during build execution. Default is 'Normal'",
           "$ref": "#/definitions/Verbosity"
+        },
+        "BuildProjectFile": {
+          "type": [
+            "null",
+            "string"
+          ],
+          "description": "Path to the build project (.csproj) relative to the repository root. Defaults to 'build/_build.csproj' when unset. Read by the Fallout global tool's in-tool runner."
         }
       }
     }
@@ -104,11 +110,6 @@
   "allOf": [
     {
       "properties": {
-        "ApiKey": {
-          "type": "string",
-          "description": "API Key for Chocolatey feed",
-          "default": "Secrets must be entered via 'nuke :secrets [profile]'"
-        },
         "CompilerPath": {
           "type": "string",
           "description": "Compiler Path"
@@ -120,7 +121,7 @@
       }
     },
     {
-      "$ref": "#/definitions/NukeBuild"
+      "$ref": "#/definitions/FalloutBuild"
     }
   ]
 }
