@@ -1,11 +1,11 @@
 using _build;
 using ICSharpCode.SharpZipLib.Checksum;
-using Nuke.Common;
-using Nuke.Common.IO;
-using Nuke.Common.Tooling;
-using Nuke.Common.Tools.Chocolatey;
-using Nuke.Common.Tools.GitVersion;
-using Nuke.Common.Utilities.Collections;
+using Fallout.Common;
+using Fallout.Common.IO;
+using Fallout.Common.Tooling;
+using Fallout.Common.Tools.Chocolatey;
+using Fallout.Common.Tools.GitVersion;
+using Fallout.Common.Utilities.Collections;
 using Octokit;
 using System;
 using Serilog;
@@ -16,7 +16,7 @@ using System.Xml.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-class Build : NukeBuild
+class Build : FalloutBuild
 {
     public static int Main() => Execute<Build>(x => x.Clean);
 

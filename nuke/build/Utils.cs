@@ -1,5 +1,5 @@
-﻿using Microsoft.Build.Tasks;
-using Nuke.Common.IO;
+using Microsoft.Build.Tasks;
+using Fallout.Common.IO;
 using Octokit;
 using Serilog;
 using System;
@@ -72,7 +72,7 @@ namespace _build
             var downloadPath = downloadDirectory / assetToDownload.Name;
 
             using var httpClient = new HttpClient();
-            httpClient.DefaultRequestHeaders.Add("User-Agent", "NukeBuild");
+            httpClient.DefaultRequestHeaders.Add("User-Agent", "FalloutBuild");
             httpClient.DefaultRequestHeaders.Add("Accept", "application/octet-stream");
 
             var response = await httpClient.GetAsync(assetToDownload.Url);
