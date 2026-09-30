@@ -47,62 +47,85 @@ class Build : FalloutBuild
     readonly AbsolutePath ChocoToolsFolder = RootDirectory / .. / "choco/GammaLauncher/tools";
     
     readonly AbsolutePath ArtifactsDirectory = RootDirectory / .. / "artifacts";
+    
     readonly AbsolutePath VvvvPropsFile = RootDirectory / .. / "GammaLauncher.props";
     readonly AbsolutePath VvvvSourceFile = RootDirectory / .. / "GammaLauncher.vl";
 
     readonly AbsolutePath VersionFile = RootDirectory / .. / "Version.props";
     
     // =======================================================
-    // RELEASE
+    // SECRETS
     // =======================================================
 
-    readonly string GithubToken = Environment.GetEnvironmentVariable("GAMMALAUNCHER_GITHUB_TOKEN", EnvironmentVariableTarget.User);
-    readonly string ChocolateyApiKey = Environment.GetEnvironmentVariable("GAMMALAUNCHER_CHOCOLATEY_API_KEY", EnvironmentVariableTarget.User);
+    [Parameter("Github release token")] 
+    [Secret] 
+    readonly string GithubToken;
+    
+    [Parameter("Chocolatey API key")]
+    [Secret] 
+    string ChocolateyApiKey;
     
     Target Clean => _ => _
         .Executes(() =>
         {
             Log.Information("Deleting outdated executables from Chocolatey /tools folder");
             ChocoToolsFolder.GlobFiles("*.exe").DeleteFiles();
+
+            Log.Information("Cleaning artifacts folder");
+            ArtifactsDirectory.CreateOrCleanDirectory();
+            
+            AbsolutePath winx64Artifactsdir = ArtifactsDirectory / WinX64Rid;
+            AbsolutePath winarm64Artifactsdir = ArtifactsDirectory / WinArm64Rid;
+            
+            winarm64Artifactsdir.CreateOrCleanDirectory();
+            winx64Artifactsdir.CreateOrCleanDirectory();
         });
     
     Target Compile => _ => _
         .DependsOn(Clean)
         .Executes(() =>
         {
-            // Set rid to win-x64
-            var launcherPropsXdoc = XDocument.Load(VvvvPropsFile);
+            try
+            {
+                // Set rid to win-x64
+                var launcherPropsXdoc = XDocument.Load(VvvvPropsFile);
 
-            launcherPropsXdoc.Descendants(XName.Get("RuntimeIdentifier", "http://schemas.microsoft.com/developer/msbuild/2003")).First().Value = WinX64Rid;
-            launcherPropsXdoc.Save(VvvvPropsFile);
+                launcherPropsXdoc.Descendants(XName.Get("RuntimeIdentifier", "http://schemas.microsoft.com/developer/msbuild/2003")).First().Value = WinX64Rid;
+                launcherPropsXdoc.Save(VvvvPropsFile);
 
-            // Compile win-x64
-            var buildWinx64 = ProcessTasks.StartProcess(CompilerPath, $"{VvvvSourceFile} --output-type WinExe --rid {WinX64Rid} --clean");
-            buildWinx64.WaitForExit();
+                // Compile win-x64
+                var buildWinx64 = ProcessTasks.StartProcess(CompilerPath, $"{VvvvSourceFile} --output-type WinExe --rid {WinX64Rid} --clean");
+                buildWinx64.WaitForExit();
 
-            // Set rid to win-arm64
-            launcherPropsXdoc.Descendants(XName.Get("RuntimeIdentifier", "http://schemas.microsoft.com/developer/msbuild/2003")).First().Value = WinArm64Rid;
-            launcherPropsXdoc.Save(VvvvPropsFile);
+                // Set rid to win-arm64
+                launcherPropsXdoc.Descendants(XName.Get("RuntimeIdentifier", "http://schemas.microsoft.com/developer/msbuild/2003")).First().Value = WinArm64Rid;
+                launcherPropsXdoc.Save(VvvvPropsFile);
 
-            // Compile win-arm
-            var buildWinArm = ProcessTasks.StartProcess(CompilerPath, $"{VvvvSourceFile} --output-type WinExe --rid {WinArm64Rid} --clean");
-            buildWinArm.WaitForExit();
+                // Compile win-arm
+                var buildWinArm = ProcessTasks.StartProcess(CompilerPath, $"{VvvvSourceFile} --output-type WinExe --rid {WinArm64Rid} --clean");
+                buildWinArm.WaitForExit();
 
-            // Delete src folders
-            var winx64SrcFolder = ArtifactsDirectory / WinX64Rid / "src";
-            if (Directory.Exists(winx64SrcFolder))
-                Directory.Delete(winx64SrcFolder, true);
+                // Delete src folders
+                var winx64SrcFolder = ArtifactsDirectory / WinX64Rid / "src";
+                if (Directory.Exists(winx64SrcFolder))
+                    Directory.Delete(winx64SrcFolder, true);
 
-            var winarm64SrcFolder = ArtifactsDirectory / WinArm64Rid / "src";
-            if (Directory.Exists(winarm64SrcFolder))
-                Directory.Delete(winarm64SrcFolder, true);
+                var winarm64SrcFolder = ArtifactsDirectory / WinArm64Rid / "src";
+                if (Directory.Exists(winarm64SrcFolder))
+                    Directory.Delete(winarm64SrcFolder, true);
 
-            // Create portable zips
-            var winx64BuildOutput = ArtifactsDirectory / WinX64Rid;
-            winx64BuildOutput.ZipTo(ArtifactsDirectory / $"gammalauncher_{Version}_{WinX64Rid}_portable.zip");
+                // Create portable zips
+                var winx64BuildOutput = ArtifactsDirectory / WinX64Rid;
+                winx64BuildOutput.ZipTo(ArtifactsDirectory / $"gammalauncher_{Version}_{WinX64Rid}_portable.zip");
 
-            var winarm64BuildOutput = ArtifactsDirectory / WinArm64Rid;
-            winarm64BuildOutput.ZipTo(ArtifactsDirectory / $"gammalauncher_{Version}_{WinArm64Rid}_portable.zip");
+                var winarm64BuildOutput = ArtifactsDirectory / WinArm64Rid;
+                winarm64BuildOutput.ZipTo(ArtifactsDirectory / $"gammalauncher_{Version}_{WinArm64Rid}_portable.zip");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         });
 
     // Create installer
@@ -110,13 +133,21 @@ class Build : FalloutBuild
         .DependsOn(Compile)
         .Executes(() =>
         {
-            // Build winx64 installer
-            var winX64InstallerCompileProcess = ProcessTasks.StartProcess(InnoCompilerPath, $"/DMyAppVersion={Version} /DMyTarget={WinX64Rid} {InnoScript}");
-            winX64InstallerCompileProcess.WaitForExit();
+            try
+            {
+                // Build winx64 installer
+                var winX64InstallerCompileProcess = ProcessTasks.StartProcess(InnoCompilerPath, $"/DMyAppVersion={Version} /DMyTarget={WinX64Rid} {InnoScript}");
+                winX64InstallerCompileProcess.WaitForExit();
 
-            // Build arm64 installer
-            var arm64InstallerCompileProcess = ProcessTasks.StartProcess(InnoCompilerPath, $"/DMyAppVersion={Version} /DMyTarget={WinArm64Rid} {InnoScript}");
-            arm64InstallerCompileProcess.WaitForExit();
+                // Build arm64 installer
+                var arm64InstallerCompileProcess = ProcessTasks.StartProcess(InnoCompilerPath, $"/DMyAppVersion={Version} /DMyTarget={WinArm64Rid} {InnoScript}");
+                arm64InstallerCompileProcess.WaitForExit();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         });
 
     // Create GitHub release

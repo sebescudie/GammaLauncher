@@ -110,6 +110,11 @@
   "allOf": [
     {
       "properties": {
+        "ChocolateyApiKey": {
+          "type": "string",
+          "description": "Chocolatey API key",
+          "default": "Secrets must be entered via 'nuke :secrets [profile]'"
+        },
         "CompilerPath": {
           "type": "string",
           "description": "Compiler Path"
@@ -117,6 +122,11 @@
         "Feed": {
           "type": "string",
           "description": "Chocolatey feed URL"
+        },
+        "GithubToken": {
+          "type": "string",
+          "description": "Github release token",
+          "default": "Secrets must be entered via 'nuke :secrets [profile]'"
         }
       }
     },
