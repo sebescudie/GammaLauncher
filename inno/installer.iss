@@ -37,7 +37,7 @@ SetupIconFile=..\img\ico.ico
 function InitializeSetup: Boolean;
 begin
   Dependency_ForceX86 := False;
-  Dependency_AddDotNet80Desktop;;
+  Dependency_AddDotNet100Desktop;;
   Result := True;
 end;
 
