@@ -6,6 +6,12 @@
 
 - You can now set a vvvversion to be the default when opening `.vl` files in one click. Thanks @sebllll for the PR!
 
+#### Changed
+
+- UI now follow window size
+- All launch-related settings were moved from the Settings tab to the Launch tab. Their value can now be edited "in line" directly under the toggle that enables such settings
+- Replaces default tabs with custom widget
+
 #### Fixed
 
 - Selecting a stable version in the dropdown and clicking _Nugets_ will open the correct folder, thanks @maximesouvestre for [the report](https://github.com/sebescudie/GammaLauncher/issues/109)!
