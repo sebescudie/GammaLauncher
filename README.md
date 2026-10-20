@@ -1,7 +1,7 @@
 # GammaLauncher
 
 <p align="center">
-<img src="img/capture.png" title="" alt="Gammalauncher Screenshot" width="259">
+<img src="img/capture.png" title="" alt="Gammalauncher Screenshot" width="512">
 </p>
 
 _A simple launcher for vvvv gamma_
