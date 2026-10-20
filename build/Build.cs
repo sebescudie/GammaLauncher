@@ -41,17 +41,17 @@ class Build : FalloutBuild
 
     readonly AbsolutePath InnoCompilerPath = "C:\\Program Files (x86)\\Inno Setup 6\\ISCC.exe";
 
-    readonly AbsolutePath InnoScript = RootDirectory / .. / "inno/installer.iss";
+    readonly AbsolutePath InnoScript = RootDirectory / "inno/installer.iss";
 
-    readonly AbsolutePath NuspecFile = RootDirectory / .. / "choco/GammaLauncher/gammalauncher.nuspec";
-    readonly AbsolutePath ChocoToolsFolder = RootDirectory / .. / "choco/GammaLauncher/tools";
+    readonly AbsolutePath NuspecFile = RootDirectory / "choco/GammaLauncher/gammalauncher.nuspec";
+    readonly AbsolutePath ChocoToolsFolder = RootDirectory / "choco/GammaLauncher/tools";
     
-    readonly AbsolutePath ArtifactsDirectory = RootDirectory / .. / "artifacts";
+    readonly AbsolutePath ArtifactsDirectory = RootDirectory / "artifacts";
     
-    readonly AbsolutePath VvvvPropsFile = RootDirectory / .. / "GammaLauncher.props";
-    readonly AbsolutePath VvvvSourceFile = RootDirectory / .. / "GammaLauncher.vl";
+    readonly AbsolutePath VvvvPropsFile = RootDirectory / "GammaLauncher.props";
+    readonly AbsolutePath VvvvSourceFile = RootDirectory / "GammaLauncher.vl";
 
-    readonly AbsolutePath VersionFile = RootDirectory / .. / "Version.props";
+    readonly AbsolutePath VersionFile = RootDirectory / "Version.props";
     
     // =======================================================
     // SECRETS
