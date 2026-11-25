@@ -1,5 +1,4 @@
 using _build;
-using ICSharpCode.SharpZipLib.Checksum;
 using Fallout.Common;
 using Fallout.Common.IO;
 using Fallout.Common.Tooling;
