@@ -1,5 +1,22 @@
 ## Changelog
 
+### 5.5.2
+
+#### New
+
+- Uninstaller is now called with the `/SILENT` flag (same as batch uninstaller always did), thanks @azeno for the [PR](https://github.com/sebescudie/GammaLauncher/pull/116)!
+
+#### Fixed
+
+- Fixes NPE in case no version was selected in the dropdow, which happens on a fresh machine, as reported by @catvvvveasel for the [report](https://github.com/sebescudie/GammaLauncher/issues/117)!
+
+### 5.5.1
+
+#### Fixed
+
+- Fixes editable package selection not being read from settings
+- Fixes >= 8.0 opening "old" nuget folder
+
 ### 5.5.0
 
 #### New
